@@ -5,26 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ideas,Realised.-Chhapai.com</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/chhapai.css">
+    <link rel="stylesheet" href="css/common.css">
   </head>
-<body>
+<body ng-app="chhapai" ng-strict-di>
+
+   <!-- Fixed position loading indicator -->
+   <loading class="loading-indicator"></loading>
+
   <header>
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
           <a href="index.html" class="pull-left visible-md visible-lg">
-            <div id="logo-img"></div>
+            <div id="logo-img" alt="Logo image"></div>
           </a>
 
           <div class="navbar-brand">
-            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+            <a href="index.html"><img src="images/chhapai.png" alt="Chhapai Business Cards" width="200px" height="50px"></a>
             <p>
-              <img src="images/star-k-logo.png" alt="Kosher certification">
-              <span>Kosher Certified</span>
-            </p>
+              <img src="images/ideas-realised.png" alt="Chhapai Business Cards" width="100px" height="50px">
+              </p>
           </div>
 
           <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
@@ -71,38 +75,80 @@
   </div>
   <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
-  <div id="main-content" class="container"></div>
+  <ui-view>
+    <div class="text-center initial-loading">
+      <h2>Loading Site...</h2>
+    </div>
+  </ui-view>
 
   <footer class="panel-footer">
     <div class="container">
       <div class="row">
-        <section id="hours" class="col-sm-4">
-          <span>Hours:</span><br>
-          Sun-Thurs: 11:15am - 10:00pm<br>
-          Fri: 11:15am - 2:30pm<br>
-          Saturday Closed
+        <section id="footer-buy" class="col-sm-3">
+          <span>Buy:</span><br>
+          Business Cards<br>
+          Premium Sample<br>
+          Pack<br>
+          Good Stuff<br>
           <hr class="visible-xs">
         </section>
-        <section id="address" class="col-sm-4">
-          <span>Address:</span><br>
-          7105 Reisterstown Road<br>
-          Baltimore, MD 21215
-          <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+        <section id="footer-links" class="col-sm-3">
+          <span>Links:</span><br>
+          Franchise<br>
+          Be An Affiliate<br>
+          Refer And Earn<br>
+          StartUp Coupons<br>
+          Blog<br>
           <hr class="visible-xs">
         </section>
-        <section id="testimonials" class="col-sm-4">
-          <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
-          <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+        <section id="footer-legal" class="col-sm-3">
+          <span>Legal:</span><br>
+          Refund Policy<br>
+          Client's Happiness<br>
+          Policy<br>
+          Privacy Policy<br>
+          Terms and Conditions<br>
+          <hr class="visible-xs">
+        </section>
+        <section id="footer-help" class="col-sm-3">
+          <span>Help:</span><br>
+          How To Order<br>
+         File Setup<br>
+         Order Tracking<br>
+         Get a Quote<br>
+         FAQ's<br>
+         Treatments<br>
+         About Us<br>
+         Contact Us<br>
+          <hr class="visible-xs">
         </section>
       </div>
-      <div class="text-center">&copy; Copyright David Chu's China Bistro 2016</div>
+      <div class="text-center">&copy; Copyright &copy; chhapai.com</div>
     </div>
   </footer>
 
-  <!-- jQuery (Bootstrap JS plugins depend on it) -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/ajax-utils.js"></script>
-  <script src="js/script.js"></script>
+   <!-- Libs -->
+   <script src="lib/jquery-2.1.4.min.js"></script>
+   <script src="lib/bootstrap.min.js"></script>
+   <script src="lib/angular.min.js"></script>
+   <script src="lib/angular-ui-router.min.js"></script>
+
+   <!-- Main Chhapai Module -->
+   <script src="src/chhapai.module.js"></script>
+
+   <!-- Common Module -->
+   <script src="src/common/common.module.js"></script>
+   <script src="src/common/loading/loading.component.js"></script>
+   <script src="src/common/loading/loading.interceptor.js"></script>
+   <script src="src/common/page.service.js"></script>
+
+   <!-- Public Module -->
+   <script src="src/public/public.module.js"></script>
+   <script src="src/public/public.routes.js"></script>
+
+   <script src="src/public/home/home.controller.js"></script>
+   <!-- ADMIN SITE -->
+
+   <!--Application files -->
 </body>
 </html>

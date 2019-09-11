@@ -1,0 +1,484 @@
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+/* Variables */
+
+@screen-sm-min: 768px;
+@navbar-height: 50px;
+@offcanvas-width: 70%;
+
+/* canvas btn color -> BS Variable */
+
+@btn-navbar: #f8f8f8;
+@nav-link-color: #888;
+@media (max-width: @screen-sm-min) {
+  /* fast styled */
+  body.bg {
+    background: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+  }
+}
+
+
+/*!
+ * Yamm!3 - Yet another megamenu for Bootstrap 3
+ * https://geedmo.github.com/yamm3
+ * 
+ * @geedmo - Licensed under the MIT license
+ */
+
+//-----------------------------
+//  Yamm Styles
+//-----------------------------
+.yamm {
+  // reset positions 
+  .nav,
+  .collapse,
+  .dropup,
+  .dropdown {
+    position: static;
+  }
+  // propagate menu position under container for fw navbars
+  .container {
+    position: relative;
+  }
+  // by default aligns menu to left
+  .dropdown-menu {
+    left: auto;
+  }
+  // Content with padding 
+  .yamm-content {
+    padding: 20px 30px;
+  }
+  // Fullwidth menu
+  .dropdown.yamm-fw .dropdown-menu {
+    left: 0;
+    right: 0;
+  }
+}
+
+
+/* off-canvas */
+
+@media screen and (max-width: 767px) {
+  .btn-menu {
+    display: block;
+  }
+  #main {
+    padding-top: @navbar-height;
+  }
+  html,
+  body,
+  .row-offcanvas,
+  .sidebar-offcanvas,
+  .navbar {
+    height: 100%;
+  }
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+  }
+  .row-offcanvas-right {
+    right: 0;
+  }
+  .row-offcanvas-left {
+    left: 0;
+  }
+  .row-offcanvas-right .sidebar-offcanvas {
+    right: -@offcanvas-width;
+    /* 6 columns */
+  }
+  .row-offcanvas-left .sidebar-offcanvas {
+    left: -@offcanvas-width;
+    /* 6 columns */
+  }
+  .row-offcanvas-right.active {
+    right: @offcanvas-width;
+    //top: -@navbar-height;
+    /* 6 columns */
+  }
+  .row-offcanvas-left.active {
+    left: @offcanvas-width;
+    //top: -@navbar-height;
+    /* 6 columns */
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    //top: -@navbar-height;
+    width: @offcanvas-width;
+    /* 6 columns */
+    .navbar {
+      margin-bottom: 0;
+      overflow: auto;
+    }
+  }
+  .navbar-toggle.collapsed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: @btn-navbar;
+  }
+}
+
+
+/* level design */
+
+.level2 > .action {
+  font-weight: bold;
+}
+
+.yamm-content .row li {
+  padding: 0;
+  margin: 0;
+  a,
+  button {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    color: @nav-link-color ;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+/* xs mode collapsed */
+
+span.open {
+  &:before {
+    content: "+";
+    padding: 5px 10px;
+    border: 1px solid grey;
+    //display: inline-block;
+    //height: 36px;
+    //width: 36px;
+    position: absolute;
+    right: 0px;
+    margin-top: -5px;
+    text-align: center;
+  }
+}
+
+/* reset button */
+
+button.action {
+  border: 0;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: @nav-link-color;
+}</style>
+<body>
+ 
+        <div class="row-offcanvas row-offcanvas-right">
+                <div class="inner-wrap">
+              
+                  <div id="canvasmenu-container" class="sidebar-offcanvas left-off-canvas-menu">
+              
+                    <!--navbar-default navbar-fixed-top -->
+                    <nav class="navbar yamm navbar-default  mr-auto ">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">Chhapai</a>
+                        </div>
+              
+                        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">--->
+                        <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-6">
+                          <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Business Cards
+                                          </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-md-3">
+                                                <span class="text-uppercase text-white">PREMIUM CARDS</span>
+                                                <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                  <a class="nav-link " href="#">Matt Finish</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#">Soft Suede Finish</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#">Texture Finish</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Uncoated Finish</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#">Pearl Finish</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                      <a class="nav-link" href="#">Sandwich Finish</a>
+                                                    </li>
+                                              </ul>
+                                              </div>
+                                              <!-- /.col-md-3  -->
+                                              <div class="col-md-3">
+                                                  <span class="text-uppercase text-white">ENVIRO CARDS</span>
+                                                <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                  <a class="nav-link " href="#">Brown Kraft</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#">100% Recycle</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#">Wool Finish</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link " href="#">Black Suede</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#">Gray Uncoated</a>
+                                                  </li>
+                                                  <li class="nav-item">
+                                                    <a class="nav-link" href="#">Color Cards</a>
+                                                  </li>
+                                              </ul>
+                                              </div>
+        <!-- /.col-md-3  -->
+        <div class="col-md-3">
+                <span class="text-uppercase text-white">BESPOKE CARDS</span>
+              <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link " href="#">Electropiated</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Embossed</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Embossed Spot Gloss</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " href="#">Foiling</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Letterpress</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Edgepaint</a>
+                </li>
+            </ul>
+            </div>
+           
+            <!-- /.col-md-3 -->
+            <div class="col-md-3">
+                <span class="text-uppercase text-white">UNIQUE CARDS</span>
+              <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link " href="#">Laser cut Shaped Cards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wood Cards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Acrylic Cards</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link " href="#">Board Cards</a>
+                </li>
+            </div>
+        </li>
+        <!--  /.container  -->
+
+
+                  
+                            
+                            
+                           
+
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Design
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+        
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <span class="text-uppercase text-white">DESIGN SERVICES</span>
+                              <ul class="nav flex-column">
+                              <li class="nav-item">
+                                <a class="nav-link " href="#">Business Crads Design</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Business Cards Logo Design</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Design Using Templates</a>
+                              </li>
+                            </ul>
+                            </div>
+                           
+
+            </li>
+                  <!-- good things -->           
+                           
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Good Things
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                          
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">NOTEBOOK</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">COATERS</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">ACCESSORIES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">BUSINESS CARDS HOLDERS</a>
+                              </li>
+                          </ul>
+                          </div>
+
+
+   <!-- franchise  -->
+                          <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Franchise
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        
+                        
+                                  <div class="container">
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                       
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                          <a class="nav-link " href="#">BLOG</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">BE AN AFFILIATE</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" href="#">REFER & EARN</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">STARUP COUPONS</a>
+                                          </li>
+                                      </ul>
+                                      </div>
+                                      </div></div>
+                                      </div>
+                                    </li>
+
+                                       <!-- help  -->
+                                    <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           Help
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    
+                                    
+                                              <div class="container">
+                                                <div class="row">
+                                                  <div class="col-md-4">
+                                                   
+                                                    <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                      <a class="nav-link " href="#">How To ORDER</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                      <a class="nav-link" href="#">File Setup</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                      <a class="nav-link" href="#">Tracking</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Treatments</a>
+                                                      </li>
+                                                  </ul>
+                                                  </div>
+                                                </li>
+                                
+
+                                                 
+                           
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+              
+                  </div>
+                
+
+
+              <style>
+              /*
+ * This code will prevent unexpected menu close when using some components (like accordion, forms, etc)
+ */
+$(document).on('click', '.yamm .dropdown-menu', function(e) {
+  e.stopPropagation()
+})
+
+/*
+ * jquery dependencies
+ */
+
+$(document).ready(function() {
+
+  $('[data-toggle="offcanvas"], body.bg').click(function() {
+    /* add a darker background*/
+    $('body').toggleClass('bg');
+    $('.row-offcanvas').toggleClass('active');
+  });
+
+  /* close menu on click outside of the menu/dark side */
+  //$("html").mouseup(function(e) {
+  $("html").on("click", function(e) {
+    
+    var subject = $("#canvasmenu-container");
+
+    if (e.target.id != subject.attr('id') && !subject.has(e.target).length) {
+      $('.row-offcanvas, body').removeClass('active bg');
+    }
+    
+  });
+  
+  
+});
+              </style>
+
+              </body>
+              </html>
+
+              
+              
+              

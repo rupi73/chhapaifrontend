@@ -1,1 +1,477 @@
-testing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+/* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+   margin-bottom:1rem;
+}
+
+.navbar .dropdown-menu {
+  border:none;
+  background-color:#0060c8!important;
+}
+
+/* breakpoint and up - mega dropdown styles */
+@media screen and (min-width: 992px) {
+  
+  /* remove the padding from the navbar so the dropdown hover state is not broken */
+.navbar {
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+/* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+.navbar .nav-item {
+  padding:.5rem .5rem;
+  margin:0 .25rem;
+}
+
+/* makes the dropdown full width  */
+.navbar .dropdown {position:static;}
+
+.navbar .dropdown-menu {
+  width:100%;
+  left:0;
+  right:0;
+/*  height of nav-item  */
+  top:45px;
+}
+  
+  /* shows the dropdown menu on hover */
+.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+  display:block!important;
+}
+  
+  .navbar .dropdown-menu {
+    border: 1px solid rgba(0,0,0,.15);
+    background-color:white;
+  }
+
+}
+
+
+</style>
+  
+  
+  </head>
+  <body>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary mx-auto">
+          <a class="navbar-brand" href="#">
+              <img src="img/final-logo-e1516025522576.png" height="80px" width="200px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" >
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Business Cards
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <span class="text-uppercase text-white">PREMIUM CARDS</span>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link " href="#">Matt Finish</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Soft Suede Finish</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Texture Finish</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Uncoated Finish</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Pearl Finish</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Sandwich Finish</a>
+                            </li>
+                      </ul>
+                      </div>
+                      <!-- /.col-md-3  -->
+                      <div class="col-md-3">
+                          <span class="text-uppercase text-white">ENVIRO CARDS</span>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link " href="#">Brown Kraft</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">100% Recycle</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wool Finish</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Black Suede</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Gray Uncoated</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Color Cards</a>
+                          </li>
+                      </ul>
+                      </div>
+                      <!-- /.col-md-3  -->
+                      <div class="col-md-3">
+                          <span class="text-uppercase text-white">BESPOKE CARDS</span>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link " href="#">Electropiated</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Embossed</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Embossed Spot Gloss</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Foiling</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Letterpress</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Edgepaint</a>
+                          </li>
+                      </ul>
+                      </div>
+                     
+                      <!-- /.col-md-3 -->
+                      <div class="col-md-3">
+                          <span class="text-uppercase text-white">UNIQUE CARDS</span>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link " href="#">Laser cut Shaped Cards</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Wood Cards</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Acrylic Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Board Cards</a>
+                          </li>
+                  <!--  /.container  -->
+        
+        
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Design
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+        
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <span class="text-uppercase text-white">DESIGN SERVICES</span>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link " href="#">Business Crads Design</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Business Cards Logo Design</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Design Using Templates</a>
+                        </li>
+                      </ul>
+                      </div>
+                     
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Good Things
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        
+        
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-4">
+                      
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">NOTEBOOK</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">COATERS</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">ACCESSORIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BUSINESS CARDS HOLDERS</a>
+                          </li>
+                      </ul>
+                      </div>
+                     
+                      <!-- /.col-md-4  -->
+                    </div>
+                  </div>
+                  <!--  /.container  -->
+        
+        
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Franchise
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-4">
+                         
+                          <ul class="nav flex-column">
+                          <li class="nav-item">
+                            <a class="nav-link " href="#">BLOG</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">BE AN AFFILIATE</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">REFER & EARN</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">STARUP COUPONS</a>
+                            </li>
+                        </ul>
+                        </div>
+                        </div></div>
+                        </div>
+
+
+                      </li>
+
+                    
+
+                  <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       Help
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-4">
+                               
+                                <ul class="nav flex-column">
+                                <li class="nav-item">
+                                  <a class="nav-link " href="#">How To ORDER</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">File Setup</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">Tracking</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Treatments</a>
+                                  </li>
+                              </ul>
+                              </div>
+                            </li>
+
+                          
+        
+            </ul>
+          
+        
+        </nav>
+
+        <style>
+        $(document).ready(function() {
+ // executes when HTML-Document is loaded and DOM is ready
+
+// breakpoint and up  
+$(window).resize(function(){
+	if ($(window).width() >= 980){	
+
+      // when you hover a toggle show its dropdown menu
+      $(".navbar .dropdown-toggle").hover(function () {
+         $(this).parent().toggleClass("show");
+         $(this).parent().find(".dropdown-menu").toggleClass("show"); 
+       });
+
+        // hide the menu when the mouse leaves the dropdown
+      $( ".navbar .dropdown-menu" ).mouseleave(function() {
+        $(this).removeClass("show");  
+      });
+  
+		// do something here
+	}	
+});  
+  
+  
+
+// document ready  
+});
+        </style>
+
+
+
+
+<img src=Edge-Paint_2.jpg height="500px" width="1370px">
+
+
+<div class="container text-justify">
+  <h1>Choose by paper</h1>
+  <p>We know papers are elementary. So, select the one that speaks you!</p>
+</div>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="img/1-1.jpg" style="width:100%">
+            <div class="container">
+              <h4><b>PREMIUM</b></h4> 
+              <p>300 GSM</p> 
+              <p>1000 cards from Rs.2000</p> 
+              <p>Bring a classy and royalty look of your brand your premium business cards. </p>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card">
+            <img src="img/3.jpg"  style="width:100%">
+            <div class="container">
+                <h4><b>PREMIUM</b></h4> 
+              <p>300 GSM</p> 
+              <p>1000 cards from Rs.2000</p>
+              <p>Bring a classy and royalty look of your brand your premium business cards. </p> 
+            </div>
+          </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="img/4-1.jpg"  style="width:100%">
+            <div class="container">
+                <h4><b>PREMIUM</b></h4> 
+                <p>300 GSM</p> 
+                <p>1000 cards from Rs.2000</p> 
+                <p>Bring a classy and royalty look of your brand your premium business cards. </p>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="img/2.jpg"  style="width:100%">
+            <div class="container">
+                <h4><b>PREMIUM</b></h4> 
+                <p>300 GSM</p> 
+                <p>1000 cards from Rs.2000</p> 
+                <p>Bring a classy and royalty look of your brand your premium business cards. </p>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center">
+    <h1>Choose by Template</h1>
+   
+  </div>
+
+  <div class="row">
+      <div class="col-md-12">
+    
+        <div id="mdb-lightbox-ui"></div>
+    
+        <div class="mdb-lightbox no-margin">
+    
+          <figure class="col-md-4">
+            <a href="#"" data-size="1600x1067">
+              <img alt="picture" src="img/11-5.jpg"
+                class="img-fluid">
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/55-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/56-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/57-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/58-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/59-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/60-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/63-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+          <figure class="col-md-4">
+            <a href="" data-size="1600x1067">
+              <img alt="picture" src="img/64-1-1024x812.jpg"
+                class="img-fluid" />
+            </a>
+          </figure>
+    
+        </div>
+    
+      </div>
+    </div>
+  
+</body>
+</html>

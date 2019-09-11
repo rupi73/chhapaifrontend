@@ -13,7 +13,7 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: '../src/public/public.html'
     })
     .state('public.home', {
       url: '/',

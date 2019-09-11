@@ -8,9 +8,8 @@
     var service =this;
     
     service.getPageContent = function(){
-      return $http.get(ApiPath +'bcardscalc').then(function(response){
-        console.log(response.data);
-        return response.data;
+      return $http.get(ApiPath +'pages/557/contentElementor').then(function(response){
+              return response.data;
       });
     }
   }

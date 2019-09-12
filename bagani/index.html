@@ -32,6 +32,59 @@
 
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+    <style>
+    /* adds some margin below the link sets  */
+.navbar .dropdown-menu div[class*="col"] {
+   margin-bottom:1rem;
+}
+
+.navbar .dropdown-menu {
+  border:none;
+  background-color:green;
+}
+
+/* breakpoint and up - mega dropdown styles */
+@media screen and (min-width: 992px) {
+  
+  /* remove the padding from the navbar so the dropdown hover state is not broken */
+.navbar {
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+/* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
+.navbar .nav-item {
+  padding:.5rem .5rem;
+  margin:0 .25rem;
+}
+
+/* makes the dropdown full width  */
+.navbar .dropdown {position:static;}
+
+.navbar .dropdown-menu {
+  width:100%;
+  left:0;
+  right:0;
+/*  height of nav-item  */
+  top:45px;
+}
+  
+  /* shows the dropdown menu on hover */
+.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
+  display:block!important;
+}
+  
+  .navbar .dropdown-menu {
+    border: 1px solid rgba(0,0,0,.15);
+    background-color:green;
+  }
+
+}
+
+
+    </style>
 </head>
 
 <body ng-app="chhapai" ng-strict-di>
@@ -75,103 +128,292 @@
             </div>
             <!-- End Header Top -->
             <!-- Start Mainmenu Area -->
-            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header bg__theme">
-                    <div class="container">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!------ Include the above in your HEAD tag ---------->
+            
+            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto" >
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Business Cards
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+              
+                      <div class="container">
                         <div class="row">
-                            <div class="col-lg-9 col-md-9 d-md-none d-sm-none d-lg-block">
-                                <nav class="main__menu__nav">
-                                    <ul class="main__menu">
-                                        <li class="drop"><a href="index.html">Business Cards</a>
-                                            <div class="container">
-                                                    <div class="row">
-                                                      <div class="col-md-4">
-                                                        
-                                                            <ul class="dropdown">
-                                                        <li class="nav-item">
-                                                          <a class="nav-link " href="#">Business Crads Design</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                          <a class="nav-link" href="#">Business Cards Logo Design</a>
-                                                        </li>
-                                                        <li class="nav-item">
-                                                          <a class="nav-link" href="#">Design Using Templates</a>
-                                                        </li>
-                                                      </ul>
-                                                      </div>
-                                        </li>
-                                        <li><a href="about.html">Design</a></li>
-                                        <li><a href="service.html">Good Things</a></li>
-                                        <li class="drop"><a href="#">pages</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog-list.html">Blog List</a></li>
-                                                <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="team.html">Team Page</a></li>
-                                                <li><a href="service.html">Our Service</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog-list.html">Franchise</a></li>
-                                        <li><a href="gallery.html">Sample</a></li>
-                                        <li><a href="contact.html">Help</a></li>
-                                    </ul>
-                                </nav>
-                                <div class="mobile-menu clearfix d-lg-none d-md-block">
-                                    <nav id="mobile_dropdown">
-                                        <ul>
-                                            <li><a href="index.html">Home</a>
-                                                <ul>
-                                                    <li><a href="index.html">Home Default</a></li>
-                                                    <li><a href="index-animation-text.html">Home Animation Text</a></li>
-                                                    <li><a href="index-banner.html">Home Banner Fixed</a></li>
-                                                    <li><a href="index-box.html">Home Box Layout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="service.html">SERVICES</a></li>
-                                            <li><a href="#">pages</a>
-                                                <ul>
-                                                    <li><a href="blog-list.html">Blog List</a></li>
-                                                    <li><a href="blog-sidebar.html">Blog Sidebar</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                    <li><a href="team.html">Team Page</a></li>
-                                                    <li><a href="service.html">Our Service</a></li>
-                                                    <li><a href="about.html">About Us</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog-list.html">Blog</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div> 
-                            </div>
-                            <div class="col-lg-3 col-md-8 col-sm-8">
-                                <div class="menu__btn d-md-none d-sm-none d-lg-block">
-                                    <span class="phone"><img src="images/icons/phone.png" alt="" />+880123456789</span>
-                                </div>
-                                <div class="menu__text d-lg-none">
-                                    <a href="index.html">Menu</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mobile-menu-area"></div>
+                          <div class="col-md-3">
+                              <span class="text-uppercase text-white">PREMIUM CARDS</span>
+                           
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link " href="#">Matt Finish</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Soft Suede Finish</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Texture Finish</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Uncoated Finish</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Pearl Finish</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sandwich Finish</a>
+                                  </li>
+                          </ul>
+                          </div>
+                          <div class="col-md-3">
+                              <span class="text-uppercase text-white">ENVIRO CARDS</span>                  
+                              <ul class="nav flex-column">
+                                  <li class="nav-item">
+                                    <a class="nav-link " href="#">Brown Kraft</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">100% Recycle</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="#">Wool Finish</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link " href="#">Black Suede</a>
+                            </ul>
+                          </div>
+                          <div class="col-md-3">
+                              <span class="text-uppercase text-white">BESPOKE CARDS</span>
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link " href="#">Electropiated</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Embossed</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Embossed Spot Gloss</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Foiling</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Letterpress</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Edgepaint</a>
+                              </li>
+                          </ul>
+                          </div>
+                          <div class="col-md-3">
+                              <span class="text-uppercase text-white">UNIQUE CARDS</span>
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link " href="#">Laser cut Shaped Cards</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Wood Cards</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Acrylic Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Board Cards</a>
+                              </li>
+                      <!--  /.container  -->
+            
+            
                     </div>
-                </div>
-                <!-- End Mainmenu Area -->
-        
-						<div class="col-lg-3 col-md-8 col-sm-8">
-							<div class="menu__btn d-md-none d-sm-none d-lg-block">
-								<span class="phone"><img src="images/icons/phone.png" alt="" />+880123456789</span>
-							</div>
-							<div class="menu__text d-lg-none">
-								<a href="index.html">Menu</a>
-							</div>
-						</div>
+                          </div>
+                          </div>
+                          </div>
+                    
+                   <!--  Design  -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Design
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+                      
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <span class="text-uppercase text-white">DESIGN SERVICE</span>
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Business Cards Design</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Business Cards Logo Design</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Design Using Templates</a>
+                            </li>
+                          </ul>
+                          </div>
+                         
+            
                     </div>
-                    <div class="mobile-menu-area"></div>
-                </div>
-            </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Good Things
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                           
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">NOTEBOOK</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">COATERS</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">ACCESSORIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BUSINESS CARDS HOLDERS</a>
+                          </li>
+                      </ul>
+                          </div>
+                         
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Franchise
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          
+          
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                           
+                            <ul class="nav flex-column">
+                            <li class="nav-item">
+                              <a class="nav-link " href="#">BLOG</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">BE AN AFFILIATE</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">REFER & EARN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">STARUP COUPONS</a>
+                              </li>
+                          </ul>
+                          </div>
+                          </div></div>
+                          </div>
+                          
+                          
+                        
+            
+                  </li>
+                  
+                    <!-- sample -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Sample
+                    </a>
+                    </li>
+
+                        <!-- Helps -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Help
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+              
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-md-4">
+                             
+                              <ul class="nav flex-column">
+                              <li class="nav-item">
+                                <a class="nav-link " href="#">How To ORDER</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">File Setup</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Tracking</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Treatments</a>
+                                </li>
+                            </ul>
+                            </div>
+                            <div class="col-md-4">
+                                                 
+                              <ul class="nav flex-column">
+                              <li class="nav-item">
+                                <a class="nav-link " href="#">Get A Quote</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                              </li>
+                              
+                            </ul>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
+                          </li>
+            
+                </ul>
+              
+            
+            
+            </nav>
+
+            <style>
+
+            $(document).ready(function() {
+                // executes when HTML-Document is loaded and DOM is ready
+               
+               // breakpoint and up  
+               $(window).resize(function(){
+                   if ($(window).width() >= 980){	
+               
+                     // when you hover a toggle show its dropdown menu
+                     $(".navbar .dropdown-toggle").hover(function () {
+                        $(this).parent().toggleClass("show");
+                        $(this).parent().find(".dropdown-menu").toggleClass("show"); 
+                      });
+               
+                       // hide the menu when the mouse leaves the dropdown
+                     $( ".navbar .dropdown-menu" ).mouseleave(function() {
+                       $(this).removeClass("show");  
+                     });
+                 
+                       // do something here
+                   }	
+               });  
+                 
+                 
+               
+               // document ready  
+               });
+
+               </style>
             <!-- End Mainmenu Area -->
         </header>
         <!-- End Header Style -->
@@ -183,9 +425,7 @@
 										<div class="container">
 												<div class="row">
 														<div class="col-md-12 col-lg-12">
-                                                                <img src="images/1920x880.jpg">
 																<div class="slider__inner">
-                                                                   
 																		<h4 class="slider__img">Bagani</h4>
 																		<h1 class="anmation-one cd-headline cx-heading loading-bar">Improve Your Bagani</h1>
 									<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking.</p>

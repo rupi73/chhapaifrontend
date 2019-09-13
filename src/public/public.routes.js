@@ -19,12 +19,14 @@ function routeConfig ($stateProvider) {
       url: '/',
       templateUrl: 'src/public/home/home.html',
       controller:'HomeController',
-      controllerAs:'homeCtrl',
-      resolve:{
-        homeContent:['PageService',function (PageService){
-          return PageService.getPageContent();
-        }]
-      }
+      controllerAs:'homeCtrl'       
+    })
+    .state('public.product', {
+      url: '/public/product',
+      templateUrl: 'src/public/product/product1.html',
+      controller:'ProductController',
+      controllerAs:'productCtrl'
+
        
     });
 }

@@ -46,74 +46,56 @@
   <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
 </div> <!-- slider-nav.// -->
 </article> <!-- gallery-wrap .end// -->
+<uib-tabset class="tabbable" active="active">
+	<uib-tab index="0" heading="Static title">
+		<h4>Static content</h4>
+		<p>
+			Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent.
+		</p>
+		<p>
+			Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+		</p>
+	</uib-tab>
+	<uib-tab index="2" select="alertMe()">
+		<uib-tab-heading>
+			<i class="glyphicon glyphicon-bell"></i> Alert!
+		</uib-tab-heading>
+		I've got an HTML heading, and a select callback. Pretty cool!
+	</uib-tab>
+</uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
-<article class="card-body p-5">
-	<h3 class="title mb-3">Original Version of Some product name</h3>
-
-<p class="price-detail-wrap"> 
-	<span class="price h3 text-warning"> 
-		<span class="currency">US $</span><span class="num">1299</span>
-	</span> 
-	<span>/per kg</span> 
-</p> <!-- price-detail-wrap .// -->
-<dl class="item-property">
-  <dt>Description</dt>
-  <dd><p>Here goes description consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco </p></dd>
-</dl>
-<dl class="param param-feature">
-  <dt>Model#</dt>
-  <dd>12345611</dd>
-</dl>  <!-- item-property-hor .// -->
-<dl class="param param-feature">
-  <dt>Color</dt>
-  <dd>Black and white</dd>
-</dl>  <!-- item-property-hor .// -->
-<dl class="param param-feature">
-  <dt>Delivery</dt>
-  <dd>Russia, USA, and Europe</dd>
-</dl>  <!-- item-property-hor .// -->
-
-<hr>
-	<div class="row">
-		<div class="col-sm-5">
-			<dl class="param param-inline">
-			  <dt>Quantity: </dt>
-			  <dd>
-			  	<select class="form-control form-control-sm" style="width:70px;">
-			  		<option> 1 </option>
-			  		<option> 2 </option>
-			  		<option> 3 </option>
-			  	</select>
-			  </dd>
-			</dl>  <!-- item-property .// -->
-		</div> <!-- col.// -->
-		<div class="col-sm-7">
-			<dl class="param param-inline">
-				  <dt>Size: </dt>
-				  <dd>
-				  	<label class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">SM</span>
-					</label>
-					<label class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">MD</span>
-					</label>
-					<label class="form-check form-check-inline">
-					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-					  <span class="form-check-label">XXL</span>
-					</label>
-				  </dd>
-			</dl>  <!-- item-property .// -->
-		</div> <!-- col.// -->
-	</div> <!-- row.// -->
-	<hr>
-	<a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>
-	<a href="#" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
-</article> <!-- card-body.// -->
+				<div class="panel panel-transparent">
+						<div class="panel-heading">
+							<h4 class="panel-title">Works with (or without) ng-repeat</h4>
+						</div>
+						<div class="panel-body">
+							<v-accordion class="vAccordion--default" control="firstAccordionControl">
+								<v-pane ng-repeat="pane in panes" expanded="1">
+									<v-pane-header>
+										<h5>{{ pane.header }}</h5>
+									</v-pane-header>
+									<v-pane-content>
+										<p>
+											{{ pane.content }}
+										</p>
+										<v-accordion ng-if="pane.subpanes">
+											<v-pane ng-repeat="subpane in pane.subpanes">
+												<v-pane-header>
+													<h5>{{ subpane.header }}</h5>
+												</v-pane-header>
+												<v-pane-content>
+													<p>
+														{{ subpane.content }}
+													</p>
+												</v-pane-content>
+											</v-pane>
+										</v-accordion>
+									</v-pane-content>
+								</v-pane>
+							</v-accordion>
+						</div>
+					</div>
 		</aside> <!-- col.// -->
 	</div> <!-- row.// -->
 </div> <!-- card.// -->

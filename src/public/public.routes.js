@@ -23,11 +23,8 @@ function routeConfig ($stateProvider) {
     })
     .state('public.product', {
       url: '/public/product',
-      templateUrl: 'src/public/product/product1.html',
-      controller:'ProductController',
-      controllerAs:'productCtrl'
-
-       
+      templateUrl: 'src/public/product/product.html',
+      controller:'ProductController'       
     });
 }
 })();

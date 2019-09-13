@@ -23,7 +23,7 @@ function routeConfig ($stateProvider) {
     })
     .state('public.product', {
       url: '/public/product',
-      templateUrl: 'src/public/product/product1.html',
+      templateUrl: 'src/public/product/product.html',
       controller:'ProductController',
       controllerAs:'productCtrl'
 

@@ -24,7 +24,20 @@ function routeConfig ($stateProvider) {
     .state('public.product', {
       url: '/public/product',
       templateUrl: 'src/public/product/product.html',
-      controller:'ProductController'       
+      controller:'ProductController',
+      controllerAs:'productCtrl'       
+    })
+    .state('public.bcards', {
+      url: '/public/bcards',
+      templateUrl: 'src/public/pages/bcards.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.samplepack', {
+      url: '/public/samplepack',
+      templateUrl: 'src/public/pages/samplepack.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
     });
 }
 })();

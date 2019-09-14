@@ -3,9 +3,10 @@
 "use strict"
 angular.module('public')
 .controller('ProductController',ProductController);
-ProductController.$inject=['$scope'];
-function ProductController($scope){
-  $scope.firstAccordionControl = {
+//ProductController.$inject=['$scope'];
+function ProductController(){
+  var $ctrl = this;
+  $ctrl.firstAccordionControl = {
     onExpand: function (expandedPaneIndex) {
         console.log('expanded:', expandedPaneIndex);
     },
@@ -13,7 +14,7 @@ function ProductController($scope){
         console.log('collapsed:', collapsedPaneIndex);
     }
 };
-$scope.panes = [{
+$ctrl.panes = [{
     header: 'Pane 1',
     content: 'Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi.'
 }, {

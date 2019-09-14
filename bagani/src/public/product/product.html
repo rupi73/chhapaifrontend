@@ -37,10 +37,10 @@
 		<aside class="col-sm-5 border-right">
 <article class="gallery-wrap"> 
 <div class="img-big-wrap">
-  <div> <a href="#"><img src="https://s9.postimg.org/tupxkvfj3/image.jpg"></a></div>
+  <div> <a href="#"><img src="img/4-1.jpg"></a></div>
 </div> <!-- slider-product.// -->
 <div class="img-small-wrap">
-  <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+  <div class="item-gallery"> <img src="img/5-100x100.jpg"> </div>
   <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
   <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
   <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
@@ -71,7 +71,7 @@
 						</div>
 						<div class="panel-body">
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
-								<v-pane ng-repeat="pane in panes" expanded="1">
+								<v-pane ng-repeat="pane in productCtrl.panes" expanded="$first">
 									<v-pane-header>
 										<h5>{{ pane.header }}</h5>
 									</v-pane-header>

@@ -29,7 +29,7 @@ function routeConfig ($stateProvider) {
     })
     .state('public.bcards', {
       url: '/public/bcards',
-      templateUrl: 'src/public/pages/bcards.html',
+      templateUrl: 'src/public/pages/franchisee.html',
       controller:'PagesController',
       controllerAs:'pagesCtrl'       
     })

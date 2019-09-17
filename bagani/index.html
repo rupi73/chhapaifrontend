@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
@@ -41,10 +41,12 @@
 .navbar .dropdown-menu div[class*="col"] {
    margin-bottom:1rem;
 }
+
 .navbar .dropdown-menu {
   border:none;
   background-color:green;
 }
+
 /* breakpoint and up - mega dropdown styles */
 @media screen and (min-width: 992px) {
   
@@ -53,13 +55,16 @@
   padding-top:0px;
   padding-bottom:0px;
 }
+
 /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
 .navbar .nav-item {
   padding:.5rem .5rem;
   margin:0 .25rem;
 }
+
 /* makes the dropdown full width  */
 .navbar .dropdown {position:static;}
+
 .navbar .dropdown-menu {
   width:100%;
   left:0;
@@ -77,7 +82,40 @@
     border: 1px solid rgba(0,0,0,.15);
     background-color:green;
   }
+
 }
+
+/*footer*/
+.footers a {color:#696969;}
+.footers p {color:#696969;}
+.footers ul {line-height:30px;}
+#social-fb:hover {
+     color: #3B5998;
+     transition:all .001s;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+     transition:all .001s;
+ }
+ #social-gp:hover {
+     color: #d34836;
+     transition:all .001s;
+ }
+ #social-em:hover {
+     color: #f39c12;
+     transition:all .001s;
+ }
+
+/* end footer*/
+
+/*subscribe*/
+
+
+
+
+/*end subscribe*/
+
+
     </style>
 </head>
 
@@ -142,7 +180,7 @@
                            
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'matt-finish'})">Matt Finish</a>
+                              <a class="nav-link" ui-sref="public.product">Matt Finish</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="#">Soft Suede Finish</a>
@@ -375,6 +413,7 @@
             </nav>
 
             <style>
+
             $(document).ready(function() {
                 // executes when HTML-Document is loaded and DOM is ready
                
@@ -401,6 +440,7 @@
                
                // document ready  
                });
+
                </style>
             <!-- End Mainmenu Area -->
         </header>
@@ -454,102 +494,95 @@
 					</ui-view>
 
         <!-- Start Footer Area -->
-        <footer class="footer__area bg__dark">
-            <div class="footer__container ptb--90">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start Single Widget -->
-                        <div class="col-md-6 col-lg-3 col-sm-12">
-                            <div class="footer">
-                                <h2 class="ft__title">About Bagani</h2>
-                                <div class="ft__details">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical. Lorem Ipsum is not simply random text.</p>
-                                </div>
-                                <ul class="team__social__link">
-                                    <li><a href="#"><i class="icofont icofont-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icofont icofont-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="icofont icofont-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icofont icofont-social-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Start Single Widget -->
-                        <!-- Start Single Widget -->
-                        <div class="col-md-6 col-lg-3 col-sm-12 xsmt--40">
-                            <div class="footer">
-                                <h2 class="ft__title">Latest Blog</h2>
-                                <div class="ft__blog__inner">
-                                    <div class="ft__blog">
-                                        <div class="ft__bl__thumb">
-                                            <a href="blog-details.html">
-                                                <img src="images/blog/sm-img/1.jpeg" alt="blog img">
-                                            </a>
-                                        </div>
-                                        <div class="ft__bl__details">
-                                            <h2><a href="blog-details.html">A new experience for a  new hope and future.</a></h2>
-                                            <span>05 April 2018</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ft__blog__inner">
-                                    <div class="ft__blog">
-                                        <div class="ft__bl__thumb">
-                                            <a href="blog-details.html">
-                                                <img src="images/blog/sm-img/2.jpeg" alt="blog img">
-                                            </a>
-                                        </div>
-                                        <div class="ft__bl__details">
-                                            <h2><a href="blog-details.html">Don’t make experience for a  new hope and future.</a></h2>
-                                            <span>05 April 2018</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Start Single Widget -->
-                        <!-- Start Single Widget -->
-                        <div class="col-md-6 col-lg-3 col-sm-12 smt--40 xsmt--40">
-                            <div class="footer">
-                                <h2 class="ft__title">Quick Link</h2>
-                                <ul class="ht__link">
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="service.html">Bagani Services</a></li>
-                                    <li><a href="#">Client Feedback</a></li>
-                                    <li><a href="#">Tearms & Condition</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Start Single Widget -->
-                        <!-- Start Single Widget -->
-                        <div class="col-md-6 col-lg-3 col-sm-12 smt--40 xsmt--40">
-                            <div class="footer">
-                                <h2 class="ft__title">Quick Contact</h2>
-                                <ul class="ht__contact">
-                                    <li><a href="#"><i class="icofont icofont-map-pins"></i>10/2 South hils, melborn, Australia</a></li>
-									<li><a href="#"><i class="icofont icofont-direction-sign"></i>Uganda, Australia</a></li>
-                                    <li><a href="#"><i class="icofont icofont-phone"></i>+883467256439</a></li>
-                                    <li><a href="#"><i class="icofont icofont-email"></i>info@example.com</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Start Single Widget -->
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <div class="container">
-                    <div class="row">
+
+        <section class="footers bg-light pt-5 pb-3">
+          <div class="container pt-5">
+              <div class="row">
+                 
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-two">
+                   <h5  class="text-success">BUY</h5>
+                   <ul class="list-unstyled">
+                    <li><a href="">Business Cards</a></li>
+                    <li><a href="service.html">Design Services</a></li>
+                    <li><a href="#">Premium sample</a></li>
+                    <li><a href="#">Pack</a></li>
+                    <li><a href="#">Pack</a></li>
+                 </ul>
+               </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-three">
+                   <h5   class="text-success">LINKS </h5>
+                   <ul class="list-unstyled">
+                    <li><a href="">Franchise</a></li>
+                    <li><a href="">Be an affiliate</a></li>
+                    <li><a href="#">Refer & Earn</a></li>
+                    <li><a href="#">Startup Coupons</a></li>
+                    <li><a href="#">Blog</a></li>
+                 </ul>
+               </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
+                   <h5  class="text-success">LEGAL</h5>
+                   <ul class="list-unstyled">
+                    <li><a href="">Refund Policy</a></li>
+                    <li><a href="">Client Happiness</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                 </ul>
+               </div>
+                <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
+                   <h5 class="text-success">HELP</h5>
+                   <ul class="list-unstyled">
+                    <li><a href="">How to order</a></li>
+                    <li><a href="">File setup</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Get a Quote</a></li>
+                    <li><a href="#">FAQ'S</a></li>
+                    <li><a href="#">Treatments</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                 </ul>
+               </div>
+
+               <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+                  <h5  class="text-success">WEEKLY NEWSLETTER</h5>
+                <div class="footers-info mt-3">
+
+                    <p>Sign up for our weekly newsletter & special offers.</p>
+
+
+                    <div class="form-group">
+                        <label class="col-md-12 control-label" for="email"></label>  
                         <div class="col-md-12">
-                            <div class="copyright__inner">
-                                <p>Copyright<i class="icofont icofont-copyright"></i>Bagani ALL Right Reserved</p>
-                            </div>
+                        <input id="email" name="email" type="text" placeholder=" Your Email" class="form-control input-md" required="">
+                       
                         </div>
-                    </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-md-12 control-label" for="submit"></label>
+                          <div class="col-md-12">
+                            <button id="submit" name="submit" type="submit" class="btn btn-success">Subscribe</button>
+                           
+                          </div>
+                        </div>
+                 
+                   
                 </div>
+
+                
+                <div class="social-icons"> 
+                    <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-2x social"></i></a>
+                    <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-2x social"></i></a>
+                  <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i></a>
+                  <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-2x social"></i></a>
+              </div>
             </div>
-        </footer>
-        <!-- End Footer Area -->
-    </div>
+               
+              </div>
+          </div>
+       </section>
+       
+    <!--end footer-->
     <!-- Body main wrapper end -->
 
     <!-- Placed js at the end of the document so the pages load faster -->
@@ -568,27 +601,26 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-sanitize.min.js"></script>
 
    	<!-- UI Bootstrap -->
-    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
-    <script src="lib/v-accordion/dist/v-accordion.min.js"></script>
+    <script src="../lib/v-accordion/dist/v-accordion.min.js"></script>
     
    <!-- Main Chhapai Module -->
-   <script src="src/chhapai.module.js"></script>
+   <script src="../src/chhapai.module.js"></script>
 
    <!-- Common Module -->
-   <script src="src/common/common.module.js"></script>
-   <script src="src/common/loading/loading.component.js"></script>
-   <script src="src/common/loading/loading.interceptor.js"></script>
-   <script src="src/common/page.service.js"></script>
-   <script src="src/common/product-business-card.service.js"></script>
+   <script src="../src/common/common.module.js"></script>
+   <script src="../src/common/loading/loading.component.js"></script>
+   <script src="../src/common/loading/loading.interceptor.js"></script>
+   <script src="../src/common/page.service.js"></script>
 
    <!-- Public Module -->
-   <script src="src/public/public.module.js"></script>
-   <script src="src/public/public.routes.js"></script>
+   <script src="../src/public/public.module.js"></script>
+   <script src="../src/public/public.routes.js"></script>
 
    <!-- Controllers -->
    <script src="src/public/home/home.controller.js"></script>
-   <script src="src/public/product/product-business-card.controller.js"></script>
+   <script src="src/public/product/product.controller.js"></script>
    <script src="src/public/pages/pages.controller.js"></script>
    <!-- ADMIN SITE -->
 

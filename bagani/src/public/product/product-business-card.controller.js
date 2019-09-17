@@ -2,12 +2,14 @@
   function(){
 "use strict"
 angular.module('public')
-.controller('ProductBusinessCardController',ProductBusinessCardController);
-ProductBusinessCardController.$inject=['$stateParams','bproducts','bcardsjson'];
+.controller('ProductBusinessCardController1',ProductBusinessCardController);
+ProductBusinessCardController1.$inject=['$stateParams','bproducts','bcardsjson'];
 function ProductBusinessCardController($stateParams,bproducts,bcardsjson){
   var $ctrl = this;
+  console.log('called');
   console.log(bproducts);
   console.log(bcardsjson);
+  console.log($stateParams);
   var productId = bproducts.productNameId[$stateParams.productname];
   $ctrl.product = bproducts[productId];
   $ctrl.firstAccordionControl = {

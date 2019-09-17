@@ -172,7 +172,7 @@ ul.breadcrumb li a:hover {
                     <div class="row">
                         <div class="col-md-3 col-sm-12">
                             <div class="logo">
-                                <a href="index.html">
+                                <a ui-sref="public.home">
                                     <img src="../images/chhapai_logo.png" alt="logo images">
                                 </a>
                             </div>
@@ -182,8 +182,8 @@ ul.breadcrumb li a:hover {
                         </div>
                         <div class="col-md-3 col-sm-12">
                             <ul class="breadcrumb">
-                                <li><a href="#">SIGNIN</a></li>
-                                <li><a href="#">REGISTER</a></li>
+                                <li><a ui-sref="public.signin">SIGNIN</a></li>
+                                <li><a ui-sref="public.register">REGISTER</a></li>
                                 
                                 
                               </ul>
@@ -196,8 +196,7 @@ ul.breadcrumb li a:hover {
           
             <nav class="navbar navbar-expand-lg navbar-dark bg-success">
             
-            
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto" >
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" ui-sref="public.bcards" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -213,22 +212,22 @@ ul.breadcrumb li a:hover {
                            
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link" ui-sref="public.product">Matt Finish</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'matt-finish'})">Matt Finish</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Soft Suede Finish</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'soft-suede-finish'})">Soft Suede Finish</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Texture Finish</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'texture-finish'})">Texture Finish</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Uncoated Finish</a>
+                                <a class="nav-link" ui-sref="public.productbusinesscard({productname:'uncoated-finish'})">Uncoated Finish</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Pearl Finish</a>
+                                  <a class="nav-link" ui-sref="public.productbusinesscard({productname:'pearl-finish'})">Pearl Finish</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Sandwich Finish</a>
+                                    <a class="nav-link" ui-sref="public.productbusinesscard({productname:'sandwich-finish'})">Sandwich Finish</a>
                                   </li>
                           </ul>
                           </div>
@@ -236,38 +235,38 @@ ul.breadcrumb li a:hover {
                               <span class="text-uppercase text-white">ENVIRO CARDS</span>                  
                               <ul class="nav flex-column">
                                   <li class="nav-item">
-                                    <a class="nav-link " href="#">Brown Kraft</a>
+                                    <a class="nav-link " ui-sref="public.productbusinesscard({productname:'brown-kraft'})">Brown Kraft</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">100% Recycle</a>
+                                    <a class="nav-link" ui-sref="public.productbusinesscard({productname:'100%-recycle'})">100% Recycle</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">Wool Finish</a>
+                                    <a class="nav-link" ui-sref="public.productbusinesscard({productname:'wool-finish'})">Wool Finish</a>
                                   </li>
                                   <li class="nav-item">
-                                      <a class="nav-link " href="#">Black Suede</a>
+                                      <a class="nav-link " ui-sref="public.productbusinesscard({productname:'black-suede'})">Black Suede</a>
                             </ul>
                           </div>
                           <div class="col-md-3">
                               <span class="text-uppercase text-white">BESPOKE CARDS</span>
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link " href="#">Electropiated</a>
+                              <a class="nav-link " ui-sref="public.productbusinesscard({productname:'electroplated'})">Electroplated</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Embossed</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'embossed'})">Embossed</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Embossed Spot Gloss</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'embossed-spot-gloss'})">Embossed Spot Gloss</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">Foiling</a>
+                                <a class="nav-link " ui-sref="public.productbusinesscard({productname:'foiling'})">Foiling</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Letterpress</a>
+                                <a class="nav-link" ui-sref="public.productbusinesscard({productname:'letterpress'})">Letterpress</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Edgepaint</a>
+                                <a class="nav-link" ui-sref="public.productbusinesscard({productname:'edgepaint'})">Edgepaint</a>
                               </li>
                           </ul>
                           </div>
@@ -275,16 +274,16 @@ ul.breadcrumb li a:hover {
                               <span class="text-uppercase text-white">UNIQUE CARDS</span>
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link " href="#">Laser cut Shaped Cards</a>
+                              <a class="nav-link " ui-sref="public.productbusinesscard({productname:'laser-cut-shaped-cards'})">Laser cut Shaped Cards</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Wood Cards</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'wood-cards'})">Wood Cards</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Acrylic Cards</a>
+                              <a class="nav-link" ui-sref="public.productbusinesscard({productname:'acrylic-cards'})">Acrylic Cards</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="#">Board Cards</a>
+                                <a class="nav-link " ui-sref="public.productbusinesscard({productname:'board-cards'})">Board Cards</a>
                               </li>
                       <!--  /.container  -->
             
@@ -296,7 +295,7 @@ ul.breadcrumb li a:hover {
                     
                    <!--  Design  -->
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Design
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -308,13 +307,13 @@ ul.breadcrumb li a:hover {
                             <span class="text-uppercase text-white">DESIGN SERVICE</span>
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link active" href="#">Business Cards Design</a>
+                              <a class="nav-link active" ui-sref="public.businesscardsdesign">Business Cards Design</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Business Cards Logo Design</a>
+                              <a class="nav-link" ui-sref="public.businesscardslogodesign">Business Cards Logo Design</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Design Using Templates</a>
+                              <a class="nav-link" ui-sref="public.businesscardstemplatedesign">Design Using Templates</a>
                             </li>
                           </ul>
                           </div>
@@ -335,16 +334,16 @@ ul.breadcrumb li a:hover {
                            
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link active" href="#">NOTEBOOK</a>
+                              <a class="nav-link active" ui-sref="public.notebook">NOTEBOOK</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">COATERS</a>
+                          <a class="nav-link" ui-sref="public.coaters">COATERS</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">ACCESSORIES</a>
+                          <a class="nav-link" ui-sref="public.accessories">ACCESSORIES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BUSINESS CARDS HOLDERS</a>
+                            <a class="nav-link" ui-sref="public.businesscardholders">BUSINESS CARDS HOLDERS</a>
                           </li>
                       </ul>
                           </div>
@@ -366,7 +365,7 @@ ul.breadcrumb li a:hover {
                               <a class="nav-link " ui-sref="public.franchisee">FRANCHISE</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">RESELLER</a>
+                              <a class="nav-link" ui-sref="public.reseller">RESELLER</a>
                             </li>
                             
                           </ul>
@@ -380,15 +379,15 @@ ul.breadcrumb li a:hover {
                   </li>
                   
                     <!-- sample -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" ui-sref="public.samplepack" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <li class="nav-item">
+                    <a class="nav-link" ui-sref="public.samplepack"  role="button"  aria-haspopup="true" aria-expanded="false">
                       Sample Pack
                     </a>
                     </li>
 
                         <!-- Helps -->
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" ui-sref="public.help" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Help
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -400,16 +399,16 @@ ul.breadcrumb li a:hover {
                              
                               <ul class="nav flex-column">
                               <li class="nav-item">
-                                <a class="nav-link " href="#">How To ORDER</a>
+                                <a class="nav-link " ui-sref="public.howtoorder">How To ORDER</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">File Setup</a>
+                                <a class="nav-link" ui-sref="public.filesetup">File Setup</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Tracking</a>
+                                <a class="nav-link" ui-sref="public.tracking">Tracking</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">Treatments</a>
+                                  <a class="nav-link" ui-sref="public.treatments">Treatments</a>
                                 </li>
                             </ul>
                             </div>
@@ -417,13 +416,13 @@ ul.breadcrumb li a:hover {
                                                  
                               <ul class="nav flex-column">
                               <li class="nav-item">
-                                <a class="nav-link " href="#">Get A Quote</a>
+                                <a class="nav-link " ui-sref="public.getaquote">Get A Quote</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
+                                <a class="nav-link" ui-sref="public.about">About</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" ui-sref="public.contact">Contact</a>
                               </li>
                               
                             </ul>
@@ -530,21 +529,21 @@ ul.breadcrumb li a:hover {
                 <div class="col-xs-12 col-sm-6 col-md-2 footers-two">
                    <h5  class="text-success">BUY</h5>
                    <ul class="list-unstyled">
-                    <li><a href="">Business Cards</a></li>
-                    <li><a href="service.html">Design Services</a></li>
-                    <li><a href="#">Premium sample</a></li>
-                    <li><a href="#">Pack</a></li>
+                    <li><a ui-sref="public.bcards">Business Cards</a></li>
+                    <li><a ui-sref="public.designservices">Design Services</a></li>
+                    <li><a ui-sref="public.premiumsample">Premium sample</a></li>
+                    <li><a ui-sref="public.packing">Pack</a></li>
                     <li><a href="#">Pack</a></li>
                  </ul>
                </div>
                 <div class="col-xs-12 col-sm-6 col-md-2 footers-three">
                    <h5   class="text-success">LINKS </h5>
                    <ul class="list-unstyled">
-                    <li><a href="">Franchise</a></li>
-                    <li><a href="">Be an affiliate</a></li>
-                    <li><a href="#">Refer & Earn</a></li>
-                    <li><a href="#">Startup Coupons</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a ui-sref="public.franchisee">Franchise</a></li>
+                    <li><a ui-sref="public.beanaffiliate">Be an affiliate</a></li>
+                    <li><a ui-sref="public.referandearn">Refer & Earn</a></li>
+                    <li><a ui-sref="public.startupcoupons">Startup Coupons</a></li>
+                    <li><a ui-sref="public.blog">Blog</a></li>
                  </ul>
                </div>
                 <div class="col-xs-12 col-sm-6 col-md-2 footers-four">
@@ -558,16 +557,16 @@ ul.breadcrumb li a:hover {
                  </ul>
                </div>
                 <div class="col-xs-12 col-sm-6 col-md-2 footers-five">
-                   <h5 class="text-success">HELP</h5>
+                   <h5 class="text-success">HE   LP</h5>
                    <ul class="list-unstyled">
                     <li><a ui-sref="public.howtoorder">How to order</a></li>
-                    <li><a href="">File setup</a></li>
-                    <li><a href="#">Order Tracking</a></li>
-                    <li><a href="#">Get a Quote</a></li>
-                    <li><a href="#">FAQ'S</a></li>
-                    <li><a href="#">Treatments</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a ui-sref="public.filesetup">File setup</a></li>
+                    <li><a ui-sref="public.ordertracking">Order Tracking</a></li>
+                    <li><a ui-sref="public.getaquote">Get a Quote</a></li>
+                    <li><a ui-sref="public.faq">FAQ'S</a></li>
+                    <li><a ui-sref="public.treatments">Treatments</a></li>
+                    <li><a ui-sref="public.aboutus">About us</a></li>
+                    <li><a ui-sref="public.contactus">Contact us</a></li>
                  </ul>
                </div>
 
@@ -629,22 +628,22 @@ ul.breadcrumb li a:hover {
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular-sanitize.min.js"></script>
 
    	<!-- UI Bootstrap -->
-    <script src="../lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
-    <script src="../lib/v-accordion/dist/v-accordion.min.js"></script>
+    <script src="lib/v-accordion/dist/v-accordion.min.js"></script>
     
    <!-- Main Chhapai Module -->
-   <script src="../src/chhapai.module.js"></script>
+   <script src="src/chhapai.module.js"></script>
 
    <!-- Common Module -->
-   <script src="../src/common/common.module.js"></script>
-   <script src="../src/common/loading/loading.component.js"></script>
-   <script src="../src/common/loading/loading.interceptor.js"></script>
-   <script src="../src/common/page.service.js"></script>
+   <script src="src/common/common.module.js"></script>
+   <script src="src/common/loading/loading.component.js"></script>
+   <script src="src/common/loading/loading.interceptor.js"></script>
+   <script src="src/common/page.service.js"></script>
 
    <!-- Public Module -->
-   <script src="../src/public/public.module.js"></script>
-   <script src="../src/public/public.routes.js"></script>
+   <script src="src/public/public.module.js"></script>
+   <script src="src/public/public.routes.js"></script>
 
    <!-- Controllers -->
    <script src="src/public/home/home.controller.js"></script>

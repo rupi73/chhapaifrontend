@@ -37,6 +37,40 @@
 
 
     <style>
+
+
+
+      /* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 12px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: BLACK;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
     /* adds some margin below the link sets  */
 .navbar .dropdown-menu div[class*="col"] {
    margin-bottom:1rem;
@@ -116,6 +150,8 @@
 /*end subscribe*/
 
 
+
+
     </style>
 </head>
 
@@ -142,18 +178,15 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <ul class="contact">
-                                <li><a href="#"><span class="bi bi-envelop"></span>info@example.com</a></li>
-                                <li><a href="#"><span class="bi bi-alarm-clock"></span>Sun-Fri: 8am to 5pm</a></li>
-                            </ul>
+                           
                         </div>
                         <div class="col-md-3 col-sm-12">
-                            <ul class="social__icon">
-                                <li><a href="#"><i class="icofont icofont-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-social-instagram"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="icofont icofont-social-google-plus"></i></a></li>
-                            </ul>
+                            <ul class="breadcrumb">
+                                <li><a href="#">SIGNIN</a></li>
+                                <li><a href="#">REGISTER</a></li>
+                                
+                                
+                              </ul>
                         </div>
                     </div>
                 </div>
@@ -319,7 +352,7 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Franchise
+                        Become a Partner
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           
@@ -330,17 +363,12 @@
                            
                             <ul class="nav flex-column">
                             <li class="nav-item">
-                              <a class="nav-link " href="#">BLOG</a>
+                              <a class="nav-link " href="#">FRANCHISE</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">BE AN AFFILIATE</a>
+                              <a class="nav-link" href="#">RESELLER</a>
                             </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">REFER & EARN</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">STARUP COUPONS</a>
-                              </li>
+                            
                           </ul>
                           </div>
                           </div></div>

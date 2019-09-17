@@ -29,14 +29,14 @@ function routeConfig ($stateProvider) {
       resolve :{
         bproducts: ['ProductBusinessCardService',function (ProductBusinessCardService){
           var bproducts = ProductBusinessCardService.bproducts;
-          if(Object.keys(bproducts).length === 0 && bproducts.constructor === Object)
+          if(Object.keys(bproducts).length === 0 && bproducts.constructor === Object || TRUE)
           return ProductBusinessCardService.getProducts();
           else
           return ProductBusinessCardService.bproducts;
         }],
         bcardsjson: ['ProductBusinessCardService',function (ProductBusinessCardService){
           var bcardsjson = ProductBusinessCardService.bcardsjson;
-          if(Object.keys(bcardsjson).length === 0 && bcardsjson.constructor === Object)
+          if(Object.keys(bcardsjson).length === 0 && bcardsjson.constructor === Object || TRUE)
           return ProductBusinessCardService.getCommonJSON();
           else
           return ProductBusinessCardService.bcardsjson;
@@ -53,6 +53,36 @@ function routeConfig ($stateProvider) {
     .state('public.samplepack', {
       url: '/public/samplepack',
       templateUrl: 'src/public/pages/samplepack.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.refundpolicy', {
+      url: '/public/refund-policy',
+      templateUrl: 'src/public/pages/refundpolicy.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.happiness', {
+      url: '/public/client-happiness',
+      templateUrl: 'src/public/pages/happinesspolicy.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.howtoorder', {
+      url: '/public/how-to-order',
+      templateUrl: 'src/public/pages/howtoorder.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.terms', {
+      url: '/public/terms',
+      templateUrl: 'src/public/pages/termsandconditions.html',
+      controller:'PagesController',
+      controllerAs:'pagesCtrl'       
+    })
+    .state('public.franchisee', {
+      url: '/public/franchisee',
+      templateUrl: 'src/public/pages/franchisee.html',
       controller:'PagesController',
       controllerAs:'pagesCtrl'       
     });

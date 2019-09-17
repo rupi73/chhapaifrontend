@@ -77,7 +77,14 @@
 									</v-pane-header>
 									<v-pane-content>
 										<p>
-											{{ pane.content }}
+											<ul class="list-group">
+												{{pane.content}}
+												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in pane.content" >
+													<input type="radio" class="form-check-input" name="optradio">{{item}}
+													<span class="badge badge-primary badge-pill">14</span>
+												</li>
+												
+											</ul>
 										</p>
 										<v-accordion ng-if="pane.subpanes">
 											<v-pane ng-repeat="subpane in pane.subpanes">

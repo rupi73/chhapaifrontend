@@ -2,16 +2,12 @@
   function(){
 "use strict"
 angular.module('public')
-.controller('ProductBusinessCardController1',ProductBusinessCardController);
-ProductBusinessCardController1.$inject=['$stateParams','bproducts','bcardsjson'];
-function ProductBusinessCardController($stateParams,bproducts,bcardsjson){
+.controller('ProductBusinessCardController',ProductBusinessCardController);
+ProductBusinessCardController.$inject=['productData'];
+function ProductBusinessCardController(productData){
   var $ctrl = this;
   console.log('called');
-  console.log(bproducts);
-  console.log(bcardsjson);
-  console.log($stateParams);
-  var productId = bproducts.productNameId[$stateParams.productname];
-  $ctrl.product = bproducts[productId];
+  console.log(productData);
   $ctrl.firstAccordionControl = {
     onExpand: function (expandedPaneIndex) {
         console.log('expanded:', expandedPaneIndex);
@@ -21,6 +17,7 @@ function ProductBusinessCardController($stateParams,bproducts,bcardsjson){
     }
 };
 $ctrl.getProductSettings = function(settings){
+    return 'abc';
     var obj = {};
     console.log($ctrl.product);
 if(typeof $ctrl.product[settings] !== 'undefined'){
@@ -34,16 +31,16 @@ return obj;
 };
 $ctrl.pandq = [{
     header: 'Paper',
-    content: $ctrl.getProductSettings('papers')
+    content: productData.paper.opts
 }, {
     header: 'Quantity',
-    content: bcardsjson.quantity.opts
+    content: productData.quantity.opts
 }, {
     header: 'Size',
-    content: bproducts[productId].paper
+    content: productData.size.opts
 },{
     header:'Printing',
-    content: bproducts[productId].paper
+    content: productData.printing.opts
 }
 
 ];

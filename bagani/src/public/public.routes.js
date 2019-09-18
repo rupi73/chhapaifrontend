@@ -141,21 +141,10 @@
         controller:'ProductBusinessCardController',
         controllerAs:'pbcctrl',
         resolve :{
-          bproducts: ['ProductBusinessCardService',function (ProductBusinessCardService){
-            var bproducts = ProductBusinessCardService.bproducts;
-            if(Object.keys(bproducts).length === 0 && bproducts.constructor === Object || TRUE)
-            return ProductBusinessCardService.getProducts();
-            else
-            return ProductBusinessCardService.bproducts;
-          }],
-          bcardsjson: ['ProductBusinessCardService',function (ProductBusinessCardService){
-            var bcardsjson = ProductBusinessCardService.bcardsjson;
-            if(Object.keys(bcardsjson).length === 0 && bcardsjson.constructor === Object || TRUE)
-            return ProductBusinessCardService.getCommonJSON();
-            else
-            return ProductBusinessCardService.bcardsjson;
-          }
-        ]
+          productData: ['$stateParams','ProductBusinessCardService',function ($stateParams,ProductBusinessCardService){
+            return ProductBusinessCardService.setCurrentProduct($stateParams.productname);
+            
+          }]
         }      
       });
   }

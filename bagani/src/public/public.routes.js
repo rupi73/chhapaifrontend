@@ -134,6 +134,30 @@
         templateUrl: 'src/public/pages/bcards.html',
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
+      })
+      .state('public.premiumcards', {
+        url: '/public/premium-cards',
+        templateUrl: 'src/public/pages/premiumcards.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.envirocards', {
+        url: '/public/enviro-cards',
+        templateUrl: 'src/public/pages/envirocards.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      })     
+      .state('public.bespokecards', {
+        url: '/public/bespoke-cards',
+        templateUrl: 'src/public/pages/bespokecards.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      })  
+      .state('public.uniquecards', {
+        url: '/public/unique-cards',
+        templateUrl: 'src/public/pages/uniquecards.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
       })  
       .state('public.productbusinesscard', {
         url: '/public/product/{productname}',

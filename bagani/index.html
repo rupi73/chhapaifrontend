@@ -31,128 +31,14 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- User style -->
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="../lib/v-accordion/dist/v-accordion.min.css">
-    <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="lib/v-accordion/dist/v-accordion.min.css">
+      <!-- Animate CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+    <!-- navbar style -->
+    <link rel="stylesheet" href="css/navbar.css">
 
 
-    <style>
-
-
-
-      /* Style the list */
-ul.breadcrumb {
-  padding: 10px 16px;
-  list-style: none;
-  
-}
-
-/* Display list items side by side */
-ul.breadcrumb li {
-  display: inline;
-  font-size: 12px;
-}
-
-/* Add a slash symbol (/) before/behind each list item */
-ul.breadcrumb li+li:before {
-  padding: 8px;
-  color: black;
-  content: "/\00a0";
-}
-
-/* Add a color to all links inside the list */
-ul.breadcrumb li a {
-  color: BLACK;
-  text-decoration: none;
-}
-
-/* Add a color on mouse-over */
-ul.breadcrumb li a:hover {
-  color: #01447e;
-  text-decoration: underline;
-}
-    /* adds some margin below the link sets  */
-.navbar .dropdown-menu div[class*="col"] {
-   margin-bottom:1rem;
-}
-
-.navbar .dropdown-menu {
-  border:none;
-  background-color:green;
-}
-
-/* breakpoint and up - mega dropdown styles */
-@media screen and (min-width: 992px) {
-  
-  /* remove the padding from the navbar so the dropdown hover state is not broken */
-.navbar {
-  padding-top:0px;
-  padding-bottom:0px;
-}
-
-/* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
-.navbar .nav-item {
-  padding:.5rem .5rem;
-  margin:0 .25rem;
-}
-
-/* makes the dropdown full width  */
-.navbar .dropdown {position:static;}
-
-.navbar .dropdown-menu {
-  width:100%;
-  left:0;
-  right:0;
-/*  height of nav-item  */
-  top:45px;
-}
-  
-  /* shows the dropdown menu on hover */
-.navbar .dropdown:hover .dropdown-menu, .navbar .dropdown .dropdown-menu:hover {
-  display:block!important;
-}
-  
-  .navbar .dropdown-menu {
-    border: 1px solid rgba(0,0,0,.15);
-    background-color:green;
-  }
-
-}
-
-/*footer*/
-.footers a {color:#696969;}
-.footers p {color:#696969;}
-.footers ul {line-height:30px;}
-#social-fb:hover {
-     color: #3B5998;
-     transition:all .001s;
- }
- #social-tw:hover {
-     color: #4099FF;
-     transition:all .001s;
- }
- #social-gp:hover {
-     color: #d34836;
-     transition:all .001s;
- }
- #social-em:hover {
-     color: #f39c12;
-     transition:all .001s;
- }
-
-/* end footer*/
-
-/*subscribe*/
-
-
-
-
-/*end subscribe*/
-
-
-
-
-    </style>
+    
 </head>
 
 <body ng-app="chhapai" ng-strict-di>
@@ -187,6 +73,8 @@ ul.breadcrumb li a:hover {
     <!-- jquery latest version -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <!-- Modernizr JS -->
+ <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Bootstrap framework js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 

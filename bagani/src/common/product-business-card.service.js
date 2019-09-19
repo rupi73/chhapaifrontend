@@ -83,11 +83,19 @@
       var paper = service.product.paper || {};
       if (Object.keys(paper).length === 0 && paper.constructor === Object)
         service.product.paper = service.bcardsjson.paper;
+        for(p of service.product.paper.opts){
+          service.product.paper[p] = service.bcardsjson.paper[p];
+        }
     };
 
     /*Set Product Treatments */
     service.setProductTreatments = function () {
-
+      var treatments = service.product.treatments || {};
+      if (Object.keys(treatments).length === 0 && paper.constructor === Object)
+        service.product.paper = service.bcardsjson.paper;
+        for(p of service.product.paper.opts){
+          service.product.paper[p] = service.bcardsjson.paper[p];
+        }
     };
 
     /*Set Product Accessories */

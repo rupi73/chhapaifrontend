@@ -4,11 +4,12 @@
     "quantity": {},
     "paper": {
     "labelselected": "Pearl Finish 320gsm", 
-    "opts":["Pearl Finish 320gsm",
-      "Pearl Finish 500gsm"],
+    "opts":{"Pearl Finish 320gsm":"Pearl Finish 320gsm",
+      "Pearl Finish 500gsm":"Pearl Finish 500gsm"},
     "about":{"Pearl Finish 320gsm":"pearl-finish"}
     },
     "size": {},
+    "treatments":["foiling","electroplating","letterpress","raisespotgloss","edgepaint","roundcorners"],
     "printing": {},
     "description": "Test Description",
     "Additional Info": "Test Additional Info"

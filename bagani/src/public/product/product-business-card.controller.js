@@ -3,8 +3,8 @@
 "use strict"
 angular.module('public')
 .controller('ProductBusinessCardController',ProductBusinessCardController);
-ProductBusinessCardController.$inject=['productData'];
-function ProductBusinessCardController(productData){
+ProductBusinessCardController.$inject=['productData','ProductBusinessCardService'];
+function ProductBusinessCardController(productData,ProductBusinessCardService){
   var $ctrl = this;
   console.log('called');
   console.log(productData);
@@ -46,32 +46,45 @@ $ctrl.pandq = [{
 ];
 $ctrl.treatments = [{
     header: 'Foiling',
-    content: 'Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi.'
+    both:true,
+    content:ProductBusinessCardService.bcardsjson.treatments.foiling.opts.colors
 }, {
     header: 'Electroplating',
-    content: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies.'
+    content: ProductBusinessCardService.bcardsjson.treatments.electroplating.opts.colors,
+    both:true
 }, {
     header: 'Letterpress',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'
+    content: ProductBusinessCardService.bcardsjson.treatments.letterpress.opts.colors,
+    both:true
 },{
     header:'RaiseSpotGloss',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'
+    content: ProductBusinessCardService.bcardsjson.treatments.raisespotgloss.opts,
+    single: true
 },
 {
     header:'Embossing',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'
+    content: ProductBusinessCardService.bcardsjson.treatments.embossing.opts,
+    single: true
 },
 {
     header:'RoundCorners',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'
+    content: ProductBusinessCardService.bcardsjson.treatments.roundcorners.opts,
+    single: true
 },
 {
-    header:'EdgePainting',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'  
+    header:'EdgePaint',
+    content: ProductBusinessCardService.bcardsjson.treatments.edgepaint.opts,
+    single: true
 },
 {
     header:'LaserEngrave',
-    content: 'Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa ac turpis faucibus orci luctus non.'  
+    content: ProductBusinessCardService.bcardsjson.treatments.laserengrave.opts,
+    single: true 
+},
+{
+    header:'LaserCut',
+    content: ProductBusinessCardService.bcardsjson.treatments.lasercut.opts,
+    single: true 
 }
 
 

@@ -4,7 +4,244 @@ h3{
     text-decoration: bold;
 }
 
+/*blog*/
+
+.pb-100 {
+	padding-bottom: 100px;
+}
+.pt-100 {
+	padding-top: 100px;
+}
+.mb-100 {
+	margin-bottom: 100px;
+}
+a {
+	text-decoration: none;
+	color: #333;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+.section-title {
+	position: relative;
+}
+.section-title p {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+}
+.section-title h4 {
+	font-size: 40px;
+	font-weight: 600;
+	text-transform: capitalize;
+	position: relative;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+.section-title h4::before {
+	position: absolute;
+	content: "";
+	width: 80px;
+	height: 2px;
+	background-color: #d8d8d8;
+	bottom: 0;
+	left: 50%;
+	margin-left: -40px;
+}
+.section-title h4::after {
+	position: absolute;
+	content: "";
+	width: 50px;
+	height: 2px;
+	background-color: #FF7200;
+	left: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+.blog-img {
+	position: relative;
+}
+.blog-img img {
+	width: 100%;
+}
+.post-category a {
+	display: inline-block;
+	background-color: #FF7200;
+	color: #fff;
+	font-size: 15px;
+	padding: 5px 20px;
+}
+.single-blog:hover img {
+	opacity: .85;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"
+}
+.post-category {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.blog-content {
+	padding: 30px 20px;
+}
+.single-blog {
+	border: 1px solid #eee;
+}
+.blog-title h4 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.meta ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.meta {
+	margin-bottom: 20px;
+	opacity: .85;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+}
+.blog-content a.box_btn {
+	display: inline-block;
+	background-color: #FF7200;
+	padding: 5px 15px;
+	color: #fff;
+	text-transform: capitalize;
+	margin-top: 20px;
+}
+a.box_btn::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #CC5B00;
+	left: -100%;
+	top: 0;
+	-webkit-transition: .5s;
+	transition: .5s;
+	z-index: -1;
+}
+a.box_btn {
+	overflow: hidden;
+	z-index: 2;
+	-webkit-transition: .5s;
+	transition: .5s;
+	position: relative;
+	text-decoration:none;
+}
+a.box_btn:hover::before {
+	left: 0;
+	z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*blog end*/
+
 </style>
+
+
+
+
+
+<section class="blog-me pt-100 pb-100" id="blog">
+        <div class="container">
+           <div class="row">
+              <div class="col-xl-6 mx-auto text-center">
+                 <div class="section-title mb-100">
+                   =
+                    <h4>latest blog</h4>
+                 </div>
+              </div>
+           </div>
+           <div class="row">
+              <div class="col-lg-4 col-md-6">
+                 <!-- Single Blog -->
+                 <div class="single-blog">
+                    <div class="blog-img">
+                       <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog1.jpg" alt="">
+                       <div class="post-category">
+                          
+                       </div>
+                    </div>
+                    <div class="blog-content">
+                       <div class="blog-title">
+                          <h4><a href="#">Business cards with Chhapai</a></h4>
+                          <div class="meta">
+                             <ul>
+                                <li>04 June 2018</li>
+                             </ul>
+                          </div>
+                       </div>
+                       <p>Nothing is more captivating than “a creative, innovative and informative piece of paper- business card”. Business cards are the physical aspects of 
+                           your Brand</p>
+                       <a href="#" class="box_btn">read more</a>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                 <!-- Single Blog -->
+                 <div class="single-blog">
+                    <div class="blog-img">
+                       <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog2.jpg" alt="">
+                       <div class="post-category">
+                         
+                       </div>
+                    </div>
+                    <div class="blog-content">
+                       <div class="blog-title">
+                          <h4><a href="#">5 Trends in Business Cards</a></h4>
+                          <div class="meta">
+                             <ul>
+                                <li>23 June 2018</li>
+                             </ul>
+                          </div>
+                       </div>
+                       <p>Business Cards- Today's necessity! 
+                            Did you know business cards are the conversation starters?
+                            They are the spices to your recipe of business! </p>
+                       <a href="#" class="box_btn">read more</a>
+                    </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                 <!-- Single Blog -->
+                 <div class="single-blog">
+                    <div class="blog-img">
+                       <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog3.jpg" alt="">
+                       <div class="post-category">
+                         
+                       </div>
+                    </div>
+                    <div class="blog-content">
+                       <div class="blog-title">
+                          <h4><a href="#">Etiquettes of Business Cards</a></h4>
+                          <div class="meta">
+                             <ul>
+                                <li>31 July 2018</li>
+                             </ul>
+                          </div>
+                       </div>
+                       <p>Do you like when you are given a business card abruptly?
+                            NO, right?
+                            Business cards are the physical aspects of your business which initiates 
+                            conversation for further prospects. </p>
+                       <a href="#" class="box_btn">read more</a>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+
 
 
 <div class="container my-5">
@@ -198,8 +435,92 @@ h3{
                     <br>
                     <p>Chhapai acknowledges the importance of this compact yet mighty instrument of business, hence provides with the best of the best creation of business cards. Design your cards with Chhapai in few simple steps completely hassle-free! Business cards created by Chhapai makes it personalized at a level to ensure you and your brand memorable in any meeting or event. </p>
                 
-
-    
-      
-      
+                
             </div>
+    <!--etiqutes-->
+
+<div class="container">
+
+
+
+    <h3>Etiquettes of Business Cards</h3>
+    <br>
+    <br>
+    <p>
+    Do you like when you are given a business card abruptly?
+    </p>
+
+   <p> NO, right?</p>
+   <p>
+    Business cards are the physical aspects of your business which initiates conversation for further prospects. Every culture has its own customs and etiquettes to hand out the business cards and we must follow them. 
+    Understanding these etiquettes will let you feel comfortable in dealing with foreign friends, colleagues, customers or clients. You will have the idea of how to interact with them smoothly and build trust opening lines of communication. 
+    Business cards are recognized by a huge range of clientele whether national or international.  Still, these are taken for granted! Pay attention to the basic etiquettes to follow and its importance. 
+    Here, I have jotted down a few points for you to ensure while sharing business cards.
+</p>
+<br>
+
+   <p><strong><b>1.  ALWAYS CARRY EXTRA</b></strong></p>
+   
+    <p> Business cards are important! You can need them anywhere! Ensure to carry enough of them to not miss your opportunities or any potential clients in any event or meeting. You even seem prepared and professional when you are ready beforehand. It is embarrassing to converse with a potential client and not being able to share your card when asked for. 
+        </p>
+
+        <br>
+
+
+        <p><strong><b>2.    KEEP THEM SAFE</b></strong></p>
+        <p>Your business cards are the face of your business! They speak a lot about your brand and business and your personality too. You should keep your cards safe; it should tear or bend or have wrinkles when you pull it put to hand out to somebody. A way you can save it from all damages by using a business card case. The first impression is the last impression. Protect the cards from wear & tear to avoid making a poor first impression. </p>
+        <br>
+
+        <p><strong><b>3.    KEEP THEM CLEAN & CRISP</b></strong></p>
+        <p>Keep your cards in tip-top shape! Nobody likes a dirty card when making a first impression. Your cards should be clean, without any ink bleeding or smudges. The business cards speak a multitude of aspects of you and your business. Keep them carefully organized in a case in a convenient place. </p>
+        <br>
+
+        <p><strong><b>4.    MAINTAIN ACCURACY</b></strong></p>
+        <p>Your business card represents your enterprises! You have to keep the details printed on it completely accurate. This piece of paper is a conversation starter for your future prospects. They are the physical examples of your brand and professionalism. When you have inaccurate details on it, you will either scribble on it or the client will not be able to reach you. You don’t desire to have the wrong impression on your clients with wrong information. Moreover, the whole purpose of establishing a huge range of clientele will be lost.</p>
+        <br>
+
+        <p><strong><b>5.    HAND OVER THE CARD FACING THE RECIPIENT</b></strong></p>
+        <p>Your clients are important to you! So, exchange your card making sure that the information on your card is readable without turning. It is necessary to read the details on the card and not just merely toss it in. This is considered rude in some customs. The moment of exchanging cards is important where both the parties receive, study and memorize the information on card. </p>
+        <br>
+
+        <p><strong><b>6.    FOLLOW INDIVIDUAL CUSTOMS</b></strong></p>
+        <p>Every culture has diverse customs and beliefs; it is to be respected by all means! The customs in exchanging the business cards vary too in different countries. </p>
+        <p>In China, one side of your business card should be printed in simplified Chinese with gold ink. Your business card should have the title and the necessary facts are to be highlighted. The cards should be offered by both the hands.</p>
+        <p>In India, you should exchange business cards only with the right hand and you should put any university degree or honor.</p>
+        <p>In Japan, business cards can be received by two hands and given by one hand. They have a ceremony of exchanging cards. Place the cards on the table in the order people are seated during a meeting.</p>
+        <br>
+
+        <p><strong><b>7.    KEEP THEM IN SEPARATED CASE</b></strong></p>
+        <p>Keep the cards separated in a case from all your other necessary items. You should not frantically look for your card in your bag or wallet in front of your client. This will show your personality and importance of your business to you. With cards in separated case and ease of accessing it, shows your professionalism. All these points are taken into consideration while making business deals.</p>
+       <br>
+
+        <p><strong><b>8.    DON’T WRITE NOTES ON CARDS</b></strong></p>
+        <p>Do not scribble on any business card! Writing anything on your business card will depict that you were unprepared, unprofessional or the information on the card is inaccurate. Business cards are treated to </p>
+        <p>be equal respect as you treat the person you associating with. Write notes on them only when it seems relevant at that point in time. You can even make a mental note then and write it out later and out of sight. This will ensure your and company’s dignity in front of your potential client and get your work organized as well.</p>
+        <br>
+
+        <p><strong><b>9.    AVOID BEING AGGRESSIVE</b></strong></p>
+        <p>Don’t be eager to hand out your card! Don’t be desperate to showcase your business card! Make sure to not give cards until asked for or seems relevant. Moreover, don’t just distribute your card to anyone anytime. This says that you don’t respect your business and company. Always wait for your card to be asked. If you don’t see this coming, ask them for theirs and then reciprocate for the same. </p>
+<br>    
+
+        <p><strong><b>10.    MAKE IT PROFESSIONAL</b></strong></p>
+        <p>Design your card with all relevant patterns and colors. Put time and effort on its paper stock, font, coloring, and effects. Your card should speak professionalism and work for you instead of against you. Impress with your professionalism! Business Card exchanging moment speaks about your personality and your business (as repeated earlier). Ensure to comment on the card you receive, note the details on it.  Your card should bring your personal business in line with professionalism. </p>
+        <br>
+
+        <p><strong><b>11.    HANDOUT WITH TWO HANDS</b></strong></p>
+        <p>Exchanging cards with two hands is a universally adopted behavior (Follow back to point 6). Giving and receiving cards with both hands shows you not only respect your brand and business but also of your prospects. This increases the value of you and your business. Hold each side with your two index fingers and thumb with the writing facing up, easier for the recipient to read. You can make exceptions when you have you are not in a situation to use both the hands.</p>
+        <br>
+
+        <p><strong><b>12.    EXCHANGE CARDS AT THE END OF CONVERSATION</b></strong></p>
+        <p>Business cards are no doubted- the conversation starter, but they start a conversation after you have an interested client. Hence, exchange your card at the end of the conversation to allow them to reach out as per their need. Don’t sound desperate to give your card without being asked for! Just don’t run giving your business card like it’s a flyer for a free concert. Treat it with the utmost respect. Be smooth in creating a scenario to exchange the cards and try not sounding impolite.</p>
+<br>
+
+
+
+
+
+
+
+
+
+    </div>

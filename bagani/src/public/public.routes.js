@@ -75,6 +75,12 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       })
+      .state('public.blog', {
+        url: '/public/blog',
+        templateUrl: 'src/public/pages/blog.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      })
       .state('public.samplepack', {
         url: '/public/samplepack',
         templateUrl: 'src/public/pages/samplepack.html',

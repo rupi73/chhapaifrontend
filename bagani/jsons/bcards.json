@@ -1,6 +1,6 @@
 {
   "quantity": {
-    "labelselected": "500(Recommended)",
+    "labelSelected": "500",
     "opts": {
       "100": "100",
       "250": "250",
@@ -914,7 +914,7 @@
     }
   },
   "size": {
-    "labelselected": "Standard 88mm x 55mm",
+    "labelSelected": "Standard 88mm x 55mm",
     "opts": {
       "Standard 88mm x 55mm": "Standard 88mm x 55mm",
       "Square 65mm x 65mm": "Square 65mm x 65mm"
@@ -923,19 +923,30 @@
     "Square 65mm x 65mm": "Square 65mm x 65mm"
   },
   "printing": {
-    "labelselected": "Single Side",
+    "labelSelected": "Single Side",
     "opts": {
       "Single Side": "Single Side",
       "Both Sides": "Both Sides"
     }
   },
   "accessories":{
-
+    "opts":{
+      "7838":"Business Card Holder"
+     },
+     "7838":"99"
   },
   "designs":{
-
+    "labelSelected": "Upload or email your own design", 
+"opts":{
+  "upload":"Upload or email your own design",
+  "bcard":"Please design my business card",
+  "logobcard":"Please design my logo & business card"
+},
+"upload":"0",
+"bcard":"999",
+"logobcard":"5999"
   },
-  "How To Order": "1. Select the card size, quantity and treatments. In order to get correct pricing, please make sure you have selected all the features you wish to apply on the card. 2. If you are unsure about the treatments, please click on the ? icon and it will bring you to the information page for that treatment.3. Make sure you read the paper information and delivery time.4. You can either upload your print file. Make sure you have setup the file in vector format if you do so. Or you can ask us to design your business card / logo. You can also design your business card using our easy to use design editor with hundreds of templates to choose from. 5. Once the payment has completed, our designer will prepare a finalized print proof and send you a copy by email. 6. After you have approved the proof, we will start the production and will then provide you with a tracking number when it’s ready for shipping.",
-  "Payment Options": "All Major Debit Cards, Credit Cards, Netbanking, Paytm, EMI. For International Payments- we accept Paypal and Western Union"
+  "howToOrder": "1. Select the card size, quantity and treatments. In order to get correct pricing, please make sure you have selected all the features you wish to apply on the card. 2. If you are unsure about the treatments, please click on the ? icon and it will bring you to the information page for that treatment.3. Make sure you read the paper information and delivery time.4. You can either upload your print file. Make sure you have setup the file in vector format if you do so. Or you can ask us to design your business card / logo. You can also design your business card using our easy to use design editor with hundreds of templates to choose from. 5. Once the payment has completed, our designer will prepare a finalized print proof and send you a copy by email. 6. After you have approved the proof, we will start the production and will then provide you with a tracking number when it’s ready for shipping.",
+  "paymentOptions": "All Major Debit Cards, Credit Cards, Netbanking, Paytm, EMI. For International Payments- we accept Paypal and Western Union"
   
 }

@@ -3,15 +3,15 @@
     "name": "Pearl Finish Business Cards",
     "quantity": {},
     "paper": {
-    "labelselected": "Pearl Finish 320gsm", 
+    "labelSelected": "Pearl Finish 320gsm", 
     "opts":["Pearl Finish 320gsm",
       "Pearl Finish 500gsm"],
     "about":{"Pearl Finish 320gsm":"pearl-finish"}
     },
     "size": {},
     "printing": {},
-    "description": "Test Description",
-    "Additional Info": "Test Additional Info"
+    "description": "Pearl Finish Business Cards Description",
+    "additionalInfo": "Pearl Finish Business Cards Additional Info"
   },
   "808": {
     "name": "Foiling Business Card",

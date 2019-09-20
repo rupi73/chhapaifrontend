@@ -26,6 +26,16 @@
     border-radius: 4px;
     cursor: zoom-in;
 }
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+	float:right;
+	width:50px;
+	}
 </style>
 <div class="container">
 	<br>  <p class="text-center">{{pbcctrl.product.name}}</p>
@@ -47,24 +57,43 @@
 </div> <!-- slider-nav.// -->
 </article> <!-- gallery-wrap .end// -->
 <uib-tabset class="tabbable" active="active">
-	<uib-tab index="0" heading="Static title">
-		<h4>Static content</h4>
-		<p>
-			Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent.
-		</p>
-		<p>
-			Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
-		</p>
+	<uib-tab index="0" heading="Description">
+		{{pbcctrl.description}}
 	</uib-tab>
-	<uib-tab index="2" select="alertMe()">
-		<uib-tab-heading>
-			<i class="glyphicon glyphicon-bell"></i> Alert!
-		</uib-tab-heading>
-		I've got an HTML heading, and a select callback. Pretty cool!
-	</uib-tab>
+	<uib-tab index="1" select="alertMe()">
+			<uib-tab-heading>
+				<i class="glyphicon glyphicon-bell"></i> Additional Info
+			</uib-tab-heading>
+			{{pbcctrl.additionalInfo}}
+		</uib-tab>
+		<uib-tab index="2">
+				<uib-tab-heading>
+					<i class="glyphicon glyphicon-bell"></i> How To Order
+				</uib-tab-heading>
+				{{pbcctrl.howToOrder}}
+			</uib-tab>
+			<uib-tab index="3">
+					<uib-tab-heading>
+						<i class="glyphicon glyphicon-bell"></i> FAQ
+					</uib-tab-heading>
+					{{pbcctrl.faq}}
+				</uib-tab>
+			<uib-tab index="4">
+								<uib-tab-heading>
+									<i class="glyphicon glyphicon-bell"></i> Reviews
+								</uib-tab-heading>
+								{{pbcctrl.reviews}}
+							</uib-tab>
+			<uib-tab index="5">
+									<uib-tab-heading>
+										<i class="glyphicon glyphicon-bell"></i> Payment Options
+									</uib-tab-heading>
+									{{pbcctrl.paymentOptions}}
+			</uib-tab>
 </uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
+				<div class="row sticky">₹2500</div>				
 				<div class="panel panel-transparent">
 						<div class="panel-heading">
 							<h6 class="panel-title">choose paper and quantity</h6>
@@ -73,17 +102,18 @@
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
 								<v-pane id="{{pane.header}}" ng-repeat="pane in pbcctrl.pandq" expanded="$first">
 									<v-pane-header>
-										<h5>{{ pane.header }}</h5>
+										<h5>{{ pane.header | uppercase }}</h5>
 									</v-pane-header>
 									<v-pane-content>
 										<p>
 											<ul class="list-group">
-												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in pane.content" >
-													<input type="radio" class="form-check-input" name="optradio">{{item}}
+												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+													<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" >{{item}}
 													<span class="badge badge-primary badge-pill">14</span>
 												</li>
 												
 											</ul>
+{{pbcctrl.selected}}
 										</p>
 										<v-accordion ng-if="pane.subpanes">
 											<v-pane ng-repeat="subpane in pane.subpanes">
@@ -110,18 +140,18 @@
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
 								<v-pane ng-repeat="pane in pbcctrl.treatments">
 									<v-pane-header>
-										<h5>{{ pane.header }}</h5>
+										<h5>{{ pane.header | uppercase }}</h5>
 									</v-pane-header>
 									<v-pane-content>
 										<div class="col-md-12 row">
 											<div class="col-md-12" ng-if="pane.single">
 													<ul class="list-group">
 															<li class="list-group-item d-flex justify-content-between align-items-center">
-																	<input type="radio" class="form-check-input" name="optradio">None
+																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" >None
 																	
 																</li>
-															<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in pane.content" >
-															<input type="radio" class="form-check-input" name="optradio">{{item}}
+															<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]">{{item}}
 															<span class="badge badge-primary badge-pill">14</span>
 														</li>
 														
@@ -133,16 +163,16 @@
 											<p>Front Side</p>
 											<ul class="list-group">
 													<li class="list-group-item d-flex justify-content-between align-items-center">
-															<input type="radio" class="form-check-input" name="optradio">None
+															<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].front" >None
 															
 														</li>
-													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in pane.content" >
-													<input type="radio" class="form-check-input" name="optradio">{{item}}
+													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+													<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].front" >{{item}}
 													<span class="badge badge-primary badge-pill">14</span>
 												</li>
 												
 											</ul>
-											
+											{{pbcctrl.selected}}
 											
 												 
 											
@@ -152,17 +182,17 @@
 												<p>Back Side</p>
 												<ul class="list-group">
 														<li class="list-group-item d-flex justify-content-between align-items-center">
-																<input type="radio" class="form-check-input" name="optradio">None
+																<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].back" >None
 																
 															</li>
-													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in pane.content" >
-														<input type="radio" class="form-check-input" name="optradio">{{item}}
+													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+														<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].back">{{item}}
 														<span class="badge badge-primary badge-pill">14</span>
 													</li>
 													
 												</ul>
 												
-													 
+												{{pbcctrl.selected}}	 
 												
 												</div>
 										
@@ -179,12 +209,23 @@
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
 								<v-pane ng-repeat="pane in pbcctrl.addons">
 									<v-pane-header>
-										<h5>{{ pane.header }}</h5>
+										<h5>{{ pane.header | uppercase }}</h5>
 									</v-pane-header>
 									<v-pane-content>
-										<p>
-											{{ pane.content }}
-										</p>
+											<p>
+													<ul class="list-group">
+															<li class="list-group-item d-flex justify-content-between align-items-center">
+																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" >None
+																	
+																</li>
+														<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" >{{item}}
+															<span class="badge badge-primary badge-pill">14</span>
+														</li>
+														
+													</ul>
+		{{pbcctrl.selected}}
+												</p>
 										<v-accordion ng-if="pane.subpanes">
 											<v-pane ng-repeat="subpane in pane.subpanes">
 												<v-pane-header>
@@ -201,6 +242,7 @@
 								</v-pane>
 							</v-accordion>
 						</div>
+						<button type="button" class="btn btn-secondary">Add To Cart</button>
 					</div>
 		</aside> <!-- col.// -->
 	</div> <!-- row.// -->

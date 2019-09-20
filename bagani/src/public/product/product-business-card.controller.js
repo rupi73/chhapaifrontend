@@ -29,60 +29,67 @@ if(typeof $ctrl.product[settings] !== 'undefined'){
 }
 return obj;
 };
+$ctrl.description = productData.description;
+$ctrl.additionalInfo = productData.additionalInfo;
+$ctrl.faq = productData.additionalInfo;
+$ctrl.reviews = productData.additionalInfo;
+$ctrl.howToOrder = ProductBusinessCardService.bcardsjson.howToOrder;
+$ctrl.paymentOptions = ProductBusinessCardService.bcardsjson.paymentOptions;
+$ctrl.selected={"paper":productData.paper.labelSelected,"quantity":ProductBusinessCardService.bcardsjson.quantity.labelSelected,"printing":ProductBusinessCardService.bcardsjson.printing.labelSelected,"size":ProductBusinessCardService.bcardsjson.size.labelSelected}
 $ctrl.pandq = [{
-    header: 'Paper',
+    header: 'paper',
     content: productData.paper.opts
 }, {
-    header: 'Quantity',
+    header: 'quantity',
     content: productData.quantity.opts
 }, {
-    header: 'Size',
+    header: 'size',
     content: productData.size.opts
 },{
-    header:'Printing',
+    header:'printing',
     content: productData.printing.opts
 }
 
 ];
 $ctrl.treatments = [{
-    header: 'Foiling',
+    header: 'foiling',
     both:true,
     content:ProductBusinessCardService.bcardsjson.treatments.foiling.opts.colors
 }, {
-    header: 'Electroplating',
+    header: 'electroplating',
     content: ProductBusinessCardService.bcardsjson.treatments.electroplating.opts.colors,
     both:true
 }, {
-    header: 'Letterpress',
+    header: 'letterpress',
     content: ProductBusinessCardService.bcardsjson.treatments.letterpress.opts.colors,
     both:true
 },{
-    header:'RaiseSpotGloss',
+    header:'raisespotgloss',
     content: ProductBusinessCardService.bcardsjson.treatments.raisespotgloss.opts,
     single: true
 },
 {
-    header:'Embossing',
+    header:'embossing',
     content: ProductBusinessCardService.bcardsjson.treatments.embossing.opts,
     single: true
 },
 {
-    header:'RoundCorners',
+    header:'roundCorners',
     content: ProductBusinessCardService.bcardsjson.treatments.roundcorners.opts,
     single: true
 },
 {
-    header:'EdgePaint',
+    header:'edgepaint',
     content: ProductBusinessCardService.bcardsjson.treatments.edgepaint.opts,
     single: true
 },
 {
-    header:'LaserEngrave',
+    header:'laserengrave',
     content: ProductBusinessCardService.bcardsjson.treatments.laserengrave.opts,
     single: true 
 },
 {
-    header:'LaserCut',
+    header:'lasercut',
     content: ProductBusinessCardService.bcardsjson.treatments.lasercut.opts,
     single: true 
 }
@@ -91,11 +98,13 @@ $ctrl.treatments = [{
 ];
 
 $ctrl.addons = [{
-    header: 'Accessories',
-    content: 'Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi.'
+    header: 'accessories',
+    content: ProductBusinessCardService.bcardsjson.accessories.opts,
+    single: true 
 }, {
-    header: 'Design',
-    content: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies.'
+    header: 'design',
+    content: ProductBusinessCardService.bcardsjson.designs.opts,
+    single: true
 }
 
 

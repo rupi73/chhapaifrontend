@@ -164,7 +164,19 @@
         templateUrl: 'src/public/pages/uniquecards.html',
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
-      })  
+      }) 
+      .state('public.checkout', {
+        url: '/public/checkout',
+        templateUrl: 'src/public/pages/checkout.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      })
+      .state('public.cart', {
+        url: '/public/cart',
+        templateUrl: 'src/public/pages/cart.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
       .state('public.productbusinesscard', {
         url: '/public/product/{productname}',
         templateUrl: 'src/public/product/product.html',

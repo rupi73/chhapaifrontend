@@ -3,8 +3,8 @@
 "use strict"
 angular.module('public')
 .controller('ProductBusinessCardController',ProductBusinessCardController);
-ProductBusinessCardController.$inject=['productData','ProductBusinessCardService'];
-function ProductBusinessCardController(productData,ProductBusinessCardService){
+ProductBusinessCardController.$inject=['productData','ProductBusinessCardService','Cart'];
+function ProductBusinessCardController(productData,ProductBusinessCardService,Cart){
   var $ctrl = this;
   console.log('called');
   console.log(productData);
@@ -29,6 +29,7 @@ if(typeof $ctrl.product[settings] !== 'undefined'){
 }
 return obj;
 };
+
 $ctrl.description = productData.description;
 $ctrl.additionalInfo = productData.additionalInfo;
 $ctrl.faq = productData.additionalInfo;
@@ -36,6 +37,8 @@ $ctrl.reviews = productData.additionalInfo;
 $ctrl.howToOrder = ProductBusinessCardService.bcardsjson.howToOrder;
 $ctrl.paymentOptions = ProductBusinessCardService.bcardsjson.paymentOptions;
 $ctrl.selected={"paper":productData.paper.labelSelected,"quantity":ProductBusinessCardService.bcardsjson.quantity.labelSelected,"printing":ProductBusinessCardService.bcardsjson.printing.labelSelected,"size":ProductBusinessCardService.bcardsjson.size.labelSelected}
+
+
 $ctrl.pandq = [{
     header: 'paper',
     content: productData.paper.opts
@@ -74,7 +77,7 @@ $ctrl.treatments = [{
     single: true
 },
 {
-    header:'roundCorners',
+    header:'roundcorners',
     content: ProductBusinessCardService.bcardsjson.treatments.roundcorners.opts,
     single: true
 },
@@ -106,12 +109,72 @@ $ctrl.addons = [{
     content: ProductBusinessCardService.bcardsjson.designs.opts,
     single: true
 }
-
-
 ];
+$ctrl.updatePrice = function(){
+    var price = 0;
+    console.log($ctrl.selected);
+    var quantity = $ctrl.selected.quantity;
+    var paperPrices = ProductBusinessCardService.bcardsjson.paper;
+    var treatmentPrices = ProductBusinessCardService.bcardsjson.treatments;
+    var accessPrices = ProductBusinessCardService.bcardsjson.accessories;
+    var designPrices = ProductBusinessCardService.bcardsjson.designs;
+    for(var i in $ctrl.selected){
+          switch(i){
+            case 'paper':
+            var paper = $ctrl.selected[i];
+            price += parseInt(paperPrices[paper].quantity[quantity]);
+            break;
+            case 'treatments':
+                var treatments = $ctrl.selected.treatments;
+                console.log(treatments);
+                    for(var treat in treatments ){  
+                        if (typeof treatments[treat] !== 'undefined' && Object.keys(treatments[treat]).length != 0 && treatments[treat].constructor === Object){
+                            var side;
+                            var color;
+                            if(typeof treatments[treat]['front']!=='undefined'){
+                            color = treatments[treat]['front'];
+                            side = "Single Side";
+                            }
+                            else if(typeof treatments[treat]['back']!=='undefined'){
+                            color = treatments[treat]['back'];
+                            side = "Single Side";
+                            }
+                            if(typeof treatments[treat]['front']!=='undefined' && typeof treatments[treat]['back']!=='undefined')
+                            side = "Both Sides";
+                            if(typeof color !=='undefined' && typeof side !=='undefined')
+                            price += parseInt(treatmentPrices[treat][side][color][quantity]);
+                        }
+                        else if(typeof treatments[treat] !== 'undefined'){
+                                                     var value = treatments[treat];
+                            console.log(treat);
+                            price += parseInt(treatmentPrices[treat][value][quantity]);
+                           
+                        }
+                        
+                    }
+            
+            break;
+            case 'accessories':
+            var access = $ctrl.selected[i];
+            console.log(access);
+            if(typeof access !== 'undefined')
+            price += parseInt(accessPrices[access]);
+            break;
+            case 'design':
+            var design = $ctrl.selected[i];
+            price += parseInt(designPrices[design]);
+            
+            break;
 
 
-
-
+        }
+    }
+     
+    $ctrl.totalPrice = price;
+};
+$ctrl.addCart = function(){
+Cart.addItem();
+};
+$ctrl.updatePrice();
 }
 })();

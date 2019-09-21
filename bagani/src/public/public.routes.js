@@ -21,6 +21,18 @@
         controller:'HomeController',
         controllerAs:'homeCtrl'       
       })
+      .state('public.signin', {
+        url: '/public/signin',
+        templateUrl: 'src/public/pages/signin.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'  
+      })     
+      .state('public.register', {
+        url: '/public/register',
+        templateUrl: 'src/public/pages/register.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'  
+      }) 
       .state('public.businesscardsdesign', {
         url: '/public/business-cards-design',
         templateUrl: 'src/public/pages/businesscardsdesign.html',
@@ -177,6 +189,69 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       }) 
+      .state('public.refundpolicy', {
+        url: '/public/refundpolicy',
+        templateUrl: 'src/public/pages/refundpolicy.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.clienthappiness', {
+        url: '/public/clienthappiness',
+        templateUrl: 'src/public/pages/clienthappiness.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      
+      .state('public.privacypolicy', {
+        url: '/public/privacypolicy',
+        templateUrl: 'src/public/pages/privacypolicy.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.termsandconditions', {
+        url: '/public/termsandconditions',
+        templateUrl: 'src/public/pages/termsandconditions.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.beanaffiliate', {
+        url: '/public/beanaffiliate',
+        templateUrl: 'src/public/pages/beanaffiliate.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.referandearn', {
+        url: '/public/referandearn',
+        templateUrl: 'src/public/pages/referandearn.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.startupcoupons', {
+        url: '/public/startupcoupons',
+        templateUrl: 'src/public/pages/startupcoupons.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+
+      .state('public.designservices', {
+        url: '/public/designservices',
+        templateUrl: 'src/public/pages/designservices.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.premiumsample', {
+        url: '/public/premiumsample',
+        templateUrl: 'src/public/pages/premiumsample.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.goodstuff', {
+        url: '/public/goodstuff',
+        templateUrl: 'src/public/pages/goodstuff.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      
       .state('public.productbusinesscard', {
         url: '/public/product/{productname}',
         templateUrl: 'src/public/product/product.html',

@@ -93,7 +93,7 @@ div.sticky {
 </uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
-				<div class="row sticky">₹2500</div>				
+				<div class="row sticky">₹{{pbcctrl.totalPrice}}</div>				
 				<div class="panel panel-transparent">
 						<div class="panel-heading">
 							<h6 class="panel-title">choose paper and quantity</h6>
@@ -108,7 +108,7 @@ div.sticky {
 										<p>
 											<ul class="list-group">
 												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-													<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" >{{item}}
+													<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice();">{{item}}
 													<span class="badge badge-primary badge-pill">14</span>
 												</li>
 												
@@ -147,11 +147,11 @@ div.sticky {
 											<div class="col-md-12" ng-if="pane.single">
 													<ul class="list-group">
 															<li class="list-group-item d-flex justify-content-between align-items-center">
-																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" >None
+																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']]" ng-change="pbcctrl.updatePrice();">None
 																	
 																</li>
 															<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]">{{item}}
+															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']]" ng-change="pbcctrl.updatePrice();">{{item}}
 															<span class="badge badge-primary badge-pill">14</span>
 														</li>
 														
@@ -163,11 +163,11 @@ div.sticky {
 											<p>Front Side</p>
 											<ul class="list-group">
 													<li class="list-group-item d-flex justify-content-between align-items-center">
-															<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].front" >None
+															<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].front" ng-change="pbcctrl.updatePrice();">None
 															
 														</li>
 													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-													<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].front" >{{item}}
+													<input type="radio" class="form-check-input" name="{{pane.header}}_front" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].front" ng-change="pbcctrl.updatePrice();">{{item}}
 													<span class="badge badge-primary badge-pill">14</span>
 												</li>
 												
@@ -182,11 +182,11 @@ div.sticky {
 												<p>Back Side</p>
 												<ul class="list-group">
 														<li class="list-group-item d-flex justify-content-between align-items-center">
-																<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].back" >None
+																<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice();">None
 																
 															</li>
 													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-														<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].back">{{item}}
+														<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice();">{{item}}
 														<span class="badge badge-primary badge-pill">14</span>
 													</li>
 													
@@ -214,12 +214,12 @@ div.sticky {
 									<v-pane-content>
 											<p>
 													<ul class="list-group">
-															<li class="list-group-item d-flex justify-content-between align-items-center">
-																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" >None
+															<li class="list-group-item d-flex justify-content-between align-items-center" ng-if="pane.header==='accessories'">
+																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice();" >None
 																	
 																</li>
 														<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" >{{item}}
+															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice();" >{{item}}
 															<span class="badge badge-primary badge-pill">14</span>
 														</li>
 														

@@ -10,16 +10,21 @@
     service.product = {};
 
     service.getProducts = function () {
+      if (Object.keys(service.bproducts).length === 0 && service.bproducts.constructor === Object  || true)
       return $http.get(ApiPath + 'jsons/bproducts.json').then(function (response) {
         service.bproducts = response.data;
         return response.data;
       });
+      else
+      return service.bproducts;
     };
     service.getCommonJSON = function () {
+      if (Object.keys(service.bcardsjson).length === 0 && service.bcardsjson.constructor === Object || true)
       return $http.get(ApiPath + 'jsons/bcards.json').then(function (response) {
         service.bcardsjson = response.data;
         return response.data;
       });
+      return service.bcardsjson;
     };
 
 
@@ -30,11 +35,9 @@
       /*Check for argument is object or is string or integer */
       /*--To be done later--*/
       var deferred = $q.defer();//promise
-      if (Object.keys(service.bproducts).length === 0 && service.bproducts.constructor === Object || true)
-        service.bproducts = service.getProducts();
-      if (Object.keys(service.bcardsjson).length === 0 && service.bcardsjson.constructor === Object || true)
-        service.bcardsjson = service.getCommonJSON();
-      
+       service.bproducts = service.getProducts();
+       service.bcardsjson = service.getCommonJSON();
+             
       $q.all([service.bproducts, service.bcardsjson]).then(function (response) {
         if (typeof productId === 'undefined') {
           /*fetch product id from product slug name */

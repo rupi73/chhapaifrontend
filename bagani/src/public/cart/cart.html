@@ -5,7 +5,7 @@
           <thead>
             <tr>
               <th>Product Name</th>
-              <th></th>
+              <th>Description</th>
               <th>Price</th>
               <th>Qty</th>
               <th>Total</th>
@@ -13,12 +13,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><img src="img\temp\temp1.jpg" height="70px" width="100px">Electroplating Business business card </td>
-              <td>Edit</td>
-              <td>500</td>
-              <td>100</td>
-              <td>500</td>
+            <tr ng-repeat="(key,item) in cctrl.items">
+              <td><img src="img\temp\temp1.jpg" height="70px" width="100px">{{item.product.name}}</td>
+              <td>{{item.paper}}</td>
+              <td>{{item.totalPrice/item.quantity}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.totalPrice}}</td>
               <td><i class="fa fa-trash" aria-hidden="true""></i></td>
             </tr>
            

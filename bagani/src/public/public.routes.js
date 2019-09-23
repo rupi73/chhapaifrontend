@@ -185,9 +185,9 @@
       })
       .state('public.cart', {
         url: '/public/cart',
-        templateUrl: 'src/public/pages/cart.html',
-        controller:'PagesController',
-        controllerAs:'pagesCtrl'       
+        templateUrl: 'src/public/cart/cart.html',
+        controller:'CartController',
+        controllerAs:'cctrl'       
       }) 
       .state('public.refundpolicy', {
         url: '/public/refundpolicy',

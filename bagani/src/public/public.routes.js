@@ -251,6 +251,18 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       }) 
+      .state('public.mattfinish', {
+        url: '/public/mattfinish',
+        templateUrl: 'src/public/pages/mattfinish.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
+      .state('public.Softfuedefinsh', {
+        url: '/public/Softfuedefinsh',
+        templateUrl: 'src/public/pages/Softfuedefinsh.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
       
       .state('public.productbusinesscard', {
         url: '/public/product/{productname}',

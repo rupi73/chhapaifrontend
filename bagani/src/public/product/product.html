@@ -58,13 +58,14 @@ div.sticky {
 </article> <!-- gallery-wrap .end// -->
 <uib-tabset class="tabbable" active="active">
 	<uib-tab index="0" heading="Description">
-		{{pbcctrl.description}}
+		<section ng-bind-html="pbcctrl.description"></section>
 	</uib-tab>
 	<uib-tab index="1" select="alertMe()">
 			<uib-tab-heading>
 				<i class="glyphicon glyphicon-bell"></i> Additional Info
 			</uib-tab-heading>
-			{{pbcctrl.additionalInfo}}
+			<section ng-bind-html="pbcctrl.additionalInfo"></section>
+			
 		</uib-tab>
 		<uib-tab index="2">
 				<uib-tab-heading>
@@ -76,7 +77,8 @@ div.sticky {
 					<uib-tab-heading>
 						<i class="glyphicon glyphicon-bell"></i> FAQ
 					</uib-tab-heading>
-					{{pbcctrl.faq}}
+					<section ng-bind-html="pbcctrl.faq"></section>
+				
 				</uib-tab>
 			<uib-tab index="4">
 								<uib-tab-heading>

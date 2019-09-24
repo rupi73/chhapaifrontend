@@ -10,101 +10,95 @@
           <div class="form-row">
             <div class="form-group  mr-2">
               <label for="Firstname">First Name</label>
-              <input type="text" class="form-control" id="firstname" placeholder="First Name">
+              <input type="text" class="form-control" id="firstname" placeholder="First Name" ng-model="cctrl.customer.billing.first_name">
             </div>
             <div class="form-group">
               <label for="Lastname">Last Name</label>
-              <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+              <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="cctrl.customer.billing.last_name">
             </div>
           </div>
           <div class="form-group">
             <label for="Email ">Email Address</label>
-            <input type="text" class="form-control" id="email" placeholder="Email Address">
+            <input type="text" class="form-control" id="email" placeholder="Email Address" ng-model="cctrl.customer.billing.email">
           </div>
           <div class="form-group">
             <label for="Companyname">Company Name</label>
-            <input type="text" class="form-control" id="company" placeholder="Company Name">
+            <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.billing.company">
           </div>
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="Country">Country</label>
-              <input type="text" class="form-control" id="country">
+              <input type="text" class="form-control" id="country" ng-model="cctrl.customer.billing.country">
             </div>
             <div class="form-group col-md-4">
               <label for="State">State</label>
-              <input type="text" class="form-control" id="state">
+              <input type="text" class="form-control" id="state" ng-model="cctrl.customer.billing.state">
             </div>
             <div class="form-group col-md-4">
               <label for="City">City</label>
-              <input type="text" class="form-control" id="city">
+              <input type="text" class="form-control" id="city" ng-model="cctrl.customer.billing.city">
             </div>
           </div>
           <div class="form-group">
               <label for="Apartment">Apartment/Steet</label>
-              <input type="text" class="form-control" id="Apartment/Steet" placeholder="Apartment/Steet">
+              <input type="text" class="form-control" id="Apartment/Steet" placeholder="Apartment/Steet" ng-model="cctrl.customer.billing.street">
             </div>
             <div class="form-row ">
                 <div class="form-group mr-2">
                   <label for="Zip\Postalcode">Zip\Postal code</label>
-                  <input type="text" class="form-control" id="Zip\Postal">
+                  <input type="text" class="form-control" id="Zip\Postal" ng-model="cctrl.customer.billing.zip">
                 </div>
                 <div class="form-group ">
                   <label for="State">Mobile</label>
-                  <input type="text" class="form-control" id="Mobile">
+                  <input type="text" class="form-control" id="Mobile" ng-model="cctrl.customer.billing.mobile">
                 </div>
             </div>
-         
                
-      
-      
-                
-                 
-                
                     <h4 class="text-success my-5">SHIP TO A DEFFRENCE ADDRESS </h4>
                     <div class="form-row">
                       <div class="form-group mr-2 ">
                         <label for="Firstname">First Name</label>
-                        <input type="text" class="form-control mr-1" id="firstname" placeholder="First Name">
+                        <input type="text" class="form-control mr-1" id="firstname" placeholder="First Name" ng-model="cctrl.customer.shipping.first_name">
                       </div>
                       <div class="form-group ">
                         <label for="Lastname">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="cctrl.customer.shipping.last_name">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="Email ">Email Address</label>
-                      <input type="text" class="form-control" id="email" placeholder="Email Address">
+                      <input type="text" class="form-control" id="email" placeholder="Email Address" ng-model="cctrl.customer.shipping.email">
                     </div>
                     <div class="form-group ">
                       <label for="Companyname">Company Name</label>
-                      <input type="text" class="form-control" id="company" placeholder="Company Name">
+                      <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-4">
                         <label for="Country">Country</label>
-                        <input type="text" class="form-control" id="country">
+                        <input type="text" class="form-control" id="country" ng-model="cctrl.customer.shipping.country">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="State">State</label>
-                        <input type="text" class="form-control" id="state">
+                        <input type="text" class="form-control" id="state" ng-model="cctrl.customer.shipping.state">
                       </div>
                       <div class="form-group col-md-4">
                         <label for="City">City</label>
-                        <input type="text" class="form-control" id="city">
+                        <input type="text" class="form-control" id="city" ng-model="cctrl.customer.shipping.city">
                       </div>
                     </div>
                     <div class="form-group ">
-                        <label for="Apartment">Apartment/Steet</label>
-                        <input type="text" class="form-control" id="Apartment/Steet" placeholder="Apartment/Steet">
+                        <label for="Apartment">Apartment/Street</label>
+                        <input type="text" class="form-control" id="Apartment/Street" placeholder="Apartment/Steet" ng-model="cctrl.customer.shipping.street">
                       </div>
                       <div class="form-row">
                           <div class="form-group mr-2">
                             <label for="Zip\Postalcode">Zip\Postal code</label>
-                            <input type="text" class="form-control" id="Zip\Postal">
+                            <input type="text" class="form-control" id="Zip\Postal" ng-model="cctrl.customer.shipping.zip">
                           </div>
                           <div class="form-group ">
                             <label for="State">Mobile</label>
-                            <input type="text" class="form-control" id="Mobile">
+                            <input type="text" class="form-control" id="Mobile" ng-model="cctrl.customer.shipping.mobile">
                           </div>
        
         
@@ -116,10 +110,10 @@
       
       <div class="col-md-6">
         <H4 class="text-success my-5">Shipping Method</H4>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-               FREE SHIPPING RS.0
+          <div class="form-check" ng-repeat="(key,method) in cc.paymentMethods">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod-{{$index}}" value="key">
+              <label class="form-check-label" for="paymentMethod-{{$index}}">
+               {{method}}
               </label>
             </div>
             <div class="form-check">
@@ -201,7 +195,7 @@
                 </div>
                 <BR>
       
-                <button type="button" class="btn btn-success ">PLACE ORDER NOW</button>
+                <button type="button" class="btn btn-success" ng-click="cctrl.placeOrder()">PLACE ORDER NOW</button>
       
             
           

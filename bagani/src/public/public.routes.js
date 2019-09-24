@@ -179,9 +179,9 @@
       }) 
       .state('public.checkout', {
         url: '/public/checkout',
-        templateUrl: 'src/public/pages/checkout.html',
-        controller:'PagesController',
-        controllerAs:'pagesCtrl'       
+        templateUrl: 'src/public/cart/checkout.html',
+        controller:'CartController',
+        controllerAs:'cctrl'       
       })
       .state('public.cart', {
         url: '/public/cart',

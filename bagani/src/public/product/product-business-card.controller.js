@@ -36,7 +36,7 @@ $ctrl.faq = productData.faq;
 $ctrl.reviews = "";
 $ctrl.howToOrder = ProductBusinessCardService.bcardsjson.howToOrder;
 $ctrl.paymentOptions = ProductBusinessCardService.bcardsjson.paymentOptions;
-$ctrl.selected={product:{id:productData.id,name:productData.name},paper:productData.paper.labelSelected,quantity:ProductBusinessCardService.bcardsjson.quantity.labelSelected,printing:ProductBusinessCardService.bcardsjson.printing.labelSelected,size:ProductBusinessCardService.bcardsjson.size.labelSelected}
+$ctrl.selected={id:productData.id,name:productData.name,paper:productData.paper.labelSelected,quantity:ProductBusinessCardService.bcardsjson.quantity.labelSelected,printing:ProductBusinessCardService.bcardsjson.printing.labelSelected,size:ProductBusinessCardService.bcardsjson.size.labelSelected}
 
 
 $ctrl.pandq = [{

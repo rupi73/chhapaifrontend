@@ -13,8 +13,9 @@ service.items.push(product);
 service.saveItems();
 
   };
-  service.removeItem = function(){
-    service.count--;
+  service.removeItem = function(index){
+    service.items.splice(index,1);
+    service.saveItems();
   };
   service.getItems = function(){
     return service.items;

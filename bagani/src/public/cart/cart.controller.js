@@ -14,6 +14,10 @@ function(){
     cc.customer.shipping = angular.copy(cc.customer.billing);
     cc.paymentMethods = {Paypal:'Paypal Checkout',Razorpay:'Razorpay',BankTransfer:'Bank Transfer'};
     console.log(cc.items);
+    cc.removeItem = function(index){
+      CartService.removeItem(index);
+      cc.items = CartService.getItems();
+    }
 
     cc.goToCheckout = function(){
     $state.go('public.checkout');

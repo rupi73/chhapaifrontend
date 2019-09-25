@@ -107,7 +107,7 @@
       </div>      
       <div class="col-md-6">
         <H4 class="text-success my-5">Shipping Method</H4>
-          <div class="form-check" ng-repeat="(key,method) in cc.paymentMethods">
+          <div class="form-check">
               <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod-{{$index}}" value="key">
               <label class="form-check-label" for="paymentMethod-{{$index}}">
                {{method}}
@@ -162,27 +162,12 @@
               <br>
       
               <H4 class="text-success my-5">PAYMENT METHOD</H4>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-               CREATED CARD/DEBIT CARD/NET BANKING
+          <div class="form-check" ng-repeat="(key,method) in cctrl.paymentMethods">
+              <input class="form-check-input" type="radio" name="payment_method" id="payment-method-{{$index}}" value="key" ng-model="cctrl.paymentBy">
+              <label class="form-check-label" for="payment-method-{{$index}}">
+               {{method}}
               </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-              PAYPAL
-              </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
-                DIRECT TRANSFER/WESTERN UNION MONEY TRANSFER
-                </label>
-              </div>
-              <br>
-      
-              <P>Make your payment directly into our bank account or western union please use your order ID as the payment reference. Your order won't be shipped until the fund have cleared in your account</P>
+            </div>            
               <br>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">

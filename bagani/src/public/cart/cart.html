@@ -19,7 +19,7 @@
               <td>{{item.totalPrice/item.quantity}}</td>
               <td>{{item.quantity}}</td>
               <td>{{item.totalPrice}}</td>
-              <td><i class="fa fa-trash" aria-hidden="true""></i></td>
+              <td><a href="javascript:void" ng-click="cctrl.removeItem($index)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
             </tr>
            
           </tbody>
@@ -31,7 +31,7 @@
 
       <div class="container">
           <div class="row">
-              <div class="col-md-4">
+              <!--div class="col-md-4">
                     <h5 class="mt-2"> Continue Shopping </h5>
                     <br>
                 <section class="border">
@@ -56,9 +56,9 @@
                         <button type="submit" class="btn btn-success">Update Total Bill</button>
                       </form>
                     </section>
-              </div>
+              </div-->
              
-              <div class="col-md-4">
+              <!--div class="col-md-4">
                     <br>
                     <section class="border" style="margin-top:30px;">
                         
@@ -74,9 +74,9 @@
                             <button type="submit" class="btn btn-success mb-4">APPLY COUPAN</button>
                           </form>
                         </section>
-                  </div>
+                  </div-->
 
-                  <div class="col-md-4">
+                  <div class="offset-md-8 col-md-4">
                   
                     <h5 class="mt-2"> Shopping Cart</h5>
                     <br>
@@ -90,8 +90,8 @@
                                 </tr>
                                   
                                   <tr>
-                                    <td>GST {{cc.gstRate}}%</td>
-                                    <td>RS.60</td>
+                                    <td>GST {{cctrl.gstRate.rate}}%</td>
+                                    <td>{{cctrl.}}</td>
                                 </tr>
 
                                   <tr>

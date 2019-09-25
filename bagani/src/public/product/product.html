@@ -47,13 +47,13 @@ div.sticky {
 		<aside class="col-sm-5 border-right">
 <article class="gallery-wrap"> 
 <div class="img-big-wrap">
-  <div> <a href="#"><img src="img/4-1.jpg"></a></div>
+  <div> <a href="#"><img src="images/products/{{pbcctrl.selected.id}}/1.jpg"></a></div>
 </div> <!-- slider-product.// -->
 <div class="img-small-wrap">
-  <div class="item-gallery"> <img src="img/5-100x100.jpg"> </div>
-  <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
-  <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
-  <div class="item-gallery"> <img src="https://s9.postimg.org/tupxkvfj3/image.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/1.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/2.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/3.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/4.jpg"></div>
 </div> <!-- slider-nav.// -->
 </article> <!-- gallery-wrap .end// -->
 <uib-tabset class="tabbable" active="active">
@@ -115,7 +115,6 @@ div.sticky {
 												</li>
 												
 											</ul>
-{{pbcctrl.selected}}
 										</p>
 										<v-accordion ng-if="pane.subpanes">
 											<v-pane ng-repeat="subpane in pane.subpanes">
@@ -227,7 +226,6 @@ div.sticky {
 														</li>
 														
 													</ul>
-		{{pbcctrl.selected}}
 												</p>
 										<v-accordion ng-if="pane.subpanes">
 											<v-pane ng-repeat="subpane in pane.subpanes">
@@ -251,7 +249,7 @@ div.sticky {
 	</div> <!-- row.// -->
 </div> <!-- card.// -->
 
-
+{{pbcctrl.selected}}
 </div>
 <!--container.//-->
 

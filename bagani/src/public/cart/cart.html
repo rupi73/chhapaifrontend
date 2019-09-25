@@ -14,11 +14,11 @@
           </thead>
           <tbody>
             <tr ng-repeat="(key,item) in cctrl.items">
-              <td><img src="img\temp\temp1.jpg" height="70px" width="100px">{{item.product.name}}</td>
+              <td><img src="img\temp\temp1.jpg" height="70px" width="100px">{{item.name}}</td>
               <td>{{item.paper}}</td>
-              <td>{{item.totalPrice/item.quantity}}</td>
+              <td>₹{{(item.totalPrice/item.quantity).toFixed(2)}}</td>
               <td>{{item.quantity}}</td>
-              <td>{{item.totalPrice}}</td>
+              <td>₹{{item.totalPrice}}</td>
               <td><a href="javascript:void" ng-click="cctrl.removeItem($index)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
             </tr>
            
@@ -86,21 +86,21 @@
                                 <tbody>
                                   <tr>
                                     <td>Subtotatal</td>
-                                    <td>{{cctrl.totalPrice}}</td>
+                                    <td>₹{{cctrl.amount}}</td>
                                 </tr>
                                   
                                   <tr>
                                     <td>GST {{cctrl.gstRate.rate}}%</td>
-                                    <td>{{cctrl.}}</td>
+                                    <td>₹{{cctrl.amountTax}}</td>
                                 </tr>
 
-                                  <tr>
+                                  <!--tr>
                                     <td>Shipping</td>
-                                    <td></td>
-                                  </tr>
+                                    <td>{{cctrl.amountShipping}}</td>
+                                  </tr-->
                                   <tr>
                                         <td>Grand Total</td>
-                                        <td>RS.60</td>
+                                        <td>₹{{cctrl.amountTotal}}</td>
                                       </tr>
 
                                   

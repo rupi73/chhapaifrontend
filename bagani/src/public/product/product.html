@@ -104,7 +104,7 @@ div.sticky {
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
 								<v-pane id="{{pane.header}}" ng-repeat="pane in pbcctrl.pandq" expanded="$first">
 									<v-pane-header>
-										<h5 class="d-inline">{{ pane.header | uppercase }}</h5><span class="float-right" style="font-size:.6em">{{pbcctrl.selected[pane.header]}}</span><span class="float-right" style="font-size:.6em" ng-if="pbcctrl.selected.labels[pane.header].price">₹{{pbcctrl.selected.labels[pane.header].price}}</span>
+										<h3 class="d-inline text-capitalize">{{ pane.header }}</h3><h5 class="d-inline float-right">{{pbcctrl.selected[pane.header]}}</h5><h5 class="d-inline float-right" ng-if="pbcctrl.selected.labels[pane.header].price">₹{{pbcctrl.selected.labels[pane.header].price}}</h5>
 									</v-pane-header>
 									<v-pane-content>
 										<p>

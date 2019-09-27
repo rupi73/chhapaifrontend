@@ -54,7 +54,8 @@
                 </div>
             </div>
                
-                    <h4 class="text-success my-5">SHIP TO A DEFFRENCE ADDRESS </h4>
+                    <h4 class="text-success my-5"><input class="justify-content-right" type="checkbox"   ng-model="cctrl.shipAddress" ng-change="cctrl.shipAddressProcess()">SHIP TO A DEFFRENCE ADDRESS</h4>
+                    <section ng-show="cctrl.shipAddress">
                     <div class="form-row">
                       <div class="form-group mr-2 ">
                         <label for="Firstname">First Name</label>
@@ -65,97 +66,85 @@
                         <input type="text" class="form-control" id="lastname" placeholder="Last Name" ng-model="cctrl.customer.shipping.last_name">
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label for="Email ">Email Address</label>
-                      <input type="text" class="form-control" id="email" placeholder="Email Address" ng-model="cctrl.customer.shipping.email">
-                    </div>
+                    
                     <div class="form-group ">
                       <label for="Companyname">Company Name</label>
                       <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
                     </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-4">
-                        <label for="Country">Country</label>
-                        <input type="text" class="form-control" id="country" ng-model="cctrl.customer.shipping.country">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="State">State</label>
-                        <input type="text" class="form-control" id="state" ng-model="cctrl.customer.shipping.state">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="City">City</label>
-                        <input type="text" class="form-control" id="city" ng-model="cctrl.customer.shipping.city">
-                      </div>
-                    </div>
+
+
+
+                   
                     <div class="form-group ">
-                        <label for="Apartment">Apartment/Street</label>
+                        <label for="Companyname">COUNTRY </label>
+                        <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
+                      </div>
+                    
+                    <div class="form-group ">
+                        <label for="Apartment">STREET ADDRESS </label>
+
+                        <input type="text" class="form-control" id="Apartment/Street" placeholder="Apartment/Steet" ng-model="cctrl.customer.shipping.street">
+                        <br>
+                        <input type="text" class="form-control" id="Apartment/Street" placeholder="Apartment/Steet" ng-model="cctrl.customer.shipping.street">
+                        <br>
                         <input type="text" class="form-control" id="Apartment/Street" placeholder="Apartment/Steet" ng-model="cctrl.customer.shipping.street">
                       </div>
-                      <div class="form-row">
-                          <div class="form-group mr-2">
-                            <label for="Zip\Postalcode">Zip\Postal code</label>
-                            <input type="text" class="form-control" id="Zip\Postal" ng-model="cctrl.customer.shipping.zip">
-                          </div>
-                          <div class="form-group ">
-                            <label for="State">Mobile</label>
-                            <input type="text" class="form-control" id="Mobile" ng-model="cctrl.customer.shipping.mobile">
-                          </div>
-       
-        
-      </div>
+
+                      <div class="form-group ">
+                        <label for="Companyname">TOWN / CITY </label>
+                        <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
+                      </div>
+
+                      <div class="form-group ">
+                          <label for="Companyname">STATE </label>
+                          <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
+                        </div>
+
+                      <div class="form-group ">
+                        <label for="Companyname">POSTCODE / ZIP </label>
+                        <input type="text" class="form-control" id="company" placeholder="Company Name" ng-model="cctrl.customer.shipping.company">
+                      </div>
+                    </section>
       </form>
       </div>      
       <div class="col-md-6">
-        <H4 class="text-success my-5">Shipping Method</H4>
-          <div class="form-check">
-              <input class="form-check-input" type="radio" name="paymentMethod" id="paymentMethod-{{$index}}" value="key">
-              <label class="form-check-label" for="paymentMethod-{{$index}}">
-               {{method}}
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-              EXPRESS SHIPPING SERVICE RS. 200
-              </label>
-            </div>
+       
+         
+           
       
       
-            <h4 CLASS="text-success my-5">REVIEW YOU ORDER</h4>
+            <h4 CLASS="text-success my-5"> YOUR ORDER</h4>
             <table class="table ">
                 <thead>
                   <tr>
                     <th>Product</th>
-                    <th>Qty</th>
-                    <th>Subtotal</th>
+                    <th>Total</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>ELECTROPLATING</td>
-                    <td>100</td>
-                    <td>500</td>
+                  <tr ng-repeat="item in cctrl.items">
+                    <td>{{item.name}}  × 500</td>
+                    <td>	₹{{item.totalPrice}}</td>
+                    
                   </tr>
                   <tr>
-                    <td></td>
+                  
                     <td>Subtotal</td>
-                    <td>500</td>
+                    <td>	₹{{cctrl.amount}}
+                    </td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td>GST 12%</td>
-                    <td>60</td>
+                    <td>{{cctrl.gstRate.rate}}% IGST</td>
+                    <td>	₹{{cctrl.amountTax}}</td>
+                   
                   </tr>
                   <tr>
-                      <td></td>
-                      <td>Shipping</td>
-                      <td>FREE</td>
+                      <td>Grand Total</td>
+                      <td>	₹{{cctrl.amountTotal}}</td>
+                    
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td>Grandtotal</td>
-                        <td>560</td>
-                      </tr>
+                  
                 </tbody>
               </table>
       
@@ -163,7 +152,7 @@
       
               <H4 class="text-success my-5">PAYMENT METHOD</H4>
           <div class="form-check" ng-repeat="(key,method) in cctrl.paymentMethods">
-              <input class="form-check-input" type="radio" name="payment_method" id="payment-method-{{$index}}" value="key" ng-model="cctrl.paymentBy">
+              <input class="form-check-input" type="radio" name="payment_method" id="payment-method-{{$index}}" ng-value="key" ng-model="cctrl.paymentBy">
               <label class="form-check-label" for="payment-method-{{$index}}">
                {{method}}
               </label>

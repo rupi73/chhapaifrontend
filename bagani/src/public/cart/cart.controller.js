@@ -49,7 +49,9 @@ function(){
     console.log(postData);
     $http.post("https://www.chhapai.com/wp-json/chhp/v1/createorder/",postData,{ headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
     .then(function(response){
-      console.log(response.data.payurl);$window.location.href = response.data.payurl;},function(error){console.log(error)});
+      console.log(response.data.payurl);//$window.location.href = response.data.payurl;
+      $window.open(response.data.payurl, "_blank")
+    },function(error){console.log(error)});
 
     }//function
 

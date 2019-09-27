@@ -1,136 +1,456 @@
 
+<style>
 
+@font-face{
+  font-family: raleway;
+  src:url(Raleway-Regular.ttf);
+}
+  body
+  {
+    font-family: raleway;
+  }
+  /*ZoomIn Hover-Mask Effect*/
+  .hover-mask a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .hover-mask img {
+      width: 100%;
+      height: auto;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+    .hover-mask:hover img {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+    .hover-mask a h5 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      height: 100%;
+      width: 100%;
+      padding: 30% 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.4);
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+    .hover-mask:hover a h5 {
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+
+      .hover-mask a text {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      height: 100%;
+      width: 100%;
+      padding: 20% 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.4);
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+    .hover-mask a text   {
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+    .hover-mask .glyphicon {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -o-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      color: #fff;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=5)";
+      filter: alpha(opacity=5);
+      opacity: 5;
+    }
+    .hover-mask:hover .glyphicon {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=5)";
+      filter: alpha(opacity=5);
+      opacity: 5;
+    }
+
+
+/*choose by paper*/
+
+ /* Hover Blur Effect */
+ .text-white {
+      color: #fff;
+    }
+    .hover-blur a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .hover-blur img {
+      width: 100%;
+      height: auto;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+    .hover-blur:hover img {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+      -webkit-filter: grayscale(0.6) blur(1px);
+      filter: grayscale(0.6) blur(1px);
+    }
+    .hover-blur a h6 {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      height: 100%;
+      width: 100%;
+      padding: 20% 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.5);
+      /*background dotted*/
+      background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+      background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+      background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+      background-image: repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+      -webkit-background-size: 3px 3px;
+      -moz-background-size: 3px 3px;
+      background-size: 3px 3px;
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+    .hover-blur:hover a h6 {
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+    }
+    .hover-blur .text-white {
+      -webkit-transform: scale(0);
+      -moz-transform: scale(0);
+      -o-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+    .hover-blur:hover .text-white {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: all 0.5s linear;
+      -moz-transition: all 0.5s linear;
+      -o-transition: all 0.5s linear;
+      -ms-transition: all 0.5s linear;
+      transition: all 0.5s linear;
+      -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=1)";
+      filter: alpha(opacity=1);
+      opacity: 1;
+    }
+
+
+
+/*choose by paper end*/
+
+</style>
 
 <img src="images/banner/banner.jpg" height="600px" width="1350">
-<!-- Features Area Start -->
-<section class="features-service pt--100">
-<div class="container">
-<div class="row">
-    <div class="col-sm-12"><h1 class="text-center text-center py-5"><strong>Choose By Paper</strong></h1></div>
-  <!-- Features Service Single -->
-  <div class="col-lg-3 col-md-6 col-sm-12">
-    <div class="features-service-single">
-      <div class="fes-ser-titel text-center">
-          <img src="images/choosebypaper/4.jpg" alt="testimonial author">
-        <h4>PREMIUM</h4>
-        <h5>300gsm</h5>
-        <h6>1000 cards from Rs.2000</h6>
-        <p>Bring a classy and royalty look of your brand your premium business cards</p>
-      </div>
-    </div>
-  </div>
-  <!-- Features Service Single -->
-  <!-- Features Service Single -->
-  <div class="col-lg-3 col-md-6 col-sm-12">
-    <div class="features-service-single">
-      <div class="fes-ser-titel text-center">
-          <img src="images/choosebypaper/3.jpg" alt="testimonial author">
-        <h4>ENVIRO</h4>
-        <h5>500gsm</h5>
-        <h6>1000 cards from Rs.3250</h6>
-        <p>These are environmental friendly cards which are durable and excellent for you.</p>
-      </div>
-    </div>
-  </div>
-  <!-- Features Service Single -->
-  <!-- Features Service Single -->
-  <div class="col-lg-3 col-md-6 col-sm-12">
-    <div class="features-service-single">
-      <div class="fes-ser-titel text-center">
-          <img src="images/choosebypaper/2.jpg" alt="testimonial author">
-        <h4>BESPOKE</h4>
-        <h5>500gsm</h5>
-        <h6>1000 cards from Rs.5000</h6>
-        <p>The color, the design, the pattern, the creativity- Create a  sound presence of your brand! 
+<!--design your bussines card-->
 
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-12">
-    <div class="features-service-single">
-      <div class="fes-ser-titel text-center">
-          <img src="images/choosebypaper/1.jpg" alt="testimonial author">
-        <h4>UNIQUE</h4>
-        <h5>1000gsm</h5>
-        <h6>1000 cards from Rs.6000</h6>
-        <p>The most vibrant way of showcasing your personality and your brand. 
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- Features Service Single -->
-</div>
-</div>
-</section>
-<!-- Features Area End -->
-<!-- Start About Area -->
-<section class="features-service pt--100 my-5 " style="background-color:	#FDF5E6	" >
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-12"><h1 class="text-center text-center mb-5">Choose by Treatment</h1></div>
-   <!-- Features Service Single -->
-  <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="media">
-     <img class="mr-3 media-object"
-     src="images/choosebytreatment/1.jpg" width="100px" hieght="100px">
-     <div class="media-body">
-       <h3 class="media-heading">Embossing</h3>
-       <p>Highlight your intricate details now with Embossing! Make a bold statement of your business and brand! </p>
-     </div>
-   </div>
+<section class="features-service pt--100">
+  <div class="container">
+  <div class="row">
+            <div class="col-sm-12 text-center mb-1"><h1 class="mb-5">Designing Your Business Card</h1></div>
+    
+    <!-- Features Service Single -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="features-service-single">
+        <div class="fes-ser-titel text-center">
+            <img src="images/facilities/1.png" width="80px" Hieght="80px" alt="testimonial author">
+          <h4>Both Side Printing</h4>
+          <p class="pb-5">Print full color on both sides of your business cards as standard at no extra cost.</p>
          </div>
-         <div class="col-lg-6 col-md-6 col-sm-12">
-          <div class="media">
-   <img class="mr-3 media-object"
-   src="images/choosebytreatment/2.jpg" width="100px" hieght="100px">
-   <div class="media-body">
-     <h3 class="media-heading ">Electroplating</h3>
-     <p>Stand out of the crowd of the mediocre business card designs, adorning the designs with its well-deserved spotlight.</p>
-   </div>
- </div>
-       </div>
-       <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="media">
- <img class="mr-3 media-object"
- src="images/choosebytreatment/3.jpg" width="100px" hieght="100px">
- <div class="media-body">
-   <h3 class="media-heading">Letterpress</h3>
-   <p>Business cards that give the ultimate exclusive touch to your brand and brand message.</p>
- </div>
-</div>
-     </div>
-     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="media">
-<img class="mr-3 media-object"
-src="images/choosebytreatment/4.jpg" width="100px" hieght="100px">
-<div class="media-body">
- <h3 class="media-heading ">Spot UV</h3>
- <p>Present an eye-catching experience to your printing with Spot UV! Take your printing to the next level of creativity and magnificence. </p>
-</div>
-</div>
-   </div>
-   <div class="col-lg-6 col-md-6 col-sm-12">
-    <div class="media">
-<img class="mr-3 media-object"
-src="images/choosebytreatment/5.jpg" width="100px" hieght="100px">
-<div class="media-body">
-<h3 class="media-heading ">Foil Press</h3>
-<p>Have an upcoming special event? Add an elegant touch to the occasion.</p>
-</div>
-</div>
- </div>
- <div class="col-lg-6 col-md-6 col-sm-12">
-  <div class="media">
-<img class="mr-3 media-object"
-src="images/choosebytreatment/6.jpg" width="100px" hieght="100px">
-<div class="media-body">
-<h3 class="media-heading">EdgePaint</h3>
-<p class="mb-5">Paint the edges of the cards to give it that extra edge. Available in Gold/ Silver/ Copper.</p>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+    <!-- Features Service Single -->
+    <!-- Features Service Single -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="features-service-single">
+        <div class="fes-ser-titel text-center">
+            <img src="images/facilities/2.png" width="80px" Hieght="80px" alt="testimonial author">
+            <h4>Next Day Dispatch</h4>
+            <p class="pb-5">On Premium and Enviro business cards without any treatments, if ordered before 11 AM.(Monday to Saturday)
+              </p>
+        </div>
+      </div>
+    </div>
+    <!-- Features Service Single -->
+    <!-- Features Service Single -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="features-service-single">
+        <div class="fes-ser-titel text-center">
+            <img src="images/facilities/3.png" width="80px" Hieght="80px" alt="testimonial author">
+            <h4>100% Satisfaction Guaranteed</h4>
+          <p>We will do anything so you are happy with your business cards. Order stress free. Your satisfaction means a world to us.</p>
+        </div>
+      </div>
+    </div>
+      <!-- Features Service Single -->
+  </div>
+  </div>
   </section>
+  <!--end design business card-->
+
+  <!--image hover-->
+<section style="background-color:white">
+
+    <h2 class="text-center pt-4">Choose by Paper
+
+      </h2>
+      <br>
+      <h4 class="text-center">We know papers are elementary. So, select the one that speaks you!</h4>
+  <div class="container">
+      
+    <div class="row my-5 py-5">
+    
+
+      
+      <br>
+     
+        <div class="col-md-3 hover-blur">
+            <a href="#" title="">
+                <img src="images\hover\1.jpg" alt=""/>
+                <h6><span class="text-white">Bring a classy and royalty look of your brand your premium business cards. </span></h6>
+              </a>
+              <br>
+              <h6 class="text-center"><strong>PREMIUM</strong></h6>
+            </div>
+
+
+            <div class="col-md-3 hover-blur">
+                <a href="#" title="">
+                    <img src="images\hover\2.jpg" alt=""/>
+                    <h6><span class="text-white">These are environmental friendly cards which are durable and excellent for you.</span></h6>
+                  </a><br>
+                  <h6 class="text-center"><strong>ENVIRO</strong></h6>
+                      
+          </div>
+
+
+          <div class="col-md-3 hover-blur">
+              <a href="#" title="">
+                  <img src="images\hover\3.jpg" alt=""/>
+                  <h6><span class="text-white">The color, the design, the pattern, the creativity- Create a  sound presence of your brand! </span></h6>
+                </a><br>
+                <h6 class="text-center"><strong>BESPOKE</strong></h6>
+                </div>
+         
+                <div class="col-md-3 hover-blur">
+                 <a href="#" title="">
+                <img src="images\hover\4.jpg" alt=""/>
+                <h6><span class="text-white">The most vibrant way of showcasing your personality and your brand.</span></h6>
+              </a><br>
+              <h6 class="text-center"><strong>UNIQUE</strong></h6>
+            </div>
+  
+  
+
+
+
+     
+      
+      </div>
+    </section>
+
+
+
+  <!--end img hover-->
+
+
+
+
+
+
+<!-- Features Area Start -->
+
+<!-- Features Area End -->
+<!-- treatment -->
+<section class="" style="background-color:white">
+
+    <h2 class="text-center pt-5">Choose by Treatment
+
+      </h2>
+      <br>
+      
+  <div class="container">
+      
+    <div class="row ">
+    
+
+      
+      <br>
+     
+        <div class="col-md-6 hover-mask">
+            <a href="#" title="">
+              <img src="images\treatment2\1.jpg" alt=""/>
+              <h5 class=" text-center text-white">Highlight your intricate details now with Embossing! Make a bold statement of your business and brand! </h5>
+            </a>
+            <br>
+            <h4 class="text-center"> Embossing</h4>
+
+
+
+            
+           
+          </div>
+
+
+          <div class="col-md-6 hover-mask">
+              <a href="#" title="">
+                <img src="images\treatment2\4.jpg" alt=""/>
+                <h5 class=" text-center text-white">Stand out of the crowd of the mediocre business card designs, adorning the designs with its well-deserved spotlight.
+
+                  </h5>
+              </a>
+              <br>
+              <h4 class="text-center"> Electroplating
+                </h4>
+                <br><br>
+                </div>
+    </div>
+
+<br>
+    <div class="row ">
+      <div class="col-md-6 hover-mask">
+          <a href="#" title="">
+              <img src="images\treatment2\2.jpg" alt=""/>
+              <h5 class=" text-center text-white">Business cards that give the ultimate exclusive touch to your brand and brand message.
+
+                </h5>
+            </a>
+            <br>
+            <h4 class="text-center"> Letterpress</h4>
+      </div>
+      <div class="col-md-6 hover-mask">
+
+          <a href="#" title="">
+              <img src="images\treatment2\3.jpg" alt=""/>
+              <h5 class=" text-center text-white">Have an upcoming special event? Add an elegant touch to the occasion.
+
+                </h5>
+            </a>
+            <br>
+            <h4 class="text-center"> Foil Press</h4>
+      </div>
+
+    </div>
+
+<br><br>
+    <div class="row mt-4 ">
+        <div class="col-md-6 hover-mask">
+            <a href="#" title="">
+                <img src="images\treatment2\5.jpg" alt=""/>
+                <h5 class=" text-center text-white">Present an eye-catching experience to your printing with Spot UV! Take your printing to the next level of creativity and magnificence.
+
+                  </h5>
+              </a>
+              <br>
+              <h4 class="text-center"> Spot UV
+
+                </h4>
+                
+        </div>
+        <div class="col-md-6 hover-mask">
+  
+            <a href="#" title="">
+                <img src="images\treatment2\6.jpg" alt=""/>
+                <h5 class=" text-center text-white">Paint the edges of the cards to give it that extra edge. Available in Gold/ Silver/ Copper.
+
+                  </h5>
+              </a>
+              <br>
+              <h4 class="text-center"> EdgePaint</h4>
+
+        </div>
+  
+      </div>
+      </div>
+
+              
+            
+  
+  
+
+
+
+     
+      
+      </div>
+    </section>
+
 <!-- End Service Area -->
 <!-- Start CounterUp Area -->
 
@@ -194,8 +514,8 @@ src="images/choosebytreatment/6.jpg" width="100px" hieght="100px">
   </section>
 <!-- End Team Area -->
 <!-- Our Project Area -->
-<section class="gallery__area pt--100  pb--70 " style="background-color:#F0FFF0">
-    <div class="container">
+<section class="gallery__area pt--100  pb--70 " style="background-color:white">
+    <div class="container-fluide mx-2">
         <div class="row">
             <div class="col-md-12">
                 <div class="section__title text-center mb--60">
@@ -577,48 +897,7 @@ src="images/choosebytreatment/6.jpg" width="100px" hieght="100px">
           <!-- Features Service Single -->
       <!-- Features Service Single -->
          </section>
-<section class="features-service pt--100">
-    <div class="container">
-    <div class="row">
-              <div class="col-sm-12 text-center mb-1"><h1 class="mb-5">Designing Your Business Card</h1></div>
-      
-      <!-- Features Service Single -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="features-service-single">
-          <div class="fes-ser-titel text-center">
-              <img src="images/facilities/1.png" width="80px" Hieght="80px" alt="testimonial author">
-            <h4>Both Side Printing</h4>
-            <p class="pb-5">Print full color on both sides of your business cards as standard at no extra cost.</p>
-           </div>
-        </div>
-      </div>
-      <!-- Features Service Single -->
-      <!-- Features Service Single -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="features-service-single">
-          <div class="fes-ser-titel text-center">
-              <img src="images/facilities/2.png" width="80px" Hieght="80px" alt="testimonial author">
-              <h4>Next Day Dispatch</h4>
-              <p class="pb-5">On Premium and Enviro business cards without any treatments, if ordered before 11 AM.(Monday to Saturday)
-                </p>
-          </div>
-        </div>
-      </div>
-      <!-- Features Service Single -->
-      <!-- Features Service Single -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="features-service-single">
-          <div class="fes-ser-titel text-center">
-              <img src="images/facilities/3.png" width="80px" Hieght="80px" alt="testimonial author">
-              <h4>100% Satisfaction Guaranteed</h4>
-            <p>We will do anything so you are happy with your business cards. Order stress free. Your satisfaction means a world to us.</p>
-          </div>
-        </div>
-      </div>
-        <!-- Features Service Single -->
-    </div>
-    </div>
-    </section>
+
     <section class="callto__action bg__theme mt-5">
         <div class="container">
             <div class="row">

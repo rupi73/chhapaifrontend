@@ -7,8 +7,9 @@
   /**
    * Configures the routes and views
    */
-  routeConfig.$inject = ['$stateProvider'];
-  function routeConfig ($stateProvider) {
+  routeConfig.$inject = ['$stateProvider','$locationProvider'];
+  function routeConfig ($stateProvider,$locationProvider) {
+    
     // Routes
     $stateProvider
       .state('public', {
@@ -276,6 +277,7 @@
           }]
         }      
       });
+        $locationProvider.html5Mode(true).hashPrefix('!');
   }
   })();
   

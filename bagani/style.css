@@ -40,6 +40,10 @@
 
 */
 
+@font-face{
+  font-family: raleway;
+  src:url('fonts/raleway/Raleway-Regular.ttf');
+}
 
 /*---------------------------------------
   02. Scroll To Top

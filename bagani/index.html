@@ -6,7 +6,7 @@
     <title>Ideas,Realised.-Chhapai.com</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <base href="/"></base>
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -42,8 +42,7 @@
 </head>
 
 <body ng-app="chhapai" ng-strict-di>
-	<!-- Fixed position loading indicator -->
-	<loading class="loading-indicator"></loading>
+	
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
@@ -54,9 +53,8 @@
         <header data-ng-include=" 'src/public/partials/header.html' " id="header" class="header"></header>
         <!-- End Header Style -->
 				<ui-view>
-						<div class="text-center initial-loading">
-							<h2>Loading Site...</h2>
-						</div>
+					<!-- Fixed position loading indicator -->
+	<loading class="loading-indicator"></loading>
 				</ui-view>
 
         <!-- Start Footer Area -->

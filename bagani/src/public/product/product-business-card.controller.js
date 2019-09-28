@@ -3,8 +3,8 @@
 "use strict"
 angular.module('public')
 .controller('ProductBusinessCardController',ProductBusinessCardController);
-ProductBusinessCardController.$inject=['productData','ProductBusinessCardService','CartService','$location'];
-function ProductBusinessCardController(productData,ProductBusinessCardService,CartService,$location){
+ProductBusinessCardController.$inject=['productData','ProductBusinessCardService','CartService','$location','$scope'];
+function ProductBusinessCardController(productData,ProductBusinessCardService,CartService,$location,$scope){
   var $ctrl = this;
   console.log('called');
   console.log(productData);
@@ -37,7 +37,7 @@ $ctrl.reviews = "";
 $ctrl.howToOrder = ProductBusinessCardService.bcardsjson.howToOrder;
 $ctrl.paymentOptions = ProductBusinessCardService.bcardsjson.paymentOptions;
 $ctrl.selected={id:productData.id,name:productData.name,paper:productData.paper.labelSelected,quantity:ProductBusinessCardService.bcardsjson.quantity.labelSelected,printing:ProductBusinessCardService.bcardsjson.printing.labelSelected,size:ProductBusinessCardService.bcardsjson.size.labelSelected}
-
+$ctrl.percardprice={quantity:{100:200,250:500}};
 
 $ctrl.pandq = [{
     header: 'paper',
@@ -134,6 +134,109 @@ $ctrl.selected.labels={paper:{},accessories:{},treatments:{},design:{}};
 
 $ctrl.updatePrice = function(head){
     head = head || 'head';
+    
+    console.log($ctrl.selected);
+    $ctrl.selected.labels={paper:{},accessories:{},treatments:{},design:{}};
+    var selectedQuantity = $ctrl.selected.quantity;
+    var paperPrices = ProductBusinessCardService.bcardsjson.paper;
+    var treatmentPrices = ProductBusinessCardService.bcardsjson.treatments;
+    var accessPrices = ProductBusinessCardService.bcardsjson.accessories;
+    var designPrices = ProductBusinessCardService.bcardsjson.designs;
+    for(var h in productData.quantity.opts){
+        var quantity = h;
+        var price = 0;
+    for(var i in $ctrl.selected){
+          switch(i){
+            case 'paper':
+            var paper = $ctrl.selected[i];
+            if(head == 'paper' && quantity==selectedQuantity)
+            $ctrl.updateTreatments();
+            if(quantity==selectedQuantity){
+            $ctrl.selected.labels.paper.price = parseInt(paperPrices[paper].quantity[quantity]);
+            }
+            price += parseInt(paperPrices[paper].quantity[quantity]);
+            break;
+            case 'treatments':
+                var treatments = $ctrl.selected.treatments;
+                console.log(treatments);
+                    for(var treat in treatments ){  
+                        if (typeof treatments[treat] !== 'undefined' && Object.keys(treatments[treat]).length != 0 && treatments[treat].constructor === Object){
+                            var side;
+                            var color;
+                            var label="";
+                            if(typeof treatments[treat]['front']!=='undefined'){
+                            color = treatments[treat]['front'];
+                            side = "Single Side";
+                            label=label + "Front:-" +color;
+                            }
+                            if(typeof treatments[treat]['back']!=='undefined'){
+                            color = typeof color==='undefined'?treatments[treat]['back']:color;
+                            side = "Single Side";
+                            label=label + "Back:-" +treatments[treat]['back'];
+                            }
+                            if(typeof treatments[treat]['front']!=='undefined' && typeof treatments[treat]['back']!=='undefined')
+                            side = "Both Sides";
+                            if(typeof color !=='undefined' && typeof side !=='undefined'){
+                            price += parseInt(treatmentPrices[treat][side][color][quantity]);
+                            if(quantity==selectedQuantity){
+                            $ctrl.selected.labels[treat]={label:label,price:parseInt(treatmentPrices[treat][side][color][quantity])}
+                            }//if selected quantity
+                            }//color and side
+                        }
+                        else if(typeof treatments[treat] !== 'undefined'){
+                                                     var value = treatments[treat];
+
+                            console.log(treat);
+                            if(quantity==selectedQuantity){
+                            $ctrl.selected.labels[treat]={label:value,price:parseInt(treatmentPrices[treat][value][quantity])}
+                            }//if      
+                            price += parseInt(treatmentPrices[treat][value][quantity]);
+                           
+                        }
+                        
+                    }
+            
+            break;
+            case 'accessories':
+            var access = $ctrl.selected[i];
+            console.log(access);
+            if(typeof access !== 'undefined'){
+                if(quantity==selectedQuantity){
+                $ctrl.selected.labels.accessories.label = accessPrices.opts[access];
+                $ctrl.selected.labels.accessories.price = parseInt(accessPrices[access]);
+                }//if
+            price += parseInt(accessPrices[access]);
+            }
+            else if($ctrl.selected.addon.accessories){
+               delete $ctrl.selected.addon.accessories;
+            }
+            break;
+            case 'design':
+            var design = $ctrl.selected[i];
+            if(quantity==selectedQuantity){
+            $ctrl.selected.labels.design.label = designPrices.opts[design];
+            $ctrl.selected.labels.design.price = parseInt(designPrices[design]);
+            }
+            price += parseInt(designPrices[design]);
+            
+            break;
+
+
+        }
+    }//loop selected
+    if(quantity==selectedQuantity){
+    $ctrl.selected.totalPrice = price;
+    }
+    $ctrl.percardprice.quantity[quantity] = (price/quantity).toFixed(2);
+}//loop quantity 
+    
+
+
+}//function
+
+
+$ctrl.updatePriceOld = function(head){
+    head = head || 'head';
     var price = 0;
     console.log($ctrl.selected);
     $ctrl.selected.labels={paper:{},accessories:{},treatments:{},design:{}};
@@ -178,7 +281,7 @@ $ctrl.updatePrice = function(head){
                             }
                         }
                         else if(typeof treatments[treat] !== 'undefined'){
-                                                     var value = treatments[treat];
+                                                                            var value = treatments[treat];
                             console.log(treat);
                             $ctrl.selected.labels[treat]={label:value,price:parseInt(treatmentPrices[treat][value][quantity])}      
                             price += parseInt(treatmentPrices[treat][value][quantity]);
@@ -219,6 +322,11 @@ $ctrl.addCart = function(){
  CartService.addItem($ctrl.selected);
  $location.url('public/cart');
 };
+$scope.$on('pq-accordion:onReady', function () {
+    var firstPane = $ctrl.pandq[1];
+    $scope.accordionPaperAndQuantity.toggle(firstPane.header);
+  });
+
 $ctrl.updatePrice('paper');
 }
 })();

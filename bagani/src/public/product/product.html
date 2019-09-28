@@ -37,7 +37,7 @@ div.sticky {
 	width:50px;
 	}
 </style>
-<div class="container">
+<div class="container-fluid">
 	<br>  <p class="text-center">{{pbcctrl.product.name}}</p>
 <hr>
 
@@ -95,20 +95,25 @@ div.sticky {
 </uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
-				<div class="row sticky">₹{{pbcctrl.selected.totalPrice}}</div>				
-				<div class="panel panel-transparent">
+				<p class="mb-2 sticky-top bg-success border float-md-right">₹{{pbcctrl.selected.totalPrice}}</p>		
+				<div class="panel panel-transparent clearfix">
 						<div class="panel-heading">
 							<h6 class="panel-title">choose paper and quantity</h6>
 						</div>
 						<div class="panel-body">
 							<v-accordion class="vAccordion--default" control="firstAccordionControl">
 								<v-pane id="{{pane.header}}" ng-repeat="pane in pbcctrl.pandq" expanded="$first">
-									<v-pane-header>
-										<h3 class="d-inline text-capitalize">{{ pane.header }}</h3><h5 class="d-inline float-right">{{pbcctrl.selected[pane.header]}}</h5><h5 class="d-inline float-right" ng-if="pbcctrl.selected.labels[pane.header].price">₹{{pbcctrl.selected.labels[pane.header].price}}</h5>
+									<v-pane-header class="col-md-9">
+											<ol class="breadcrumb pb-0">
+													<li class="breadcrumb-item"><h3 class="d-inline text-capitalize">{{ pane.header }}</h3></li>
+													<li class="breadcrumb-item">	<h5 class="d-inline float-right text-monospace">{{pbcctrl.selected[pane.header]}}</h5></li>
+													<li class="breadcrumb-item active"><h5 class="d-inline float-right bg-info" ng-if="pbcctrl.selected.labels[pane.header].price">₹{{pbcctrl.selected.labels[pane.header].price}}</h5></li>
+											</ol>
+										
 									</v-pane-header>
 									<v-pane-content>
 										<p>
-											<ul class="list-group">
+											<ul class="list-group col-md-9">
 												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
 													<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);">{{item}}
 													<span class="badge badge-primary badge-pill">14</span>

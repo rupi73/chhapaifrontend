@@ -562,7 +562,7 @@ img.zoom {
 
               
             
-  
+     
   
 
 
@@ -611,7 +611,7 @@ img.zoom {
             <li class="list-item">Create your designs with ease</li>
             <li class="list-item">Options to customize in detail</li>
           </ul>
-          <a href="#">Create Your Own Design</a>
+          <a ui-sref="public.productbusinesscard({productname:'matt-finish'})">Create Your Own Design</a>
         </div>
       </div>
     </div>
@@ -628,7 +628,7 @@ img.zoom {
               <li class="list-item">Already decided the look of card</li>
               <li class="list-item">Want to go with your style?</li>
             </ul>
-            <a href="#">Upload Your Design</a>
+            <a ui-sref="public.productbusinesscard({productname:'embossed'})" >Upload Your Design</a>
         </div>
       </div>
     </div>
@@ -730,8 +730,13 @@ img.zoom {
             </div>
             
            
+
            
        </div>
+       <div class="row justify-content-center my-4">
+       <a ui-sref="public.businesscardstemplatedesign"><button type="button" class="btn btn-outline-success  ">View More Design </button>
+       </a>
+      </div>
 
      
       
@@ -750,11 +755,11 @@ img.zoom {
                <div class="card">
                   <img class="card-img-top" src="images\goodt\1.jpg" alt="Card image cap">
                   <div class="card-body">
-                     <h5 class="card-title border-bottom pb-3">Notebooks<a href="#" class="float-right d-inline-flex share"><i class="fas fa-share-alt text-primary"></i></a></h5>
+                     <h5 class="card-title border-bottom pb-3">Notebooks<a href="#" class="float-right d-inline-flex share"></a></h5>
                      <p class="card-text">Personalized  “Living Hinge”  Note Books are cut From a Single Piece Of Wood In An Articulate Way Called A “Living Hinge” 
 
                       </p><br>
-                     <a href="#" class="float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                     <a ui-sref="public.notebook" class="float-right"><button type="button" class="btn btn-outline-success btn-sm">Read more</button></a>
                   </div>
                </div>
          
@@ -762,11 +767,11 @@ img.zoom {
                 <div class="card ">
                    <img class="card-img-top" src="images\goodt\2.jpg" alt="Card image cap">
                    <div class="card-body">
-                      <h5 class="card-title border-bottom pb-3">Coasters<a href="#" class="float-right d-inline-flex share"><i class="fas fa-share-alt text-primary"></i></a></h5>
+                      <h5 class="card-title border-bottom pb-3">Coasters<a href="#" class="float-right d-inline-flex share"></a></h5>
                       <p class="card-text"> Light up your workspace with the customized coasters. These are lightweight and durable.
                          </p>
                          <br><br>
-                      <a href="#" class="float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                      <a ui-sref="public.coasters" class="float-right"><button type="button" class="btn btn-outline-success btn-sm mt-1">Read more</button> </a>
                    </div>
                 </div>
         
@@ -774,10 +779,10 @@ img.zoom {
                 <div class="card ">
                    <img class="card-img-top" src="images\goodt\3.jpg" alt="Card image cap">
                    <div class="card-body">
-                      <h5 class="card-title border-bottom pb-3">Accessories<a href="#" class="float-right d-inline-flex share"><i class="fas fa-share-alt text-primary"></i></a></h5>
+                      <h5 class="card-title border-bottom pb-3">Accessories<a href="#" class="float-right d-inline-flex share"></a></h5>
                       <p class="card-text">Your workspace defines you! Keep it well-organized and tidy with the Pen-Stand and Stationery 
                          </p><br>
-                      <a href="#" class="float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                      <a ui-sref="public.accessories" class="float-right"> <button type="button" class="btn btn-outline-success btn-sm">Read more</button></a>
                    </div>
                 </div>
              
@@ -787,13 +792,13 @@ img.zoom {
                    <img class="card-img-top" src="images\goodt\4.jpg" alt="Card image cap">
                    <div class="card-body">
                       <h5 class="card-title border-bottom pb-3">Business Card Holder
-                          <a href="#" class="float-right d-inline-flex share"><i class="fas fa-share-alt text-primary"></i></a></h5>
+                          <a href="#" class="float-right d-inline-flex share"></a></h5>
                       <p class="card-text">Business card Holders for your valuable business cards. These are classy and vibrant at the same time.
 
 
  
                        </p><br>
-                      <a href="#" class="float-right">Read more <i class="fas fa-angle-double-right"></i></a>
+                      <a ui-sref="public.businesscardholders" class="float-right"><button type="button" class="btn btn-outline-success btn-sm">Read more</button> </a>
                    </div>
                
              </div>
@@ -906,7 +911,7 @@ img.zoom {
 </div>
     </div>
 </section>
-<!-- frenchise -->
+<!-- franchise -->
 
 <section style="background-color: 	#fff0f5">
   <div class="container py-5">
@@ -934,6 +939,9 @@ img.zoom {
           <h4>Minimal Investment
             </h4>
             <p>A business model where almost everything can be over the internet.</p>
+
+            <br><br>
+            <button type="button" class="btn btn-success">Know More</button>
           </div>
     
     <div class="col-md-4 mt-5">

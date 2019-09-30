@@ -58,9 +58,9 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       })
-      .state('public.coaters', {
-        url: '/public/coaters',
-        templateUrl: 'src/public/pages/coaters.html',
+      .state('public.coasters', {
+        url: '/public/coasters',
+        templateUrl: 'src/public/pages/coasters.html',
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       })
@@ -76,9 +76,9 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       })
-      .state('public.franchisee', {
-        url: '/public/franchisee',
-        templateUrl: 'src/public/pages/franchisee.html',
+      .state('public.franchise', {
+        url: '/public/franchise',
+        templateUrl: 'src/public/pages/franchise.html',
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       })

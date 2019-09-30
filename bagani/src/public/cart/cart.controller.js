@@ -7,8 +7,8 @@ function(){
   function CartController($rootScope,CartService,$state,$http,$window){
     var cc = this;
     cc.items = [];
-    cc.shipping = {India:{min:2500,rate:250}};
-    cc.gstRate ={rate:18.5};
+    cc.shipping = {India:{min:1500,rate:250},Other:{min:10000,rate:2000}};
+    cc.gstRate ={rate:12};
     cc.customer = {billing:{},shipping:{}};
     cc.customer.billing = {first_name:'Rupinder',last_name:'Singh',email:'rupinder.singh@gmail.com',company:'Genie Robo',city:'Chandigarh',state:'Punjab',country:'India',street:'Industrial Area',zip:'164009',mobile:'9988776655'}
     cc.customer.shipping = angular.copy(cc.customer.billing);
@@ -16,7 +16,7 @@ function(){
     cc.amountShipping = 0;
     cc.removeItem = function(index){
       CartService.removeItem(index);
-      cc.items = CartService.getItems();
+      cc.getItems();
     }//function
 
     cc.goToCheckout = function(){
@@ -34,7 +34,7 @@ function(){
       cc.amount = amount;
       amountTax = ((cc.gstRate.rate * amount) / 100).toFixed(2);
       cc.amountTax = amountTax;
-      cc.amountTotal = Number(amount) + Number(cc.amountTax);
+      cc.amountTotal = (Number(amount) + Number(cc.amountTax)).toFixed(2);
       
     };//function
 

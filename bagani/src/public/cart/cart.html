@@ -107,7 +107,8 @@
                                 </tbody>
                               </table>
                               <br>
-                              <button type="submit" class="btn btn-success mb-4" ng-click="cctrl.goToCheckout()">Proceed to Checkout</button>
+                              <button type="submit" class="btn btn-success mb-4" ng-disabled="!cctrl.items.length" ng-click="cctrl.goToCheckout()">Proceed to Checkout</button>
+                              
                   </div>
           </div>
       </div>

@@ -95,7 +95,7 @@ div.sticky {
 </uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
-				<div class="card mb-4 box-shadow sticky-top border float-md-right">
+				<div class="col-md-3 card mb-4 box-shadow sticky-top border float-md-right">
 						<div class="card-header">
 							<h4 class="my-0 font-weight-normal"> Card Detail</h4>
 						</div>
@@ -106,21 +106,23 @@ div.sticky {
 								<li>Quantity:-{{pbcctrl.selected.quantity}}</li>
 								<li>Size:-{{pbcctrl.selected.size}}</li>
 								<li>Printing:-{{pbcctrl.selected.printing}}</li>
-								<li ng-if="pbcctrl.selected.treatments" ng-repeat="(treat,attr) in pbcctrl.selected.treatments">{{treat}}:-{{pbcctrl.selected.labels[treat].label}}</li>
+								<li ng-if="pbcctrl.selected.treatments" ng-repeat="(treat,attr) in pbcctrl.selected.treatments" class="text-capitalize">{{treat}}:-{{pbcctrl.selected.labels[treat].label}}</li>
+								<li ng-if="pbcctrl.selected.accessories" class="text-capitalize">Accessory:-{{pbcctrl.selected.labels.accessories.label}}</li>
+								<li ng-if="pbcctrl.selected.design" class="text-capitalize">Design:-{{pbcctrl.selected.labels.design.label}}</li>
 								
 							</ul>
 							<button type="button" class="btn btn-lg btn-block btn-outline-primary">₹{{pbcctrl.selected.totalPrice}}</button>
 						</div>
 					</div>
 										
-				<div class="panel panel-transparent clearfix">
+				<div class="col-md-9 panel panel-transparent clearfix">
 						<div class="panel-heading">
 							<h6 class="panel-title">choose paper and quantity</h6>
 						</div>
 						<div class="panel-body">
 							<v-accordion id="pq-accordion" class="vAccordion--default" control="accordionPaperAndQuantity">
 								<v-pane id="{{ ::pane.header }}" ng-repeat="pane in pbcctrl.pandq">
-									<v-pane-header class="col-md-9">
+									<v-pane-header>
 											<ol class="breadcrumb pb-0">
 													<li class="breadcrumb-item"><h5 class="d-inline text-capitalize">{{ pane.header }}</h5></li>
 													<li class="breadcrumb-item">	<h6 class="d-inline float-right text-monospace">{{pbcctrl.selected[pane.header]}}</h6></li>
@@ -130,7 +132,7 @@ div.sticky {
 									</v-pane-header>
 									<v-pane-content>
 										<p>
-											<ul class="list-group col-md-9">
+											<ul class="list-group">
 												<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
 													<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);">{{item}}
 													<span class="badge badge-primary badge-pill" ng-if="pbcctrl.percardprice[pane.header][key]">₹{{pbcctrl.percardprice[pane.header][key]}}/per piece</span>
@@ -156,14 +158,14 @@ div.sticky {
 							</v-accordion>
 						</div>
 					</div>
-					<div class="panel panel-transparent">
+					<div class="col-md-9 panel panel-transparent clearfix">
 						<div class="panel-heading">
 							<h6 class="panel-title">choose treatments(optional)</h6>
 						</div>
 						<div class="panel-body">
 							<v-accordion class="vAccordion--default" control="accordionTreatments">
 								<v-pane ng-repeat="pane in pbcctrl.treatments">
-									<v-pane-header class="col-md-9">
+									<v-pane-header>
 											<ol class="breadcrumb pb-0">
 													<li class="breadcrumb-item"><h5 class="d-inline text-capitalize">{{ pane.header }}</h5></li>
 													<li class="breadcrumb-item" ng-if="pbcctrl.selected.treatments[pane.header]">	<h6 class="d-inline float-right text-monospace">{{pbcctrl.selected.labels[pane.header].label}}</h6></li>
@@ -171,7 +173,7 @@ div.sticky {
 											</ol>
 									</v-pane-header>
 									<v-pane-content>
-										<div class="col-md-9 row">
+										<div class="row">
 											<div class="col-md-12" ng-if="pane.single">
 													<ul class="list-group">
 															<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -222,57 +224,58 @@ div.sticky {
 													 
 												
 												</div>
-										
+										</div>
 									</v-pane-content>
 								</v-pane>
 							</v-accordion>
 						</div>
 					</div>
-					<div class="panel panel-transparent">
-						<div class="panel-heading">
-							<h6 class="panel-title">choose addons(optional)</h6>
-						</div>
-						<div class="panel-body">
-							<v-accordion class="vAccordion--default" control="accordionAddons">
-								<v-pane ng-repeat="pane in pbcctrl.addons">
-									<v-pane-header class="col-md-9">
-											<ol class="breadcrumb pb-0">
-													<li class="breadcrumb-item"><h5 class="d-inline text-capitalize">{{ pane.header }}</h5></li>
-													<li class="breadcrumb-item" ng-if="pbcctrl.selected[pane.header]">	<h6 class="d-inline float-right text-monospace">{{pbcctrl.selected.labels[pane.header].label}}</h6></li>
-													<li class="breadcrumb-item" ng-if="pbcctrl.selected.labels[pane.header].price"><h6 class="d-inline float-right">₹{{pbcctrl.selected.labels[pane.header].price}}</h6></li>
-											</ol>
-										</v-pane-header>
-									<v-pane-content>
-											<p>
-													<ul class="list-group col-md-9">
-															<li class="list-group-item d-flex justify-content-between align-items-center" ng-if="pane.header==='accessories'">
-																	<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);" >None
-																	
-																</li>
-														<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-															<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);" >{{item}}
-																		</li>
-														
-													</ul>
-												</p>
-										<v-accordion ng-if="pane.subpanes">
-											<v-pane ng-repeat="subpane in pane.subpanes">
-												<v-pane-header>
-													<h5>{{ subpane.header }}</h5>
-												</v-pane-header>
-												<v-pane-content>
-													<p>
-														{{ subpane.content }}
+					<div class="col-md-9 panel panel-transparent clearfix">
+							<div class="panel-heading">
+								<h6 class="panel-title">choose addons(optional)</h6>
+							</div>
+							<div class="panel-body">
+								<v-accordion class="vAccordion--default" control="accordionAddons">
+									<v-pane ng-repeat="pane in pbcctrl.addons">
+										<v-pane-header>
+												<ol class="breadcrumb pb-0">
+														<li class="breadcrumb-item"><h5 class="d-inline text-capitalize">{{ pane.header }}</h5></li>
+														<li class="breadcrumb-item" ng-if="pbcctrl.selected[pane.header]">	<h6 class="d-inline float-right text-monospace">{{pbcctrl.selected.labels[pane.header].label}}</h6></li>
+														<li class="breadcrumb-item" ng-if="pbcctrl.selected.labels[pane.header].price"><h6 class="d-inline float-right">₹{{pbcctrl.selected.labels[pane.header].price}}</h6></li>
+												</ol>
+											</v-pane-header>
+										<v-pane-content>
+												<p>
+														<ul class="list-group">
+																<li class="list-group-item d-flex justify-content-between align-items-center" ng-if="pane.header==='accessories'">
+																		<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);" >None
+																		
+																	</li>
+															<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
+																<input type="radio" class="form-check-input" name="{{pane.header}}" ng-value="key" ng-model="pbcctrl.selected[pane['header']]" ng-change="pbcctrl.updatePrice(pane.header);" >{{item}}
+																			</li>
+															
+														</ul>
 													</p>
-												</v-pane-content>
-											</v-pane>
-										</v-accordion>
-									</v-pane-content>
-								</v-pane>
-							</v-accordion>
+											<v-accordion ng-if="pane.subpanes">
+												<v-pane ng-repeat="subpane in pane.subpanes">
+													<v-pane-header>
+														<h5>{{ subpane.header }}</h5>
+													</v-pane-header>
+													<v-pane-content>
+														<p>
+															{{ subpane.content }}
+														</p>
+													</v-pane-content>
+												</v-pane>
+											</v-accordion>
+										</v-pane-content>
+									</v-pane>
+								</v-accordion>
+							</div>
+							<button type="button" class="btn btn-secondary" ng-click="pbcctrl.addCart()">Add To Cart</button>
 						</div>
-						<button type="button" class="btn btn-secondary" ng-click="pbcctrl.addCart()">Add To Cart</button>
-					</div>
+						
 		</aside> <!-- col.// -->
 	</div> <!-- row.// -->
 </div> <!-- card.// -->
@@ -282,14 +285,3 @@ div.sticky {
 <!--container.//-->
 
 
-<br><br><br>
-<article class="bg-secondary mb-3">  
-<div class="card-body text-center">
-    <h4 class="text-white">HTML UI KIT <br> Ready to use Bootstrap 4 components and templates </h4>
-<p class="h5 text-white"> for Ecommerce, marketplace, booking websites 
-and product landing pages</p>   <br>
-<p><a class="btn btn-warning" target="_blank" href="http://bootstrap-ecommerce.com/"> Bootstrap-ecommerce.com  
- <i class="fa fa-window-restore "></i></a></p>
-</div>
-<br><br><br>
-</article>

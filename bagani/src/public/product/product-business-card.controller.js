@@ -36,7 +36,7 @@ $ctrl.faq = productData.faq;
 $ctrl.reviews = "";
 $ctrl.howToOrder = ProductBusinessCardService.bcardsjson.howToOrder;
 $ctrl.paymentOptions = ProductBusinessCardService.bcardsjson.paymentOptions;
-$ctrl.selected={id:productData.id,name:productData.name,paper:productData.paper.labelSelected,quantity:ProductBusinessCardService.bcardsjson.quantity.labelSelected,printing:ProductBusinessCardService.bcardsjson.printing.labelSelected,size:ProductBusinessCardService.bcardsjson.size.labelSelected}
+$ctrl.selected={id:productData.id,name:productData.name,paper:productData.paper.labelSelected,quantity:ProductBusinessCardService.bcardsjson.quantity.labelSelected,printing:ProductBusinessCardService.bcardsjson.printing.labelSelected,size:ProductBusinessCardService.bcardsjson.size.labelSelected,design:ProductBusinessCardService.bcardsjson.designs.labelSelected}
 $ctrl.percardprice={quantity:{100:200,250:500}};
 
 $ctrl.pandq = [{
@@ -136,7 +136,7 @@ $ctrl.updatePrice = function(head){
     head = head || 'head';
     
     console.log($ctrl.selected);
-    $ctrl.selected.labels={paper:{},accessories:{},treatments:{},design:{}};
+    $ctrl.selected.labels={paper:{},accessories:{},design:{}};
     var selectedQuantity = $ctrl.selected.quantity;
     var paperPrices = ProductBusinessCardService.bcardsjson.paper;
     var treatmentPrices = ProductBusinessCardService.bcardsjson.treatments;
@@ -169,11 +169,17 @@ $ctrl.updatePrice = function(head){
                             side = "Single Side";
                             label=label + "Front:-" +color;
                             }
+                            else if(typeof $ctrl.selected.treatments[treat] && typeof $ctrl.selected.treatments[treat].front!=='undefined'){
+                            delete $ctrl.selected.treatments[treat].front; 
+                            }
                             if(typeof treatments[treat]['back']!=='undefined'){
                             color = typeof color==='undefined'?treatments[treat]['back']:color;
                             side = "Single Side";
                             label=label + "Back:-" +treatments[treat]['back'];
                             }
+                            else if(typeof $ctrl.selected.treatments[treat] && typeof $ctrl.selected.treatments[treat].back !=='undefined'){
+                                delete $ctrl.selected.treatments[treat].back; 
+                                }
                             if(typeof treatments[treat]['front']!=='undefined' && typeof treatments[treat]['back']!=='undefined')
                             side = "Both Sides";
                             if(typeof color !=='undefined' && typeof side !=='undefined'){
@@ -182,16 +188,23 @@ $ctrl.updatePrice = function(head){
                             $ctrl.selected.labels[treat]={label:label,price:parseInt(treatmentPrices[treat][side][color][quantity])}
                             }//if selected quantity
                             }//color and side
+                            else{
+                                delete $ctrl.selected.treatments[treat];  
+                            }
                         }
                         else if(typeof treatments[treat] !== 'undefined'){
                                                      var value = treatments[treat];
 
-                            console.log(treat);
+                            console.log("selected treatment is" +treat);
                             if(quantity==selectedQuantity){
                             $ctrl.selected.labels[treat]={label:value,price:parseInt(treatmentPrices[treat][value][quantity])}
                             }//if      
                             price += parseInt(treatmentPrices[treat][value][quantity]);
                            
+                        }
+                        else if(typeof treatments[treat] === 'undefined'){
+                            delete $ctrl.selected.treatments[treat];
+                               
                         }
                         
                     }
@@ -207,8 +220,8 @@ $ctrl.updatePrice = function(head){
                 }//if
             price += parseInt(accessPrices[access]);
             }
-            else if($ctrl.selected.addon.accessories){
-               delete $ctrl.selected.addon.accessories;
+            else if($ctrl.selected.accessories){
+               delete $ctrl.selected.accessories;
             }
             break;
             case 'design':
@@ -234,90 +247,6 @@ $ctrl.updatePrice = function(head){
 
 }//function
 
-
-$ctrl.updatePriceOld = function(head){
-    head = head || 'head';
-    var price = 0;
-    console.log($ctrl.selected);
-    $ctrl.selected.labels={paper:{},accessories:{},treatments:{},design:{}};
-    var quantity = $ctrl.selected.quantity;
-    var paperPrices = ProductBusinessCardService.bcardsjson.paper;
-    var treatmentPrices = ProductBusinessCardService.bcardsjson.treatments;
-    var accessPrices = ProductBusinessCardService.bcardsjson.accessories;
-    var designPrices = ProductBusinessCardService.bcardsjson.designs;
-    
-    for(var i in $ctrl.selected){
-          switch(i){
-            case 'paper':
-            var paper = $ctrl.selected[i];
-            if(head == 'paper')
-            $ctrl.updateTreatments();
-            $ctrl.selected.labels.paper.price = parseInt(paperPrices[paper].quantity[quantity]);
-            price += parseInt(paperPrices[paper].quantity[quantity]);
-            break;
-            case 'treatments':
-                var treatments = $ctrl.selected.treatments;
-                console.log(treatments);
-                    for(var treat in treatments ){  
-                        if (typeof treatments[treat] !== 'undefined' && Object.keys(treatments[treat]).length != 0 && treatments[treat].constructor === Object){
-                            var side;
-                            var color;
-                            var label="";
-                            if(typeof treatments[treat]['front']!=='undefined'){
-                            color = treatments[treat]['front'];
-                            side = "Single Side";
-                            label=label + "Front:-" +color;
-                            }
-                            if(typeof treatments[treat]['back']!=='undefined'){
-                            color = typeof color==='undefined'?treatments[treat]['back']:color;
-                            side = "Single Side";
-                            label=label + "Back:-" +treatments[treat]['back'];
-                            }
-                            if(typeof treatments[treat]['front']!=='undefined' && typeof treatments[treat]['back']!=='undefined')
-                            side = "Both Sides";
-                            if(typeof color !=='undefined' && typeof side !=='undefined'){
-                            price += parseInt(treatmentPrices[treat][side][color][quantity]);
-                            $ctrl.selected.labels[treat]={label:label,price:parseInt(treatmentPrices[treat][side][color][quantity])}
-                            }
-                        }
-                        else if(typeof treatments[treat] !== 'undefined'){
-                                                                            var value = treatments[treat];
-                            console.log(treat);
-                            $ctrl.selected.labels[treat]={label:value,price:parseInt(treatmentPrices[treat][value][quantity])}      
-                            price += parseInt(treatmentPrices[treat][value][quantity]);
-                           
-                        }
-                        
-                    }
-            
-            break;
-            case 'accessories':
-            var access = $ctrl.selected[i];
-            console.log(access);
-            if(typeof access !== 'undefined'){
-                $ctrl.selected.labels.accessories.label = accessPrices.opts[access];
-                $ctrl.selected.labels.accessories.price = parseInt(accessPrices[access]);
-            price += parseInt(accessPrices[access]);
-
-            }
-            else{
-               delete $ctrl.selected.addon.accessories;
-            }
-            break;
-            case 'design':
-            var design = $ctrl.selected[i];
-            $ctrl.selected.labels.design.label = designPrices.opts[design];
-            $ctrl.selected.labels.design.price = parseInt(designPrices[design]);
-            price += parseInt(designPrices[design]);
-            
-            break;
-
-
-        }
-    }
-     
-    $ctrl.selected.totalPrice = price;
-};
 $ctrl.addCart = function(){
  CartService.addItem($ctrl.selected);
  $location.url('public/cart');

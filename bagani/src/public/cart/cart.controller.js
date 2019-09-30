@@ -10,7 +10,7 @@ function(){
     cc.shipping = {India:{min:1500,rate:250},Other:{min:10000,rate:2000}};
     cc.gstRate ={rate:12};
     cc.customer = {billing:{},shipping:{}};
-    cc.customer.billing = {first_name:'Rupinder',last_name:'Singh',email:'rupinder.singh@gmail.com',company:'Genie Robo',city:'Chandigarh',state:'Punjab',country:'India',street:'Industrial Area',zip:'164009',mobile:'9988776655'}
+    /*cc.customer.billing = {first_name:'Rupinder',last_name:'Singh',email:'rupinder.singh@gmail.com',company:'Genie Robo',city:'Chandigarh',state:'Punjab',country:'India',street:'Industrial Area',zip:'164009',mobile:'9988776655'}*/
     cc.customer.shipping = angular.copy(cc.customer.billing);
     cc.paymentMethods = {Paypal:'Paypal Checkout',Razorpay:'Razorpay',BankTransfer:'Bank Transfer'};
     cc.amountShipping = 0;
@@ -65,6 +65,10 @@ function(){
       console.log(cc.customer.shipping);
 
     }//function
+
+    cc.validateForm = function(){
+
+    }
 
     cc.getItems();
 

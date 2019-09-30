@@ -178,6 +178,12 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       }) 
+      .state('public.knowmorefranchise', {
+        url: '/public/knowmorefranchise',
+        templateUrl: 'src/public/pages/knowmorefranchise.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
       .state('public.checkout', {
         url: '/public/checkout',
         templateUrl: 'src/public/cart/checkout.html',

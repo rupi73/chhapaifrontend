@@ -3,8 +3,8 @@ function(){
   "use strict"
   angular.module('public')
   .controller('CartController',CartController);
-  CartController.$inject = ['$rootScope','CartService','$state','$http','$window'];
-  function CartController($rootScope,CartService,$state,$http,$window){
+  CartController.$inject = ['$rootScope','CartService','$state','$http','$window','$scope','ApiPathWP'];
+  function CartController($rootScope,CartService,$state,$http,$window,$scope,ApiPathWP){
     var cc = this;
     cc.items = [];
     cc.shipping = {India:{min:1500,rate:250},Other:{min:10000,rate:2000}};
@@ -14,6 +14,7 @@ function(){
     cc.customer.shipping = angular.copy(cc.customer.billing);
     cc.paymentMethods = {Paypal:'Paypal Checkout',Razorpay:'Razorpay',BankTransfer:'Bank Transfer'};
     cc.amountShipping = 0;
+    cc.placeOrderFormSubmitted = false;
     cc.removeItem = function(index){
       CartService.removeItem(index);
       cc.getItems();
@@ -37,7 +38,19 @@ function(){
       cc.amountTotal = (Number(amount) + Number(cc.amountTax)).toFixed(2);
       
     };//function
-
+    cc.placeOrderFormSubmit = function(){
+      if($scope.checkout.$invalid){
+        angular.forEach($scope.checkout.$error, function (field) {
+          angular.forEach(field, function(errorField){
+              errorField.$setTouched();
+          })
+      });
+        console.log(43);
+      }
+      
+      cc.placeOrderFormSubmitted = true;
+      return true;
+    }
     cc.placeOrder = function(){
       var data = {items:cc.items,
       customer:{billing:cc.customer.billing,shipping:cc.customer.shipping},
@@ -45,9 +58,10 @@ function(){
 
     
     };
-   var postData = $.param(data);
+
+    var postData = $.param(data);
     console.log(postData);
-    $http.post("https://www.chhapai.com/wp-json/chhp/v1/createorder/",postData,{ headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
+    $http.post(ApiPathWP + "createorder/",postData,{ headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
     .then(function(response){
       console.log(response.data.payurl);
       $window.location.href = response.data.payurl;

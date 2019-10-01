@@ -26,6 +26,9 @@ function(){
 
     cc.getItems = function(){
       cc.items = CartService.getItems();
+      console.log(cc.items.length);
+      if(!cc.items.length)
+      $state.go('public.home');
       console.log(cc.items);
       var amount = 0;
       var amountTax = 0;

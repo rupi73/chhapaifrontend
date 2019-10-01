@@ -188,7 +188,15 @@
         url: '/public/checkout',
         templateUrl: 'src/public/cart/checkout.html',
         controller:'CartController',
-        controllerAs:'cctrl'       
+        controllerAs:'cctrl',
+        resolve :{
+          productData: ['$stateParams','CartService',function ($stateParams,CartService){
+            var items = CartService.getItems();
+            if(items.length)
+            return true;
+            return false;
+          }]
+        }             
       })
       .state('public.cart', {
         url: '/public/cart',

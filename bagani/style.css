@@ -1552,3 +1552,9 @@ blockquote {
 	left: 14px;
 } 
 }
+.ng-touched.ng-valid{
+  border: 2px green solid;
+}
+.ng-touched.ng-invalid{
+  border: 2px red solid;
+}

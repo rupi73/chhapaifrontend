@@ -258,6 +258,13 @@
         controller:'PagesController',
         controllerAs:'pagesCtrl'       
       }) 
+
+      .state('public.logodesignform', {
+        url: '/public/logodesignform',
+        templateUrl: 'src/public/pages/logodesignform.html',
+        controller:'PagesController',
+        controllerAs:'pagesCtrl'       
+      }) 
       .state('public.mattfinish', {
         url: '/public/mattfinish',
         templateUrl: 'src/public/pages/mattfinish.html',

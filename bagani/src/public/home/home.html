@@ -17,7 +17,7 @@
     }
     .hover-mask img {
       width: 100%;
-      height: auto;
+      height: 100%;
       -webkit-transition: all 0.5s ease-in-out;
       -moz-transition: all 0.5s ease-in-out;
       -o-transition: all 0.5s ease-in-out;
@@ -36,7 +36,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      margin-top: 20px;
+      margin-top: 0px;
       margin-bottom: 20px;
       height: 100%;
       width: 100%;
@@ -90,7 +90,7 @@
       -o-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
-      color: #fff;
+      color:black;
       -webkit-transition: all 0.5s linear;
       -moz-transition: all 0.5s linear;
       -o-transition: all 0.5s linear;
@@ -407,7 +407,8 @@ img.zoom {
                 <h6><span class="text-white">Bring a classy and royalty look of your brand your premium business cards. </span></h6>
               </a>
               <br>
-              <h6 class="text-center"><strong>PREMIUM</strong></h6>
+              
+              <a ui-sref="public.bcards"><p class="text-center"><b>PREMIUM</b><p></a>
             </div>
 
 
@@ -416,7 +417,8 @@ img.zoom {
                     <img src="images\hover\2.jpg" alt=""/>
                     <h6><span class="text-white">These are environmental friendly cards which are durable and excellent for you.</span></h6>
                   </a><br>
-                  <h6 class="text-center"><strong>ENVIRO</strong></h6>
+                  <a ui-sref="public.envirocards"><p class="text-center"><b>ENVIRO</b><p></a>
+
                       
           </div>
 
@@ -426,7 +428,8 @@ img.zoom {
                   <img src="images\hover\3.jpg" alt=""/>
                   <h6><span class="text-white">The color, the design, the pattern, the creativity- Create a  sound presence of your brand! </span></h6>
                 </a><br>
-                <h6 class="text-center"><strong>BESPOKE</strong></h6>
+                <a ui-sref="public.bespokecards"><p class="text-center"><b>BESPOKE</b><p></a>
+              
                 </div>
          
                 <div class="col-md-3 hover-blur">
@@ -434,7 +437,8 @@ img.zoom {
                 <img src="images\hover\4.jpg" alt=""/>
                 <h6><span class="text-white">The most vibrant way of showcasing your personality and your brand.</span></h6>
               </a><br>
-              <h6 class="text-center"><strong>UNIQUE</strong></h6>
+              <a ui-sref="public.uniquecards"><p class="text-center"><b>UNIQUE</b><p></a>
+         
             </div>
   
   
@@ -476,11 +480,12 @@ img.zoom {
      
         <div class="col-md-6 hover-mask">
             <a href="#" title="">
-              <img src="images\treatment2\1.jpg " class="" alt=""/>
+              <img src="images\treatment2\1.jpg "  style="  border-radius: 8px;" class="" alt=""/>
               <h5 class=" text-center text-white">Highlight your intricate details now with Embossing! Make a bold statement of your business and brand! </h5>
             </a>
             <br>
-            <h5 class="text-center"> Embossing</h5>
+            <a ui-sref="public.productbusinesscard({productname:'embossed'})">
+               <h4 class="text-center"> Embossing</h4></a>
 
 
 
@@ -497,8 +502,9 @@ img.zoom {
                   </h5>
               </a>
               <br>
-              <h5 class="text-center"> Electroplating
-                </h5>
+              <a ui-sref="public.productbusinesscard({productname:'electroplated'})"> 
+                <h4 class="text-center"> Electroplating
+                </h4></a>
                 <br><br>
                 </div>
     </div>
@@ -513,7 +519,8 @@ img.zoom {
                 </h5>
             </a>
             <br>
-            <h5 class="text-center"> Letterpress</h5>
+            <a ui-sref="public.productbusinesscard({productname:'letterpress'})">
+            <h4 class="text-center"> Letterpress</h4></a>
       </div>
       <div class="col-md-6 hover-mask">
 
@@ -524,7 +531,8 @@ img.zoom {
                 </h5>
             </a>
             <br>
-            <h5 class="text-center"> Foil Press</h5>
+            <a  ui-sref="public.productbusinesscard({productname:'foiling'})" >
+            <h4 class="text-center"> Foil Press</h4></a>
       </div>
 
     </div>
@@ -539,9 +547,10 @@ img.zoom {
                   </h5>
               </a>
               <br>
-              <h5 class="text-center"> Spot UV
+              <a ui-sref="public.productbusinesscard({productname:'embossed-spot-gloss'})">
+              <h4 class="text-center"> Spot UV
 
-                </h5>
+                </h4></a>
                 
         </div>
         <div class="col-md-6 hover-mask">
@@ -553,7 +562,8 @@ img.zoom {
                   </h5>
               </a>
               <br>
-              <h5 class="text-center"> EdgePaint</h5>
+              <a ui-sref="public.productbusinesscard({productname:'edgepaint'})">
+              <h4 class="text-center"> EdgePaint</h4></a>
 
         </div>
   
@@ -592,7 +602,7 @@ img.zoom {
             <li class="list-item">Easy and Quick Customization</li>
             <li class="list-item">Looking for Professional Design</li>
             <li class="list-item">Find your Inspiration!</li>
-          </ul>
+          </ul><br>
           <a href="#">Choose Our Design</a>
         </div>
       </div>
@@ -610,7 +620,7 @@ img.zoom {
             <li class="list-item">Have your own logo?</li>
             <li class="list-item">Create your designs with ease</li>
             <li class="list-item">Options to customize in detail</li>
-          </ul>
+          </ul><br>
           <a ui-sref="public.productbusinesscard({productname:'matt-finish'})">Create Your Own Design</a>
         </div>
       </div>
@@ -627,7 +637,7 @@ img.zoom {
               <li class="list-item">Have your own Design?</li>
               <li class="list-item">Already decided the look of card</li>
               <li class="list-item">Want to go with your style?</li>
-            </ul>
+            </ul><br>
             <a ui-sref="public.productbusinesscard({productname:'embossed'})" >Upload Your Design</a>
         </div>
       </div>

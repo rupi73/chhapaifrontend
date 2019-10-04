@@ -1,6 +1,6 @@
 <style>
 .counter {
-    background-color:#f5f5f5;
+    background-color:white;
     padding: 20px 0;
     border-radius: 5px;
 }
@@ -393,16 +393,75 @@ background: #707070;
 }
 /*end slider*/
 
+/* Container holding the image and the text */
+.container-fluide {
+  position: relative;
+  text-align: center;
+  color:black;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 50px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 77%;
+  transform: translate(-50%, -50%);
+}
+
 
 </style>
+
+
+
+<div class="container-fluide">
+  <img src="images/banner.png"  height=" 600px" width="1350px"alt="">
+  <div class="centered text-left">
+    <h2>Own a <b>BUSINESS &</h2><br>
+    <h2>Change the <b>WORLD</b></h2><br>
+    <h4 class="">Take advantage of our</h4><br>
+    <h4>famous Brand with dignity!</h4><br>
+    <button type="button" class="btn btn-outline-success">Buy Now</button>
+  </div>
+
+</div>
          
     <!--numbring-->
+    <section class="p-5" style="background-color: white">
     <div class="container my-5">
+      <h4 class="text-center my-3">A Glimpse of us Chhapai over Years</h4>
     <div class="row text-center">
         <div class="col">
         <div class="counter">
  
-  <h2 class="timer count-title count-number" data-to="14" data-speed="1500">years</h2>
+  <h2 class="timer count-title count-number" data-to="14 " data-speed="1500"></h2>
    <h3 class="count-text ">OF BRAND HERITAGE</h3>
 </div>
         </div>
@@ -422,6 +481,7 @@ background: #707070;
           
      </div>
 </div>
+</section>
 </div>
 <br>
 
@@ -449,9 +509,9 @@ background: #707070;
     </div>
 
     <div class="col-md-6 ">
-            <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                  </div>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lkOoMrFDVI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
     </div>
     </div>
 </div>
@@ -462,9 +522,9 @@ background: #707070;
 
 <div class="container" >
     <div class="row p-5">
-       
+        <div class="card-deck">
                 <div class="col-md-3">
-                        <div class="card bg-light">
+                        <div class="card bg-light h-100">
                            <img class="card-img-top" src="img\2006.jpg" alt="Card image cap">
                            <div class="card-body">
                               <h5 class="card-title border-bottom pb-3">2006</h5>
@@ -476,19 +536,19 @@ background: #707070;
         
 
                 <div class="col-md-3">
-                        <div class="card bg-light">
+                        <div class="card bg-light h-100">
                            <img class="card-img-top" src="img\2016.jpg" alt="Card image cap">
                            <div class="card-body">
                               <h5 class="card-title border-bottom pb-3">2011</h5>
                               <p class="card-text">Started working on the most simple franchise business model in print. With capabilities of so many various papers and treatments </p>
-
+                            <br>
                            </div>
                         </div>
                      </div>
     
 
                 <div class="col-md-3">
-                        <div class="card bg-light">
+                        <div class="card bg-light h-100">
                            <img class="card-img-top" src="img\2011.jpg" alt="Card image cap">
                            <div class="card-body">
                               <h5 class="card-title border-bottom pb-3">2016</h5>
@@ -503,7 +563,7 @@ background: #707070;
 
         
                 <div class="col-md-3">
-                        <div class="card bg-light">
+                        <div class="card bg-light h-100">
                            <img class="card-img-top" src="img\2019.jpg" alt="Card image cap">
                            <div class="card-body">
                               <h5 class="card-title border-bottom pb-3">2018</h5>
@@ -515,6 +575,7 @@ background: #707070;
       
 
     </div>
+  </div>
 </div>
 
 </section>
@@ -596,13 +657,12 @@ background: #707070;
 
     <!--four cards-->
 
-    <section class="services pt-100 pb-50" style="background-color:	#FFFFE0"id="services">
+    <section class="services pt-100 pb-50" style="background-color:white"id="services">
             <div class="container">
                <div class="row">
                   <div class="col-xl-6 mx-auto text-center">
                      <div class="section-title mb-100">
-                        <p>what i can do</p>
-                        <h4>my services</h4>
+                  
                      </div>
                   </div>
                </div>

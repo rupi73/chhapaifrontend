@@ -102,8 +102,8 @@ v-pane-content {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 10px;
-    height: 1px;
+    width: 15px;
+    height: 2px;
     background-color: #2196F3;
     -webkit-transform-origin: 50% 50%;
             transform-origin: 50% 50%;

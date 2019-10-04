@@ -1,104 +1,61 @@
 <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
+.gallery-wrap .img-big-wrap img {
+    height: 450px;
+    width: auto;
+    display: inline-block;
+    cursor: zoom-in;
 }
 
 
-
-
-
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.gallery-wrap .img-small-wrap .item-gallery {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    margin: 7px 2px;
+    display: inline-block;
+    overflow: hidden;
 }
 
-/* Six columns side by side */
-.column {
-  float: center;
-  width: 20%;
+.gallery-wrap .img-small-wrap {
+    text-align: center;
 }
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity:0.2;
+.gallery-wrap .img-small-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: zoom-in;
 }
-
-.active,
-.demo:hover {
-  opacity: 2;
-}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+	float:right;
+	width:50px;
+	}
 </style>
 <div class="container-fluid">
 	<br>  <p class="text-center">{{pbcctrl.product.name}}</p>
 <hr>
 
 	
-<div class="card p-3">
+<div class="card">
 	<div class="row">
 		<aside class="col-sm-5 border-right">
-			<!-- Container for the image gallery -->
-
-
-		<!-- Full-width images with number text -->
-		<div class="mySlides">
-		  <div class="numbertext"></div>
-			<img src="images/products/{{pbcctrl.selected.id}}/1.jpg" style="width:100%">
-		</div>
-	  
-		<div class="mySlides">
-		  <div class="numbertext"></div>
-			<img src="images/products/{{pbcctrl.selected.id}}/2.jpg" style="width:100%">
-		</div>
-	  
-		<div class="mySlides">
-		  <div class="numbertext"></div>
-			<img src="images/products/{{pbcctrl.selected.id}}/3.jpg" style="width:100%">
-		</div>
-	  
-		<div class="mySlides">
-		  <div class="numbertext"></div>
-			<img src="images/products/{{pbcctrl.selected.id}}/4.jpg" style="width:100%">
-		</div><br>
-	  
-		
-	  
-	
-	  
-		<!-- Thumbnail images -->
-		<div class="row">
-		  <div class="column">
-			<img class="demo cursor ml-3" src="images/products/{{pbcctrl.selected.id}}/1.jpg" style="width:100%" onclick="currentSlide(1)" >
-		  </div>
-		  <div class="column">
-			<img class="demo cursor mx-2" src="images/products/{{pbcctrl.selected.id}}/2.jpg" style="width:100%" onclick="currentSlide(2)" >
-		  </div>
-		  <div class="column">
-			<img class="demo cursor mx-2" src="images/products/{{pbcctrl.selected.id}}/3.jpg" style="width:100%" onclick="currentSlide(3)" >
-		  </div>
-		  <div class="column">
-			<img class="demo cursor mx-2" src="images/products/{{pbcctrl.selected.id}}/4.jpg" style="width:100%" onclick="currentSlide(4)" >
-		  </div>
-		 
-		</div>
-	  
- <!-- gallery-wrap .end// -->
+<article class="gallery-wrap"> 
+<div class="img-big-wrap">
+  <div> <a href="#"><img src="images/products/{{pbcctrl.selected.id}}/1.jpg"></a></div>
+</div> <!-- slider-product.// -->
+<div class="img-small-wrap">
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/1.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/2.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/3.jpg"> </div>
+  <div class="item-gallery"> <img src="images/products/{{pbcctrl.selected.id}}/4.jpg"></div>
+</div> <!-- slider-nav.// -->
+</article> <!-- gallery-wrap .end// -->
 <uib-tabset class="tabbable" active="active">
 	<uib-tab index="0" heading="Description">
 		<section    class="m-4" ng-bind-html="pbcctrl.description"></section>
@@ -141,7 +98,7 @@
 </uib-tabset>
 		</aside>
 		<aside class="col-sm-7">
-				<div class="col-md-4 card m-2 box-shadow sticky-top border float-md-right " style="  border-radius: 15px ;">
+				<div class="col-md-3 card m-2 box-shadow sticky-top border float-md-right " style="  border-radius: 15px ;">
 						<div class="card-header mt-3">
 							<h4 class="my-0 font-weight-normal"> Card Detail</h4>
 						</div>
@@ -153,21 +110,20 @@
 								<li><b>Size :- </b>{{pbcctrl.selected.size}}</li>
 								<li><b>Printing :- </b>{{pbcctrl.selected.printing}}</li>
 								<li ng-if="pbcctrl.selected.treatments" ng-repeat="(treat,attr) in pbcctrl.selected.treatments" class="text-capitalize">{{treat}}:-{{pbcctrl.selected.labels[treat].label}}</li>
-								<li ng-if="pbcctrl.selected.accessories" class="text-capitalize"><b>Accessory:-</b>{{pbcctrl.selected.labels.accessories.label}}</li>
-								<li ng-if="pbcctrl.selected.design" class="text-capitalize"><b>Design:-</b>{{pbcctrl.selected.labels.design.label}}</li>
+								<li ng-if="pbcctrl.selected.accessories" class="text-capitalize">Accessory:-{{pbcctrl.selected.labels.accessories.label}}</li>
+								<li ng-if="pbcctrl.selected.design" class="text-capitalize">Design:-{{pbcctrl.selected.labels.design.label}}</li>
 								
 							</ul>
-							<button type="button" class="btn btn-lg btn-block ">₹{{pbcctrl.selected.totalPrice}}</button>
+							<button type="button" class="btn btn-lg btn-block btn-outline-primary">₹{{pbcctrl.selected.totalPrice}}</button>
 						
-						
-							<button type="button" class="btn btn-primary  btn-block" ng-click="pbcctrl.addCart()">Add To Cart</button> <br>
+							<br>
+							<button type="button" class="btn btn-outline-primary my-3" ng-click="pbcctrl.addCart()">Add To Cart</button>
 
-							<span class="rounded-lg "><small>100% HAPPINESS GUARANTEE
-									if you are not happy with your order contact us and we'll make it right! ..more</small></span>
+						
 						</div>
 					</div>
 										
-				<div class="col-md-8 panel panel-transparent clearfix">
+				<div class="col-md-9 panel panel-transparent clearfix">
 						<div class="panel-heading">
 							<h6 class="panel-title my-3">choose paper and quantity</h6>
 						</div>
@@ -176,9 +132,9 @@
 								<v-pane id="{{ ::pane.header }}" ng-repeat="pane in pbcctrl.pandq">
 									<v-pane-header>
 											<ol class="breadcrumb pb-0 " >
-													<li class="breadcrumb-item"><h5 class="d-inline text-capitalize py-2">{{ pane.header }}</h5></li>
-													<li class="breadcrumb-item">	<h6 class="d-inline float-right text-monospace py-1">{{pbcctrl.selected[pane.header]}}</h6></li>
-													<li class="breadcrumb-item" ng-if="pbcctrl.selected.labels[pane.header].price py-4"><h6 class="d-inline float-right">₹{{pbcctrl.selected.labels[pane.header].price}}</h6> </li>
+													<li class="breadcrumb-item"><h5 class="d-inline text-capitalize">{{ pane.header }}</h5></li>
+													<li class="breadcrumb-item">	<h6 class="d-inline float-right text-monospace">{{pbcctrl.selected[pane.header]}}</h6></li>
+													<li class="breadcrumb-item" ng-if="pbcctrl.selected.labels[pane.header].price"><h6 class="d-inline float-right">₹{{pbcctrl.selected.labels[pane.header].price}}</h6> </li>
 											</ol>
 										
 									</v-pane-header>
@@ -210,9 +166,9 @@
 							</v-accordion>
 						</div>
 					</div>
-					<div class="col-md-8 panel panel-transparent clearfix">
+					<div class="col-md-9 panel panel-transparent clearfix">
 						<div class="panel-heading">
-							<h6 class="panel-title mb-2">choose treatments(optional)</h6>
+							<h6 class="panel-title ">choose treatments(optional)</h6>
 						</div>
 						<div class="panel-body">
 							<v-accordion class="vAccordion--default" control="accordionTreatments">
@@ -263,11 +219,11 @@
 												<p>Back Side</p>
 												<ul class="list-group">
 														<li class="list-group-item d-flex justify-content-between align-items-center">
-																<input type="radio" class="form-check-input ml-1" name="{{pane.header}}_back" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice(pane.header);"><p class="ml-4">None</p>
+																<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice(pane.header);">None
 																
 															</li>
 													<li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(key,item) in pane.content" >
-														<input type="radio" class="form-check-input ml-1" name="{{pane.header}}_back" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice(pane.header);"><p class="ml-4">None</p>
+														<input type="radio" class="form-check-input" name="{{pane.header}}_back" ng-value="key" ng-model="pbcctrl.selected.treatments[pane['header']].back" ng-change="pbcctrl.updatePrice(pane.header);">{{item}}
 													
 													</li>
 													
@@ -282,9 +238,9 @@
 							</v-accordion>
 						</div>
 					</div>
-					<div class="col-md-8 panel panel-transparent clearfix">
+					<div class="col-md-9 panel panel-transparent clearfix">
 							<div class="panel-heading">
-								<h6 class="panel-title mb-2">choose addons(optional)</h6>
+								<h6 class="panel-title">choose addons(optional)</h6>
 							</div>
 							<div class="panel-body">
 								<v-accordion class="vAccordion--default" control="accordionAddons">
@@ -325,7 +281,7 @@
 									</v-pane>
 								</v-accordion>
 							</div>
-						
+							<button type="button" class="btn btn-outline-primary my-3" ng-click="pbcctrl.addCart()">Add To Cart</button>
 						</div>
 						
 		</aside> <!-- col.// -->
@@ -337,36 +293,3 @@
 <!--container.//-->
 
 
-<script>
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>

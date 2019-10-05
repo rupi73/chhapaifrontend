@@ -1,4 +1,28 @@
 <style>
+
+
+  /*banner*/
+  .container-fluide {
+  position: relative;
+  max-width:100%;
+
+  margin: 0 auto;
+}
+
+.container-fluide img {vertical-align: middle;}
+
+.container-fluide .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color:white;
+  
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+  /* end banner*/
    
    * {
   box-sizing: border-box;
@@ -40,73 +64,98 @@
 
 </style>
 
-<div class="container">
-    <h2 class="text-center my-5">Our Design Services</h2>
-    <h6 class="text-center mb-5">Our Design Services
-            Chhapai offers slick designing services for all clienteles associated with us for printing. We offer Simple Logo Tracing, Business Cards Designs and Logo Design Services. Our creativity, innovation and magnificence on printing and designing will put a spotlight on your brand. Learn More</h6>
+<div class="container-fluide ">
 
+    <img src="images/design.jpg" alt="Notebook" height="700px" width="1400px">
+    <div class="content text-center ">
+      <div class="row">
+      <div class="col-md-6">
+      <h1 class="text-white">Heading</h1><br>
+      <h6 class="text-white">Lorem ipsum dolor sit amet, an his etiam <torquatos class="br"></torquatos>
+         Tollit soleat phaedrum te duo, <br> eum cu recteque expetendis neglegentur. 
+         Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei.</h6><br><br>
+        </div>
+        <div class="col-md-6">
+         <div class="embed-responsive embed-responsive-16by9 mb-5 ">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eVdfXBbyl_U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div><br>
+          <button type="button" class="btn btn-outline-success mr-2" >Business Card Design</button>
+          <button type="button" class="btn btn-outline-success" >Logo Design</button>
+    </div>
+  </div>
 
+<div class="container" >
+ 
+    <h2 class="text-center  my-3">Our Design Services</h2>
+    <p class="text-center  my-2 px-5">Our Design Services
+            Chhapai offers slick designing services for all clienteles associated with us for printing. We offer Simple Logo Tracing, Business Cards Designs and Logo Design Services. Our creativity, innovation and magnificence on printing and designing will put a spotlight on your brand. Learn More</p>
+
+          
 </div>
-<section class="features-service pt--100">
+<section class="features-service py-5 bg-white "> 
         <div class="container">
-        <div class="row">
-                  <div class="col-sm-12 text-center mb-5"><h1>Designing Your Business Card</h1></div>
+        <div class="row my-5">
+                  
           
           <!-- Features Service Single -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="features-service-single">
-              <div class="fes-ser-titel text-center">
-                  <img src="img\file.png" width="80px" Hieght="80px" alt="testimonial author">
-                <h4>Client File</h4>
-                <p>You shall provide us your details; files for logo, pictures, deisgns, etc( vector format only)</p>
-               </div>
-            </div>
-          </div>
-          <!-- Features Service Single -->
-          <!-- Features Service Single -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="features-service-single">
-              <div class="fes-ser-titel text-center">
-                  <img src="img/concept.png" width="80px" Hieght="80px" alt="testimonial author">
-                  <h4>Brainstorming</h4>
-                  <p>We acknowledge your business, brand and target clients for best business cards.</p>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+              <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div class="card-body">
+                    <img src="img/file.png" class="m-4" width="80px" Hieght="80px" alt="testimonial author"><br>
+                  <h4 class="card-title">Client File</h4>
+                  <p class=" card-text pb-5">Client File
+                      You shall provide us your details; files for logo, pictures, deisgns, etc( vector format only)</p>
+                 </div>
               </div>
             </div>
-          </div>
           <!-- Features Service Single -->
           <!-- Features Service Single -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="features-service-single">
-              <div class="fes-ser-titel text-center">
-                  <img src="img/sketch.png" width="80px" Hieght="80px" alt="testimonial author">
-                  <h4>Design</h4>
-                <p>Easy! We have our designers to that for you as per your given details.</p>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+              <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div class="card-body">
+                    <img src="img/concept.png" class="m-4" width="80px" Hieght="80px" alt="testimonial author"><br>
+                  <h4 class="card-title">Brainstorming</h4>
+                  <p class=" card-text pb-5">Client File
+                      We acknowledge your business, brand and target clients for best business cards.</p>
+                 </div>
               </div>
             </div>
-          </div>
+          <!-- Features Service Single -->
+          <!-- Features Service Single -->
+          <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+              <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div class="card-body">
+                    <img src="img/sketch.png" class="m-4" width="80px" Hieght="80px" alt="testimonial author"><br>
+                  <h4 class="card-title">Design</h4>
+                  <p class=" card-text pb-5">Easy! We have our designers to that for you as per your given details.</p>
+                 </div>
+              </div>
+            </div>
             <!-- Features Service Single -->
         </div>
         <br>
-        <div class="row mt-3">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="features-service-single">
-                          <div class="fes-ser-titel text-center">
-                              <img src="img/profiles.png" width="80px" Hieght="80px" alt="testimonial author">
-                              <h4>Revisions</h4>
-                            <p>We will amend the designs as per your suggestion when sent for final proofing.</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-md-6 col-sm-12">
-                            <div class="features-service-single">
-                              <div class="fes-ser-titel text-center">
-                                  <img src="img/appointment.png" width="80px" Hieght="80px" alt="testimonial author">
-                                  <h4>Turnaround Time</h4>
-                                <p>1-3 working days</p>
-                              </div>
-                            </div>
-                          </div>
+        <div class="row mb-5">
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                  <div class="card-body">
+                      <img src="img/profiles.png" class="m-4" width="80px" Hieght="80px" alt="testimonial author"><br>
+                    <h4 class="card-title">Revisions</h4>
+                    <p class=" card-text pb-5">We will amend the designs as per your suggestion when sent for final proofing.</p>
+                   </div>
+                </div>
+              </div>
 
+              <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                  <div class="card h-100" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <div class="card-body">
+                        <img src="img/appointment.png" class="m-4" width="80px" Hieght="80px" alt="testimonial author"><br>
+                      <h4 class="card-title">Turnaround Time</h4>
+                      <p class=" card-text pb-5">1-3 working days</p>
+                     </div>
+                  </div>
+                </div>
         </div>
         </div>
         </section>
